@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                pt.ipvc.rastreio.sistemaderastreio/pt.ipvc.rastreio.sistemaderastreio.HelloApplication
+                                pt.ipvc.rastreio.sistemaderastreio/pt.ipvc.rastreio.sistemaderastreio.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

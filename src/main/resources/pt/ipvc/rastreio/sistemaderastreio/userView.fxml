@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.userController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.UserController">
    <children>
       <Button layoutX="274.0" layoutY="168.0" mnemonicParsing="false" text="Button" />
       <Label layoutX="274.0" layoutY="127.0" text="Label" />
