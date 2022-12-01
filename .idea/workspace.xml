@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="funcionar">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/utils/alerts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/Styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/appView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/appView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio",
-    "settings.editor.selected.configurable": "editor.preferences.completion"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />

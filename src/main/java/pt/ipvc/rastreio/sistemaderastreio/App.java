@@ -13,7 +13,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage){
         try {
-            Parent parent = FXMLLoader.load(Objects.requireNonNull(Userview.class.getResource("appView.fxml")));
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("appView.fxml")));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();

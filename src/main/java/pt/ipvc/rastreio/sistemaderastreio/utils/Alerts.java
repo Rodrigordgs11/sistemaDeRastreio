@@ -9,6 +9,8 @@ public class Alerts {
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.show();
+        //how to use it
+        //Alerts("title", "header", "message", INFORMATION);
     }
 }
 
