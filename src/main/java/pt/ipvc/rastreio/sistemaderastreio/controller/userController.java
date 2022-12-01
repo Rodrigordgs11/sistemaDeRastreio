@@ -1,9 +1,9 @@
-package pt.ipvc.rastreio.sistemaderastreio;
+package pt.ipvc.rastreio.sistemaderastreio.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class userController {
     @FXML
     private Label welcomeText;
 
