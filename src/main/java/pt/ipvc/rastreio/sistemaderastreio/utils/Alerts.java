@@ -10,7 +10,7 @@ public class Alerts {
         alert.setContentText(content);
         alert.show();
         //how to use it
-        //Alerts("title", "header", "message", INFORMATION);
+        //Alerts.showAlert("title", "header", e.getMessage(), Alert.AlertType.ERROR);
     }
 }
 

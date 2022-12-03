@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class user {
-    public static ArrayList<user> users = new ArrayList<user>();
     private int id;
     private String name;
     private String username;
@@ -20,9 +19,6 @@ public class user {
         this.numberPhone = numberPhone;
     }
 
-    public void setUsers(ArrayList<user> users) {
-        this.users = users;
-    }
 
     public int getId() {
         return id;
