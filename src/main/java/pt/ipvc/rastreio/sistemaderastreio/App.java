@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import pt.ipvc.rastreio.sistemaderastreio.controller.UserController.*;
 
 import java.io.IOException;
 import java.util.Objects;

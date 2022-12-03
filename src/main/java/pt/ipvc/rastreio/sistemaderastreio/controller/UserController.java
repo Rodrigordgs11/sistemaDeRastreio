@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 import pt.ipvc.rastreio.sistemaderastreio.utils.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.*;
 
-import java.io.IOException;
-
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
 public class UserController{
@@ -30,12 +28,15 @@ public class UserController{
     @FXML
     private Button buttonRegister;
 
-    public void buttonRegisterAction() throws IOException {
+    public void buttonRegisterAction(){
         try {
             boolean exist = false;
+            boolean existPhone = false;
             if(nameRegister.getText().isEmpty() || userNameRegister.getText().isEmpty() || passwordRegister.getText().isEmpty() || phoneRegister.getText().isEmpty() || passwordRegister.getText().isEmpty() || confirmPasswordRegister.getText().isEmpty()) throw new isEmptyException("Text field is empty");
             for(user u : users) if (userNameRegister.getText().equals(u.getUsername())) exist = true;
             if(exist) throw new alreadyExistException("Username already used");
+            for(user u : users) if (Integer.parseInt(phoneRegister.getText()) == u.getNumberPhone()) existPhone = true;
+            if(existPhone) throw new alreadyExistException("Phone already exists");
             if(phoneRegister.getText().length() != 9) throw new NumberFormatException("Phone field must have 9 numbers");
             if(!(passwordRegister.getText().equals(confirmPasswordRegister.getText()))) throw new matchException("Passwords aren't matching");
             user newUser = new user(nameRegister.getText(), nameRegister.getText(), passwordRegister.getText(), Integer.parseInt(phoneRegister.getText()), 0, user.typeUser.userStd);
@@ -47,7 +48,7 @@ public class UserController{
         }catch(isEmptyException e){
             Alerts.showAlert("Empty field", "A field is empty",e.getMessage(), Alert.AlertType.WARNING);
         }catch(alreadyExistException e){
-            Alerts.showAlert("User already exists", "User already exists, change for another",e.getMessage(), Alert.AlertType.ERROR);
+            Alerts.showAlert("User already exists", "User already exists or phone number exists, change for another",e.getMessage(), Alert.AlertType.ERROR);
         }catch(matchException e){
             Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
         }

@@ -1,7 +1,4 @@
 package pt.ipvc.rastreio.sistemaderastreio.backend;
-
-import java.util.ArrayList;
-import java.util.List;
 public class user {
     public enum typeUser{
         admin,

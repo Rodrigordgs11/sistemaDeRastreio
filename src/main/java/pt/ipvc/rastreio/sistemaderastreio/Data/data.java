@@ -9,7 +9,6 @@ import java.util.List;
 
 public class data {
     public static void saveUsers(){
-        File path = new File("C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv"))){
             for (user u: users) {
                 bw.write(u.getName() + "," + u.getUsername() + "," + u.getPassword() + "," + u.getNumberPhone() + "," + u.getNumOfWork() + "," + u.getTipoUser().toString());
@@ -39,8 +38,8 @@ public class data {
     }
 
     public static List<user> users = new ArrayList<>();
-    private user.typeUser tipoUser;
+    /*private user.typeUser tipoUser;
     public void setTipoUser(typeUser tipoUser){
         this.tipoUser = tipoUser;
-    }
+    }*/
 }
