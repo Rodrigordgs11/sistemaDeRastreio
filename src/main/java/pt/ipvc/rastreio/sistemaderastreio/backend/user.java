@@ -2,23 +2,38 @@ package pt.ipvc.rastreio.sistemaderastreio.backend;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class user {
-    private int id;
+    public enum typeUser{
+        admin,
+        userManager,
+        userStd
+    }
+
+    public user.typeUser tipoUser;
+    private static int id = 0;
     private String name;
     private String username;
     private String password;
     private int numberPhone;
     private int numOfWork;
 
-    public user(String name, String username, String password, int numberPhone){
-        this.id += 1;
+    public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser){
+        this.id ++;
         this.name = name;
         this.username = username;
         this.password = password;
         this.numberPhone = numberPhone;
+        this.numOfWork = numOfWork;
+        this.tipoUser = tipoUser;
     }
 
+    public void setTipoUser(typeUser tipoUser){
+        this.tipoUser = tipoUser;
+    }
+
+    public typeUser getTipoUser() {
+        return tipoUser;
+    }
 
     public int getId() {
         return id;
