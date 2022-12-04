@@ -1,4 +1,7 @@
 package pt.ipvc.rastreio.sistemaderastreio.backend;
+
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
+
 public class user {
     public enum typeUser{
         admin,
@@ -15,7 +18,7 @@ public class user {
     private int numOfWork;
 
     public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser){
-        this.id ++;
+        this.id = users.size();
         this.name = name;
         this.username = username;
         this.password = password;
@@ -35,11 +38,6 @@ public class user {
     public int getId() {
         return id;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }

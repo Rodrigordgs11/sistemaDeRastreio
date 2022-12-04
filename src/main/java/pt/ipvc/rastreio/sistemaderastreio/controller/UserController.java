@@ -27,18 +27,20 @@ public class UserController{
     private Button buttonLogin;
     @FXML
     private Button buttonRegister;
-
+    public void validator() throws alreadyExistException, matchException, isEmptyException {
+        boolean exist = false;
+        boolean existPhone = false;
+        if(nameRegister.getText().isEmpty() || userNameRegister.getText().isEmpty() || passwordRegister.getText().isEmpty() || phoneRegister.getText().isEmpty() || passwordRegister.getText().isEmpty() || confirmPasswordRegister.getText().isEmpty()) throw new isEmptyException("Text field is empty");
+        for(user u : users) if (userNameRegister.getText().equals(u.getUsername())) exist = true;
+        if(exist) throw new alreadyExistException("Username already used");
+        for(user u : users) if (Integer.parseInt(phoneRegister.getText()) == u.getNumberPhone()) existPhone = true;
+        if(existPhone) throw new alreadyExistException("Phone already exists");
+        if(phoneRegister.getText().length() != 9) throw new NumberFormatException("Phone field must have 9 numbers");
+        if(!(passwordRegister.getText().equals(confirmPasswordRegister.getText()))) throw new matchException("Passwords aren't matching");
+    }
     public void buttonRegisterAction(){
         try {
-            boolean exist = false;
-            boolean existPhone = false;
-            if(nameRegister.getText().isEmpty() || userNameRegister.getText().isEmpty() || passwordRegister.getText().isEmpty() || phoneRegister.getText().isEmpty() || passwordRegister.getText().isEmpty() || confirmPasswordRegister.getText().isEmpty()) throw new isEmptyException("Text field is empty");
-            for(user u : users) if (userNameRegister.getText().equals(u.getUsername())) exist = true;
-            if(exist) throw new alreadyExistException("Username already used");
-            for(user u : users) if (Integer.parseInt(phoneRegister.getText()) == u.getNumberPhone()) existPhone = true;
-            if(existPhone) throw new alreadyExistException("Phone already exists");
-            if(phoneRegister.getText().length() != 9) throw new NumberFormatException("Phone field must have 9 numbers");
-            if(!(passwordRegister.getText().equals(confirmPasswordRegister.getText()))) throw new matchException("Passwords aren't matching");
+            validator();
             user newUser = new user(nameRegister.getText(), nameRegister.getText(), passwordRegister.getText(), Integer.parseInt(phoneRegister.getText()), 0, user.typeUser.userStd);
             users.add(newUser);
             users.get(0).tipoUser = user.typeUser.admin;
