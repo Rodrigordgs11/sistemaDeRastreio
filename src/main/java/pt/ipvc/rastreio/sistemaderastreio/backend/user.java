@@ -3,6 +3,12 @@ package pt.ipvc.rastreio.sistemaderastreio.backend;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
 public class user {
+    public user(String name, String username, String password) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+    }
+
     public enum typeUser{
         admin,
         userManager,
