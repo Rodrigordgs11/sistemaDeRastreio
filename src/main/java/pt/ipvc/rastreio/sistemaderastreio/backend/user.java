@@ -10,7 +10,7 @@ public class user {
     }
 
     public user.typeUser tipoUser;
-    private static int id = 0;
+    private int id = 1;
     private String name;
     private String username;
     private String password;
@@ -18,7 +18,7 @@ public class user {
     private int numOfWork;
 
     public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser){
-        this.id = users.size();
+        this.id += users.get(users.size() - 1).getId();
         this.name = name;
         this.username = username;
         this.password = password;
