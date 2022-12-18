@@ -9,11 +9,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class Userview extends Application {
+public class Dashboard extends Application {
     @Override
     public void start(Stage primaryStage){
         try {
-            Parent parent = FXMLLoader.load(Objects.requireNonNull(Userview.class.getResource("userView.fxml")));
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(Dashboard.class.getResource("dashboardView.fxml")));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();
