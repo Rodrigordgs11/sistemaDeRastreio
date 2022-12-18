@@ -1,15 +1,18 @@
 package pt.ipvc.rastreio.sistemaderastreio.Data;
 
+
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 public class data {
+    static String userDirectory = System.getProperty("user.dir");
     public static void saveUsers(){
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv"))){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv"))){
             for (user u: users) {
                 bw.write(u.getName() + "," + u.getUsername() + "," + u.getPassword() + "," + u.getNumberPhone() + "," + u.getNumOfWork() + "," + u.getTipoUser().toString());
                 bw.newLine();
@@ -19,7 +22,7 @@ public class data {
         }
     }
     public static void loadUsers(){
-        try (BufferedReader br = new BufferedReader(new FileReader("C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv"))){
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv"))){
             String user = br.readLine();
             while (user != null){
                 String[] fields = user.split(",");

@@ -24,7 +24,7 @@ public class user {
     private int numOfWork;
 
     public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser){
-        this.id += users.get(users.size() - 1).getId();
+        this.id++;
         this.name = name;
         this.username = username;
         this.password = password;
