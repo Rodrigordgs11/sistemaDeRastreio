@@ -14,3 +14,18 @@
 .shadow{
     -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2), 10.0, 0.0, 0.0, 10.0);
 }
+
+.axis{
+    -fx-stroke: #fff;
+    -fx-fill: #fff;
+    -fx-font-size: 24;
+    -fx-tick-label-fill: #fff;
+}
+
+.selected-button-container{
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+
+.button-container-mouse-moved{
+    -fx-background-color: rgba(255,255,255,0.1);
+}

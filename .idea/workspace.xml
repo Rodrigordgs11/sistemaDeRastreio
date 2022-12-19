@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="dashboard create">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="dashboard controller create">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/Styles/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/Styles/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" afterDir="false" />
     </list>
@@ -103,7 +100,7 @@
       <workItem from="1669902443918" duration="2526000" />
       <workItem from="1670089371907" duration="208000" />
       <workItem from="1670089704992" duration="17485000" />
-      <workItem from="1671368142637" duration="15798000" />
+      <workItem from="1671368142637" duration="17526000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -189,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671387735937</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="dashboard controller create">
+      <created>1671410346452</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671410346452</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +224,8 @@
     <MESSAGE value="login polymorfism" />
     <MESSAGE value="read and write files update" />
     <MESSAGE value="dashboard create" />
-    <option name="LAST_COMMIT_MESSAGE" value="dashboard create" />
+    <MESSAGE value="dashboard controller create" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard controller create" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
