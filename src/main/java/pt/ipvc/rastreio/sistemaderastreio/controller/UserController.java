@@ -1,10 +1,19 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 
 import javafx.fxml.FXML;
 import pt.ipvc.rastreio.sistemaderastreio.utils.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.*;
+
+import java.io.IOException;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
