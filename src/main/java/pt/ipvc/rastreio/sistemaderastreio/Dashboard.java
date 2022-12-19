@@ -9,14 +9,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.loadUsers;
+
 public class Dashboard extends Application {
     @Override
     public void start(Stage primaryStage){
         try {
-            Parent parent = FXMLLoader.load(Objects.requireNonNull(Dashboard.class.getResource("dashboardView.fxml")));
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboardView.fxml")));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();
+            primaryStage.setTitle("Login and register");
         } catch (IOException e) {
             e.printStackTrace();
         }

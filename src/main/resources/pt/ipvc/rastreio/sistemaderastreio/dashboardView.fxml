@@ -1,12 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.UserController">
-   <children>
-      <Button layoutX="274.0" layoutY="168.0" mnemonicParsing="false" text="Button" />
-      <Label layoutX="274.0" layoutY="127.0" text="Label" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" styleClass="gradient-background" stylesheets="@Styles/dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.DashboardController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="188.0" styleClass="shadow" text="Menu inicial" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="30.0" />
+               </font>
+            </Label>
+            <Pane maxHeight="-Infinity" prefHeight="1.0" prefWidth="200.0" styleClass="line-color" stylesheets="@Styles/dashboard.css" HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="46.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+               <image>
+                  <Image url="@images/settings.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="290.0" spacing="10.0" styleClass="container" stylesheets="@Styles/dashboard.css" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                     <image>
+                        <Image url="@images/icons8-user-100.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="192.0">
+                     <children>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Rodrigo" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Software engenier" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1.0" prefWidth="246.0" styleClass="line-color" stylesheets="@Styles/dashboard.css" />
+            <VBox prefHeight="450.0" prefWidth="290.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/icons8-user-100.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/icons8-user-100.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/icons8-user-100.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/icons8-user-100.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox fx:id="" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox prefWidth="100.0" styleClass="container" stylesheets="@Styles/dashboard.css">
+               <children>
+                  <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Social media" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="260.0">
+                           <children>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/icons8-user-100.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Social media" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Social media" textFill="#ffffff4d">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Pane maxHeight="-Infinity" prefHeight="180.0" prefWidth="1.0" styleClass="line-color" stylesheets="@Styles/dashboard.css" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="260.0">
+                           <children>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/icons8-user-100.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Social media" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Social media" textFill="#ffffff4d">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Pane maxHeight="-Infinity" prefHeight="180.0" prefWidth="1.0" styleClass="line-color" stylesheets="@Styles/dashboard.css" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="260.0">
+                           <children>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/icons8-user-100.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Social media" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Social media" textFill="#ffffff4d">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefWidth="490.0" spacing="20.0">
+               <children>
+                  <VBox prefHeight="315.0" prefWidth="490.0" styleClass="container" stylesheets="@Styles/dashboard.css">
+                     <children>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Work time" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="30.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <LineChart fx:id="lineChart" legendVisible="false" styleClass="shadow" stylesheets="@Styles/dashboard.css">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="315.0" prefWidth="490.0" styleClass="container" stylesheets="@Styles/dashboard.css">
+                     <children>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Projects" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="30.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <PieChart fx:id="pieChart" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
