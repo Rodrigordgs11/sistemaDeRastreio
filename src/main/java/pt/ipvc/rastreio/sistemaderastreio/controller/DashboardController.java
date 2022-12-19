@@ -44,5 +44,4 @@ public class DashboardController implements Initializable {
         );
         pieChart.setData(pieChartData);
     }
-
 }

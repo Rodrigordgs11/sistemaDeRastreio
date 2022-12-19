@@ -1,11 +1,14 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 
@@ -14,6 +17,7 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.*;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
@@ -36,6 +40,23 @@ public class UserController{
     private Button buttonLogin;
     @FXML
     private Button buttonRegister;
+    @FXML
+    private Scene scene;
+    @FXML
+    private Stage stage;
+    @FXML
+    private Parent parent;
+    private boolean nExist = false;
+    public void switchScene(ActionEvent event) throws IOException {
+        buttonLoginAction();
+        if(nExist){
+            parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
     public void validator() throws alreadyExistException, matchException, isEmptyException {
         boolean exist = false;
         boolean existPhone = false;
@@ -67,7 +88,6 @@ public class UserController{
     }
 
     public void buttonLoginAction(){
-        boolean nExist = false;
         try {
             if (userNameLogin.getText().isEmpty() || passwordLogin.getText().isEmpty()) throw new isEmptyException("Text field is empty");
             for (user u : users)

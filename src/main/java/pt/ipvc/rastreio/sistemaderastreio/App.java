@@ -12,23 +12,18 @@ import java.util.Objects;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.loadUsers;
 
 public class App extends Application {
-    private static Scene scene;
     @Override
     public void start(Stage primaryStage){
         try {
             loadUsers();
             Parent parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("appView.fxml")));
-            scene = new Scene(parent);
+            Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();
             primaryStage.setTitle("Login and register");
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static Scene getScene(){
-        return scene;
     }
     public static void main(String[] args) {
         launch(args);

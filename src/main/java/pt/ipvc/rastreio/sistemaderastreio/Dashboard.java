@@ -19,7 +19,7 @@ public class Dashboard extends Application {
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();
-            primaryStage.setTitle("Login and register");
+            primaryStage.setTitle("Menu inicial");
         } catch (IOException e) {
             e.printStackTrace();
         }
