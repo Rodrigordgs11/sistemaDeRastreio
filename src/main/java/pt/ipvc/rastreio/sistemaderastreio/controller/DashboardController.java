@@ -1,6 +1,5 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,19 +7,30 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
+import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.userLogged;
+import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
 public class DashboardController implements Initializable {
     @FXML
     private LineChart<String, Integer> lineChart;
     @FXML
     private PieChart pieChart;
+    @FXML
+    private Label name;
+    @FXML
+    private Label userName;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         iniLineChart();
         iniPieChart();
+        returnUserLogged();
     }
     private void iniLineChart(){
         XYChart.Series series = new XYChart.Series();
@@ -43,5 +53,10 @@ public class DashboardController implements Initializable {
             new PieChart.Data("Android", 15)
         );
         pieChart.setData(pieChartData);
+    }
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(userLogged().getName());
+        userName.setText(userLogged().getUsername());
     }
 }

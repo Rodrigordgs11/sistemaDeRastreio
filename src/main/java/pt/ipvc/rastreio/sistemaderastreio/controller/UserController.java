@@ -45,6 +45,10 @@ public class UserController{
     @FXML
     private Parent parent;
     private boolean nExist = false;
+    private static int idLog;
+    public static int getIdLog() {
+        return idLog;
+    }
     public void switchScene(ActionEvent event) throws IOException, InterruptedException {
         buttonLoginAction();
         if(nExist){
@@ -54,6 +58,7 @@ public class UserController{
             scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();
+            stage.setTitle("Menu inicial");
         }
     }
     public void validator() throws alreadyExistException, matchException, isEmptyException {
@@ -70,7 +75,7 @@ public class UserController{
     public void buttonRegisterAction(){
         try {
             validator();
-            user newUser = new user(nameRegister.getText(), nameRegister.getText(), passwordRegister.getText(), Integer.parseInt(phoneRegister.getText()), 0, user.typeUser.userStd);
+            user newUser = new user(nameRegister.getText(), userNameRegister.getText(), passwordRegister.getText(), Integer.parseInt(phoneRegister.getText()), 0, user.typeUser.userStd);
             users.add(newUser);
             users.get(0).tipoUser = user.typeUser.admin;
             buttonRegister.setText("Registado with sucess..");
@@ -93,6 +98,7 @@ public class UserController{
                 if (u.getUsername().equals(userNameLogin.getText()) && u.getPassword().equals(passwordLogin.getText())){
                     buttonLogin.setText("Login with sucess..");
                     nExist = true;
+                    idLog = u.getId();
                 }
             if(!nExist) throw new matchException("Username or password invalid");
         }catch(isEmptyException e){

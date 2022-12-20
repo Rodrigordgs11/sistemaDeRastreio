@@ -5,9 +5,10 @@ import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+
+import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;
 
 public class data {
     static String userDirectory = System.getProperty("user.dir");
@@ -41,8 +42,12 @@ public class data {
     }
 
     public static List<user> users = new ArrayList<>();
-    /*private user.typeUser tipoUser;
-    public void setTipoUser(typeUser tipoUser){
-        this.tipoUser = tipoUser;
-    }*/
+    public static user userLogged() {
+        for (user u : users) {
+            if(getIdLog() == u.getId()){
+                return u;
+            }
+        }
+        return null;
+    }
 }
