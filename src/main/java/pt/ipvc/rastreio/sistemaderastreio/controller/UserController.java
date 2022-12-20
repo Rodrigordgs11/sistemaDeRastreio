@@ -5,9 +5,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
@@ -18,6 +15,7 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.*;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
@@ -47,9 +45,10 @@ public class UserController{
     @FXML
     private Parent parent;
     private boolean nExist = false;
-    public void switchScene(ActionEvent event) throws IOException {
+    public void switchScene(ActionEvent event) throws IOException, InterruptedException {
         buttonLoginAction();
         if(nExist){
+            TimeUnit.SECONDS.sleep(1);
             parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(parent);

@@ -71,7 +71,7 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@images/icons8-user-100.png" />
+                              <Image url="@images/icons8-dashboard-layout-48.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
@@ -85,10 +85,10 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@images/icons8-user-100.png" />
+                              <Image url="@images/project.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Projetos" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
@@ -99,10 +99,10 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@images/icons8-user-100.png" />
+                              <Image url="@images/task.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Tarefas" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
