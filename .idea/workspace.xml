@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Dash UI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/MySettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/mySettings.fxml" afterDir="false" />
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Correct error and create mySetings files">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/Styles/mySettings.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/MySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/MySettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/mySettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/mySettings.fxml" afterDir="false" />
     </list>
     <list id="b15cc39e-28b8-44ca-b094-929e04edd2ed" name="Changes by Pedro" comment="Changes by Pedro" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +24,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -52,6 +52,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio/src/main/resources/pt/ipvc/rastreio/sistemaderastreio",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,8 +73,8 @@
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pt.ipvc.rastreio.sistemaderastreio" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
+      <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
   </component>
   <component name="RunManager">
@@ -109,7 +110,7 @@
       <workItem from="1669902443918" duration="2526000" />
       <workItem from="1670089371907" duration="208000" />
       <workItem from="1670089704992" duration="17485000" />
-      <workItem from="1671368142637" duration="44966000" />
+      <workItem from="1671368142637" duration="56211000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -237,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671500644408</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Correct error and create mySetings files">
+      <created>1671551334337</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1671551334337</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +281,8 @@
     <MESSAGE value="switch dash with log in done" />
     <MESSAGE value="Dash UI" />
     <MESSAGE value="Changes by Pedro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Pedro" />
+    <MESSAGE value="Correct error and create mySetings files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct error and create mySetings files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

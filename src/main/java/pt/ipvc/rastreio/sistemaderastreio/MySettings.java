@@ -13,7 +13,7 @@ public class MySettings extends Application {
     @Override
     public void start(Stage primaryStage){
         try {
-            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboardView.fxml")));
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mySettings.fxml")));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();
