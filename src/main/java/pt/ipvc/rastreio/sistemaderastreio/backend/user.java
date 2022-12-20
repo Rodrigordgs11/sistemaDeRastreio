@@ -22,9 +22,10 @@ public class user {
     private String password;
     private int numberPhone;
     private int numOfWork;
+    private static int numUsers = 0;
 
     public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser){
-        this.id++;
+        this.id = ++numUsers;
         this.name = name;
         this.username = username;
         this.password = password;
