@@ -147,7 +147,10 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="49.0" prefWidth="396.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" />
+                  <TextField fx:id="Name" prefHeight="49.0" prefWidth="396.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                     <font>
+                        <Font size="17.0" />
+                     </font></TextField>
                </children>
                <padding>
                   <Insets bottom="20.0" />
@@ -163,7 +166,10 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="49.0" prefWidth="375.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" />
+                  <TextField fx:id="UserName" prefHeight="49.0" prefWidth="375.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                     <font>
+                        <Font size="17.0" />
+                     </font></TextField>
                </children>
                <padding>
                   <Insets bottom="20.0" />
@@ -179,7 +185,10 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="49.0" prefWidth="412.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" />
+                  <TextField fx:id="Phone" prefHeight="49.0" prefWidth="412.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                     <font>
+                        <Font size="17.0" />
+                     </font></TextField>
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" />
@@ -195,7 +204,10 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="54.0" prefWidth="374.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" />
+                  <TextField fx:id="Password" prefHeight="54.0" prefWidth="374.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                     <font>
+                        <Font size="17.0" />
+                     </font></TextField>
                </children>
                <padding>
                   <Insets bottom="20.0" />
@@ -211,10 +223,13 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="52.0" prefWidth="310.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" />
+                  <TextField fx:id="ConfirmPass" prefHeight="52.0" prefWidth="310.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                     <font>
+                        <Font size="17.0" />
+                     </font></TextField>
                </children>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" stylesheets="@Styles/mySettings.css" text="Save changes" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#buttonSaveChanges" prefHeight="40.0" prefWidth="155.0" stylesheets="@Styles/mySettings.css" text="Save changes" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Agency FB Bold" size="15.0" />
                </font>

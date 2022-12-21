@@ -5,10 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 
 import java.io.IOException;
 import java.util.Objects;
-
 public class MySettings extends Application {
     @Override
     public void start(Stage primaryStage){
@@ -17,7 +17,7 @@ public class MySettings extends Application {
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();
-            primaryStage.setTitle("Menu inicial");
+            primaryStage.setTitle("My settings");
         } catch (IOException e) {
             e.printStackTrace();
         }
