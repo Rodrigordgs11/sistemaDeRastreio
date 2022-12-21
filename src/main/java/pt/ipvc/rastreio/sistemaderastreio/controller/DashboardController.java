@@ -16,6 +16,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
@@ -46,11 +47,14 @@ public class DashboardController implements Initializable {
     private Parent parent;
     @FXML
     private ImageView imageSwitchMy;
+    @FXML
+    private HBox Utilizadores;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         iniLineChart();
         iniPieChart();
-        returnUserLogged();;
+        returnUserLogged();
+        setVisibleUsers();
     }
     public void handleImage(MouseEvent event) throws InterruptedException, IOException {
         TimeUnit.SECONDS.sleep(1);
@@ -87,5 +91,12 @@ public class DashboardController implements Initializable {
         System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+
+    private void setVisibleUsers(){
+        if(Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.admin) || Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userManager))
+            Utilizadores.setVisible(true);
+        else
+            Utilizadores.setVisible(false);
     }
 }

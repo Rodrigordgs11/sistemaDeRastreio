@@ -75,7 +75,7 @@ public class UserController{
     public void buttonRegisterAction(){
         try {
             validator();
-            user newUser = new user(nameRegister.getText(), userNameRegister.getText(), passwordRegister.getText(), Integer.parseInt(phoneRegister.getText()), 0, user.typeUser.userStd);
+            user newUser = new userStd(nameRegister.getText(), userNameRegister.getText(), passwordRegister.getText(), Integer.parseInt(phoneRegister.getText()), 0, user.typeUser.userStd);
             users.add(newUser);
             users.get(0).tipoUser = user.typeUser.admin;
             buttonRegister.setText("Registado with sucess..");

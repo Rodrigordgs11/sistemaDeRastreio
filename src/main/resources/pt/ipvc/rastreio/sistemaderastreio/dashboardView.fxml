@@ -24,11 +24,6 @@
                </font>
             </Label>
             <Pane maxHeight="-Infinity" prefHeight="1.0" prefWidth="200.0" styleClass="line-color" stylesheets="@Styles/dashboard.css" HBox.hgrow="ALWAYS" />
-            <ImageView fitHeight="46.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
-               <image>
-                  <Image url="@images/settings.png" />
-               </image>
-            </ImageView>
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />
@@ -113,10 +108,38 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@images/icons8-user-100.png" />
+                              <Image url="@images/invites.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Dashboard" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Convites" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/report.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Relatórios" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="Utilizadores" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/users.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Utilizadores" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>

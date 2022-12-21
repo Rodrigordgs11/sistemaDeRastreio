@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
@@ -25,11 +26,11 @@ import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
 public class MySettingsController implements Initializable {
     @FXML
-    private TextField ConfirmPass;
+    private PasswordField ConfirmPass;
     @FXML
     private TextField Name;
     @FXML
-    private TextField Password;
+    private PasswordField Password;
     @FXML
     private TextField Phone;
     @FXML
@@ -44,9 +45,13 @@ public class MySettingsController implements Initializable {
     private Scene scene;
     @FXML
     private Stage stage;
+    @FXML
+    private HBox Utilizadores;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         returnUserLogged();
+        setVisibleUsers();
     }
     public void returnUserLogged(){
         name.setText(Objects.requireNonNull(userLogged()).getName());
@@ -97,5 +102,11 @@ public class MySettingsController implements Initializable {
         data.saveUsers();
     }
 
+    private void setVisibleUsers(){
+        if(Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.admin) || Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userManager))
+            Utilizadores.setVisible(true);
+        else
+            Utilizadores.setVisible(false);
+    }
 
 }

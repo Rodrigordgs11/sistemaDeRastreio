@@ -1,13 +1,17 @@
 package pt.ipvc.rastreio.sistemaderastreio.Data;
 
 
+import pt.ipvc.rastreio.sistemaderastreio.backend.admin;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
+import pt.ipvc.rastreio.sistemaderastreio.backend.userManager;
+import pt.ipvc.rastreio.sistemaderastreio.backend.userStd;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;
 
 public class data {
@@ -33,7 +37,12 @@ public class data {
                 int numberPhone = Integer.parseInt(fields[3]);
                 int numOfWork = Integer.parseInt(fields[4]);
                 typeUser typeuser = typeUser.valueOf(fields[5]);
-                users.add(new user(name, userName, password, numberPhone, numOfWork, typeuser));
+                if(typeUser.valueOf(fields[5]).equals(userStd))
+                    users.add(new userStd(name, userName, password, numberPhone, numOfWork, typeuser));
+                if(typeUser.valueOf(fields[5]).equals(userManager))
+                    users.add(new userManager(name, userName, password, numberPhone, numOfWork, typeuser));
+                if(typeUser.valueOf(fields[5]).equals(admin))
+                    users.add(new admin(name, userName, password, numberPhone, numOfWork, typeuser));
                 user = br.readLine();
             }
         }catch (IOException e){
