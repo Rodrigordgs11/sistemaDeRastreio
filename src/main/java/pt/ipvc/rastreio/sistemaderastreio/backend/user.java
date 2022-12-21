@@ -1,5 +1,8 @@
 package pt.ipvc.rastreio.sistemaderastreio.backend;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
 public class user {
@@ -22,6 +25,8 @@ public class user {
     private String password;
     private int numberPhone;
     private int numOfWork;
+
+    private List<Project> projects;
     private static int numUsers = 0;
 
     public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser){
@@ -32,6 +37,7 @@ public class user {
         this.numberPhone = numberPhone;
         this.numOfWork = numOfWork;
         this.tipoUser = tipoUser;
+        this.projects = new ArrayList<>();
     }
 
     public void setTipoUser(typeUser tipoUser){
