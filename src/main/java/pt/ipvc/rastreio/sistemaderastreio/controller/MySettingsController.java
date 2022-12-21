@@ -1,16 +1,25 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
@@ -29,6 +38,12 @@ public class MySettingsController implements Initializable {
     private Label name;
     @FXML
     private Label userName;
+    @FXML
+    private Parent parent;
+    @FXML
+    private Scene scene;
+    @FXML
+    private Stage stage;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         returnUserLogged();
@@ -36,6 +51,15 @@ public class MySettingsController implements Initializable {
     public void returnUserLogged(){
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+    public void handleDashboard(MouseEvent event) throws InterruptedException, IOException {
+        TimeUnit.SECONDS.sleep(1);
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Menu Inicial");
     }
     public void validator() throws isEmptyException, alreadyExistException, matchException {
         boolean existPhone = false;
