@@ -77,6 +77,7 @@ public class DashboardController implements Initializable {
         lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
         series.getNode().setStyle("-fx-stroke: #153250");
     }
+
     private void iniPieChart(){
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
             new PieChart.Data("Android", 15),

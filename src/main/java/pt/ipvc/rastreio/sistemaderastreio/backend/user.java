@@ -5,7 +5,7 @@ import java.util.List;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
-public class user {
+public abstract class user {
     public user(String name, String username, String password) {
         this.name = name;
         this.username = username;
@@ -25,7 +25,6 @@ public class user {
     private String password;
     private int numberPhone;
     private int numOfWork;
-
     private List<Project> projects;
     private static int numUsers = 0;
 
@@ -90,6 +89,10 @@ public class user {
     public void setNumOfWork(int numOfWork) {
         this.numOfWork = numOfWork;
     }
+
+    public List<Project> getProjects(){return this.projects;}
+
+    public void setProjects(List<Project> projects){this.projects = projects;}
 
     @Override
     public String toString() {
