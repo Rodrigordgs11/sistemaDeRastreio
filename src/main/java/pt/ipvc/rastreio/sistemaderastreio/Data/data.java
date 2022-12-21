@@ -5,8 +5,11 @@ import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
 
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 import static pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;

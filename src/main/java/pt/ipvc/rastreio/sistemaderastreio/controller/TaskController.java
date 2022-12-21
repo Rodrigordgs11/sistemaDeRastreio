@@ -66,6 +66,7 @@ public class TaskController implements Initializable {
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
+
     public void handleDashboard(MouseEvent event) throws InterruptedException, IOException {
         TimeUnit.SECONDS.sleep(1);
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -111,6 +112,4 @@ public class TaskController implements Initializable {
             Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)",e.getMessage(), Alert.AlertType.WARNING);
         }
     }
-
-
 }

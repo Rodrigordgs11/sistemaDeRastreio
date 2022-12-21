@@ -15,7 +15,7 @@ import static pt.ipvc.rastreio.sistemaderastreio.Data.data.loadUsers;
 
 public class App extends Application {
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         try {
             loadUsers();
             loadTasks();

@@ -6,11 +6,16 @@ import java.util.List;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
 public abstract class user {
-    public user(String name, String username, String password) {
-        this.name = name;
-        this.username = username;
-        this.password = password;
-    }
+    public user.typeUser tipoUser;
+    private int id = 1;
+    private String name;
+    private String username;
+    private String password;
+    private int numberPhone;
+    private int numOfWork;
+    private List<Project> projects;
+    private List<Task> tasks;
+    private static int numUsers = 0;
 
     public enum typeUser{
         admin,

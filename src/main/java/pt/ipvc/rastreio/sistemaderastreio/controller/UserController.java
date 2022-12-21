@@ -49,6 +49,7 @@ public class UserController{
     public static int getIdLog() {
         return idLog;
     }
+
     public void switchScene(ActionEvent event) throws IOException, InterruptedException {
         buttonLoginAction();
         if(nExist){

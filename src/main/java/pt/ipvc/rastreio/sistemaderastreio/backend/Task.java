@@ -4,14 +4,17 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class Task {
+    private int idUser;
     private String description;
     private Date startTime;
+    private Date endTime;
     private TaskState state;
     private int numTasks;
 
-    public Task(String description, TaskState state){
+    public Task(String description, TaskState state, int idUser){
         this.description = description;
         this.startTime = new Date();
+        this.endTime = new Date();
         this.state = state;
         this.idUser = idUser;
     }
@@ -62,6 +65,24 @@ public class Task {
 
     public void setState(TaskState state) {
         this.state = state;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "description='" + description + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", state=" + state +
+                '}';
     }
 }
 

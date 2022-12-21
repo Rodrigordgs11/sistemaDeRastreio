@@ -40,6 +40,7 @@ public class DashboardController implements Initializable {
     private Label name;
     @FXML
     private Label userName;
+
     private Scene scene;
     @FXML
     private Stage stage;
