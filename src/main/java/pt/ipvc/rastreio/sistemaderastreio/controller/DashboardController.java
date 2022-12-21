@@ -65,6 +65,16 @@ public class DashboardController implements Initializable {
         stage.show();
         stage.setTitle("My Settings");
     }
+    public void switchCreateTask(MouseEvent event) throws InterruptedException, IOException {
+        TimeUnit.SECONDS.sleep(1);
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create task");
+    }
+
     private void iniLineChart(){
         XYChart.Series series = new XYChart.Series();
 

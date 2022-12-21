@@ -1,11 +1,8 @@
 package pt.ipvc.rastreio.sistemaderastreio.Data;
 
 
-import pt.ipvc.rastreio.sistemaderastreio.backend.admin;
-import pt.ipvc.rastreio.sistemaderastreio.backend.user;
+import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
-import pt.ipvc.rastreio.sistemaderastreio.backend.userManager;
-import pt.ipvc.rastreio.sistemaderastreio.backend.userStd;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -26,6 +23,38 @@ public class data {
             System.out.println("Error writting file"+e.getMessage());
         }
     }
+
+    public static void saveTasks(){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv"))){
+            for (Task t: tasks) {
+                    bw.write(t.getDescription() + "," + t.getState().toString() + "," + t.getStartTime() + "," + t.getEndTime() + "," + t.getidUser());
+                    bw.newLine();
+                }
+        }catch (IOException e){
+            System.out.println("Error writting file"+e.getMessage());
+        }
+    }
+
+    public static void loadTasks() throws ParseException{
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv"))){
+            String task = br.readLine();
+            while (task != null){
+                String[] fields = task.split(",");
+                String description = fields[0];
+                TaskState state = TaskState.valueOf(fields[1]);
+                Date startTime = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy").parse(fields[2]);
+                Date endTime = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy").parse(fields[3]);
+                int idTask = Integer.parseInt(fields[4]);
+                tasks.add(new Task(description, state, startTime, endTime, idTask));
+                task = br.readLine();
+            }
+        }catch (IOException e){
+            System.out.println("Error reading file"+ e.getMessage());
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void loadUsers(){
         try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv"))){
             String user = br.readLine();
@@ -51,6 +80,8 @@ public class data {
     }
 
     public static List<user> users = new ArrayList<>();
+    public static List<Task> tasks = new ArrayList<>();
+    public static List<Project> projects = new ArrayList<>();
     public static user userLogged() {
         for (user u : users) {
             if(getIdLog() == u.getId()){

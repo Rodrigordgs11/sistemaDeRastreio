@@ -90,7 +90,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                  <HBox alignment="CENTER" onMouseClicked="#switchCreateTask" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>

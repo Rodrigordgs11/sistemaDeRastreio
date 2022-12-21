@@ -7,8 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Objects;
 
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.loadTasks;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.loadUsers;
 
 public class App extends Application {
@@ -16,12 +18,13 @@ public class App extends Application {
     public void start(Stage primaryStage){
         try {
             loadUsers();
+            loadTasks();
             Parent parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("appView.fxml")));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
             primaryStage.show();
             primaryStage.setTitle("Login and register");
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }

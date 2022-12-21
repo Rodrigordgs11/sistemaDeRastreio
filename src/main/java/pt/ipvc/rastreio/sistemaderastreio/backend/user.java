@@ -18,17 +18,13 @@ public abstract class user {
         userStd
     }
 
-    public user.typeUser tipoUser;
-    private int id = 1;
-    private String name;
-    private String username;
-    private String password;
-    private int numberPhone;
-    private int numOfWork;
-    private List<Project> projects;
-    private static int numUsers = 0;
+    public user(String name, String username, String password) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+    }
 
-    public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser){
+    public user(String name, String username, String password, int numberPhone, int numOfWork, typeUser tipoUser) {
         this.id = ++numUsers;
         this.name = name;
         this.username = username;
@@ -36,7 +32,17 @@ public abstract class user {
         this.numberPhone = numberPhone;
         this.numOfWork = numOfWork;
         this.tipoUser = tipoUser;
+        this.tasks = new ArrayList<>();
         this.projects = new ArrayList<>();
+    }
+
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 
     public void setTipoUser(typeUser tipoUser){

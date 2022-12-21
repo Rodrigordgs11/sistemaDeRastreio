@@ -69,7 +69,6 @@ public class MySettingsController implements Initializable {
     public void validator() throws isEmptyException, alreadyExistException, matchException {
         boolean existPhone = false;
         boolean exitUser = false;
-        boolean exitPass = false;
         if(!Phone.getText().isEmpty()) for(user u: users) if((Integer.parseInt(Phone.getText())) == u.getNumberPhone()) existPhone = true;
         if(existPhone) throw new alreadyExistException("Phone already exists");
         if(!Phone.getText().isEmpty()) if(Phone.getText().length() != 9 ) throw new NumberFormatException("Phone field must have 9 numbers");
