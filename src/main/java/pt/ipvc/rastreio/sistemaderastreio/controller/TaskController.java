@@ -99,6 +99,7 @@ public class TaskController implements Initializable {
                     userLogged().getTasks().add(task);
                     //System.out.println(userLogged().getTasks().get(0).getDescription());
             }else {
+                task.setState(TaskState.EMCURSO);
                 task.setStartTime(dateFormat);
                 userLogged().getTasks().add(task);
                 tasks.add(task);
