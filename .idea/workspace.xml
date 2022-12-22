@@ -4,31 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="update user abstract and update dashboard with userEnumeration">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Invite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/images/invites.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/images/report.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/images/users.png" afterDir="false" />
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="update tasks">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/UserView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/Styles/user.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/editTask.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/userItem.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/userView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskView.fxml" afterDir="false" />
-    </list>
-    <list id="478b7d6f-1147-404f-ae76-10cbf2510dde" name="Changes by Pedro" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/user.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" afterDir="false" />
+    </list>
+    <list id="723b4978-08bb-4ab2-84fb-86f290347fd9" name="Changes by Pedro" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Enum" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -49,72 +40,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java">
-      <ranges>
-        <range start1="3" end1="5" start2="3" end2="4" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="6" end1="8" start2="5" end2="5" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="10" end1="10" start2="7" end2="9" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="12" end1="12" start2="11" end2="12" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="28" end1="28" start2="28" end2="60" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="53" end1="53" start2="85" end2="87" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/App.java">
-      <ranges>
-        <range start1="9" end1="9" start2="9" end2="10" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="11" end1="11" start2="12" end2="13" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="15" end1="16" start2="17" end2="18" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="18" end1="18" start2="20" end2="21" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="23" end1="24" start2="26" end2="27" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java">
       <ranges>
-        <range start1="8" end1="9" start2="8" end2="9" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="16" end1="16" start2="16" end2="17" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="17" end1="17" start2="18" end2="19" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="18" end1="19" start2="20" end2="20" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="20" end1="21" start2="21" end2="21" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="24" end1="24" start2="24" end2="27" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="28" end1="30" start2="31" end2="32" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="52" end1="52" start2="54" end2="56" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="53" end1="54" start2="57" end2="59" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="57" end1="57" start2="62" end2="63" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="63" end1="63" start2="69" end2="70" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="72" end1="82" start2="79" end2="91" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="84" end1="85" start2="93" end2="94" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="87" end1="94" start2="96" end2="109" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="95" end1="98" start2="110" end2="111" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="100" end1="104" start2="113" end2="115" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="105" end1="106" start2="116" end2="116" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="107" end1="109" start2="117" end2="117" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/user.java">
-      <ranges>
-        <range start1="8" end1="13" start2="8" end2="18" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="20" end1="29" start2="25" end2="30" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="30" end1="31" start2="31" end2="32" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="38" end1="38" start2="39" end2="40" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="40" end1="40" start2="42" end2="51" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java">
-      <ranges>
-        <range start1="42" end1="42" start2="42" end2="43" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="67" end1="67" start2="68" end2="78" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java">
-      <ranges>
-        <range start1="6" end1="6" start2="6" end2="7" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="8" end1="8" start2="9" end2="10" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="9" end1="9" start2="11" end2="12" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="10" end1="11" start2="13" end2="14" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="13" end1="13" start2="16" end2="17" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
-        <range start1="14" end1="14" start2="18" end2="19" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="15" end1="15" start2="20" end2="44" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="39" end1="39" start2="68" end2="86" changelist="478b7d6f-1147-404f-ae76-10cbf2510dde" />
+        <range start1="59" end1="59" start2="59" end2="60" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="68" end1="69" start2="69" end2="69" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="78" end1="79" start2="78" end2="78" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="90" end1="91" start2="89" end2="90" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="102" end1="102" start2="101" end2="102" changelist="723b4978-08bb-4ab2-84fb-86f290347fd9" />
+        <range start1="114" end1="114" start2="114" end2="118" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
       </ranges>
     </file>
   </component>
@@ -162,8 +95,8 @@
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
+      <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
     </key>
   </component>
   <component name="RunManager">
@@ -201,7 +134,7 @@
       <workItem from="1670089704992" duration="17485000" />
       <workItem from="1671368142637" duration="72103000" />
       <workItem from="1671640184126" duration="16849000" />
-      <workItem from="1671657440068" duration="1027000" />
+      <workItem from="1671657440068" duration="19194000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -371,7 +304,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671636333217</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update tasks">
+      <created>1671658654732</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671658654732</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Changes by Pedro">
+      <created>1671658665902</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1671658665902</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,9 +357,10 @@
     <MESSAGE value="Switch dash to mySettings done" />
     <MESSAGE value="MySettings view done" />
     <MESSAGE value="create task files" />
-    <MESSAGE value="Changes by Pedro" />
     <MESSAGE value="update user abstract and update dashboard with userEnumeration" />
-    <option name="LAST_COMMIT_MESSAGE" value="update user abstract and update dashboard with userEnumeration" />
+    <MESSAGE value="update tasks" />
+    <MESSAGE value="Changes by Pedro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Pedro" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

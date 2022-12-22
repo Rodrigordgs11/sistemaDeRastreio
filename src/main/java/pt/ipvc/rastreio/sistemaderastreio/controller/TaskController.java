@@ -57,6 +57,7 @@ public class TaskController implements Initializable {
 
     @FXML
     private TextField Description;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         returnUserLogged();
@@ -66,7 +67,6 @@ public class TaskController implements Initializable {
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
-
     public void handleDashboard(MouseEvent event) throws InterruptedException, IOException {
         TimeUnit.SECONDS.sleep(1);
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -76,7 +76,6 @@ public class TaskController implements Initializable {
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     public void ListTasks(){
         for (Task t: tasks){
             if(t.getidUser() == userLogged().getId()){
@@ -88,7 +87,7 @@ public class TaskController implements Initializable {
         if (Description.getText().isEmpty()) throw new isEmptyException("Description field is empty");
     }
 
-        public void createTask() throws isEmptyException {
+    public void createTask() throws isEmptyException {
         try {
             validator();
             Task task = new Task(Description.getText(), TaskState.PORINICIAR, Objects.requireNonNull(userLogged()).getId());
@@ -111,5 +110,9 @@ public class TaskController implements Initializable {
         } catch (ParseException e) {
             Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)",e.getMessage(), Alert.AlertType.WARNING);
         }
+    }
+
+    public void editTask(){
+
     }
 }

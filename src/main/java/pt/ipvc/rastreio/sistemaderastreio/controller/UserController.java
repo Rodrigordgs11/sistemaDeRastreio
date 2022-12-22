@@ -1,10 +1,14 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
@@ -14,12 +18,14 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.*;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
-public class UserController{
+public class UserController implements Initializable {
     @FXML
     private TextField userNameLogin;
     @FXML
@@ -106,6 +112,37 @@ public class UserController{
             Alerts.showAlert("Empty field", "A field is empty",e.getMessage(), Alert.AlertType.ERROR);
         }catch (matchException e){
             Alerts.showAlert("Invalid username or password", "You must put valid username or password",e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    public void handleDashboard(MouseEvent event) throws InterruptedException, IOException {
+        TimeUnit.SECONDS.sleep(1);
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Menu Inicial");
+    }
+
+    @FXML
+    private VBox container = new VBox();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        userItem();
+    }
+    public void userItem(){
+        for (user u: users){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("userItem.fxml"));
+            try {
+                HBox hBox = fxmlLoader.load();
+                UserItemController userItemController = fxmlLoader.getController();
+                userItemController.setData(u);
+                container.getChildren().add(hBox);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

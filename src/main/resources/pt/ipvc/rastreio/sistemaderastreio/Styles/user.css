@@ -1,0 +1,13 @@
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.button_{
+    -fx-background-color: #153250;
+    -fx-background-radius: 50;
+}
+
+.light-gray-background{
+    -fx-background-color: #ADD3D0;
+
+}
