@@ -10,5 +10,4 @@ public class userStd extends user{
         super(name, username, password, numberPhone, numOfWork, tipoUser);
     }
 
-
 }

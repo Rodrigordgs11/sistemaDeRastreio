@@ -30,6 +30,7 @@ public class UserItemController extends  UserController implements Initializable
         idUser.setVisible(true);
     }
     public void setData(user User){
+        idUser.setText(String.valueOf(User.getId()));
         NameUser.setText(User.getName());
         NumberPhoneUser.setText(String.valueOf(User.getNumberPhone()));
         TypeUserUser.setText(String.valueOf(User.getTipoUser()));
