@@ -59,7 +59,6 @@ public class UserController implements Initializable {
     public void switchScene(ActionEvent event) throws IOException, InterruptedException {
         buttonLoginAction();
         if(nExist){
-            TimeUnit.SECONDS.sleep(1);
             parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(parent);
@@ -116,7 +115,6 @@ public class UserController implements Initializable {
     }
 
     public void handleDashboard(MouseEvent event) throws InterruptedException, IOException {
-        TimeUnit.SECONDS.sleep(1);
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
@@ -127,6 +125,8 @@ public class UserController implements Initializable {
 
     @FXML
     private VBox container = new VBox();
+
+    public HBox hBox;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userItem();
@@ -136,10 +136,10 @@ public class UserController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("userItem.fxml"));
             try {
-                HBox hBox = fxmlLoader.load();
+                hBox = fxmlLoader.load();
                 UserItemController userItemController = fxmlLoader.getController();
                 userItemController.setData(u);
-                container.getChildren().add(hBox);
+                container.getChildren().add(hBox); //give id to hbox
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

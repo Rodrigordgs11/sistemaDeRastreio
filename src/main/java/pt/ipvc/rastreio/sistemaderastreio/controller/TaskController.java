@@ -67,8 +67,7 @@ public class TaskController implements Initializable {
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
-    public void handleDashboard(MouseEvent event) throws InterruptedException, IOException {
-        TimeUnit.SECONDS.sleep(1);
+    public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);

@@ -57,8 +57,7 @@ public class DashboardController implements Initializable {
         returnUserLogged();
         setVisibleUsers();
     }
-    public void handleImage(MouseEvent event) throws InterruptedException, IOException {
-        TimeUnit.SECONDS.sleep(1);
+    public void handleImage(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
@@ -66,8 +65,7 @@ public class DashboardController implements Initializable {
         stage.show();
         stage.setTitle("My Settings");
     }
-    public void switchCreateTask(MouseEvent event) throws InterruptedException, IOException {
-        TimeUnit.SECONDS.sleep(1);
+    public void switchCreateTask(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
@@ -76,8 +74,7 @@ public class DashboardController implements Initializable {
         stage.setTitle("Create task");
     }
 
-    public void switchUser(MouseEvent event) throws InterruptedException, IOException {
-        TimeUnit.SECONDS.sleep(1);
+    public void switchUser(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("userView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);

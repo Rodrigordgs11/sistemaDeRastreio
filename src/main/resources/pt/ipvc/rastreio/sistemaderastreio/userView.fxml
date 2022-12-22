@@ -198,32 +198,32 @@
                            <children>
                               <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0" spacing="10.0" styleClass="light-gray-background" stylesheets="@Styles/user.css">
                                  <children>
-                                    <Label prefHeight="22.0" prefWidth="197.0" text="Name">
+                                    <Label prefHeight="22.0" prefWidth="197.0" text="Name" textFill="WHITE">
                                        <font>
-                                          <Font size="15.0" />
+                                          <Font name="System Bold" size="15.0" />
                                        </font>
                                        <padding>
                                           <Insets left="10.0" />
                                        </padding>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="181.0" text="Username">
+                                    <Label prefHeight="22.0" prefWidth="181.0" text="Username" textFill="WHITE">
                                        <font>
-                                          <Font size="15.0" />
+                                          <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="156.0" text="Number Phone">
+                                    <Label prefHeight="22.0" prefWidth="156.0" text="Number Phone" textFill="WHITE">
                                        <font>
-                                          <Font size="15.0" />
+                                          <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="175.0" text="Type User">
+                                    <Label prefHeight="22.0" prefWidth="175.0" text="Type User" textFill="WHITE">
                                        <font>
-                                          <Font size="15.0" />
+                                          <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="206.0" text="Actions">
+                                    <Label prefHeight="22.0" prefWidth="206.0" text="Actions" textFill="WHITE">
                                        <font>
-                                          <Font size="15.0" />
+                                          <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
                                  </children>
