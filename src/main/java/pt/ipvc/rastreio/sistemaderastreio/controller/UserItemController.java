@@ -47,13 +47,16 @@ public class UserItemController extends UserController implements Initializable{
     private Stage stage;
     @FXML
     private Scene scene;
+
     public int getId() {
         return id;
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idUser.setVisible(false);
     }
+
     public void setData(user User){
         idUser.setText(String.valueOf(User.getId()));
         NameUser.setText(User.getName());
@@ -61,6 +64,7 @@ public class UserItemController extends UserController implements Initializable{
         TypeUserUser.setText(String.valueOf(User.getTipoUser()));
         UsernameUser.setText(User.getUsername());
     }
+
     @FXML
     public void edit(ActionEvent event) throws IOException {
         userItem();
@@ -84,6 +88,7 @@ public class UserItemController extends UserController implements Initializable{
         users.removeIf(u -> Integer.parseInt(idUser.getText()) == u.getId());
         saveUsers();
     }
+
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
