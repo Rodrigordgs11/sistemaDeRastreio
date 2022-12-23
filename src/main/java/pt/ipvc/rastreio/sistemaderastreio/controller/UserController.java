@@ -1,14 +1,10 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.*;
+import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.input.*;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
@@ -21,7 +17,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
@@ -55,7 +50,6 @@ public class UserController implements Initializable {
     public static int getIdLog() {
         return idLog;
     }
-
     public void switchScene(ActionEvent event) throws IOException{
         buttonLoginAction();
         if(nExist){
@@ -104,7 +98,6 @@ public class UserController implements Initializable {
         }
         saveUsers();
     }
-
     public void buttonLoginAction(){
         try {
             if (userNameLogin.getText().isEmpty() || passwordLogin.getText().isEmpty()) throw new isEmptyException("Text field is empty");
@@ -121,7 +114,6 @@ public class UserController implements Initializable {
             Alerts.showAlert("Invalid username or password", "You must put valid username or password",e.getMessage(), Alert.AlertType.ERROR);
         }
     }
-
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -130,13 +122,14 @@ public class UserController implements Initializable {
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     @FXML
     private VBox container = new VBox();
     public HBox hBox;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userItem();
+        //returnUserLogged();
+        //setVisibleUsers();
     }
     public void userItem(){
         for (user u: users){
@@ -151,5 +144,26 @@ public class UserController implements Initializable {
                 throw new RuntimeException(e);
             }
         }
+    }
+    @FXML
+    private Label name;
+    @FXML
+    private Label userName;
+    @FXML
+    private HBox Utilizadores;
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+    private void setVisibleUsers(){
+        if(Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.admin) || Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userManager))
+            Utilizadores.setVisible(true);
+        else Utilizadores.setVisible(false);
+    }
+
+    @FXML
+    void CreateUser(ActionEvent event) {
+
     }
 }

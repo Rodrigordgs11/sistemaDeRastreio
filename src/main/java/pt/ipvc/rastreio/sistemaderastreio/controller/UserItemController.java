@@ -27,8 +27,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.userLogged;
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
 public class UserItemController extends UserController implements Initializable{
     private static int id;
@@ -78,24 +77,12 @@ public class UserItemController extends UserController implements Initializable{
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-    @FXML
-    public void editPass(ActionEvent event) {
-        userItem();
-        for (user u: users){
-            if(Integer.parseInt(idUser.getText()) == u.getId()){
 
-            }
-        }
-    }
     @FXML
-    public void remove(ActionEvent event) {
+    public void remove(ActionEvent event){
         userItem();
-        for (user u: users){
-            if(Integer.parseInt(idUser.getText()) == u.getId()){
-                //System.out.println(u.getId());
-                //System.out.println(idUser.getText());
-            }
-        }
+        users.removeIf(u -> Integer.parseInt(idUser.getText()) == u.getId());
+        saveUsers();
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));

@@ -35,15 +35,6 @@
       </Label>
       <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="204.0" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#editPass" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #43BD9B;" styleClass="button_" stylesheets="@Styles/user.css">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/forgotPass.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
             <Button mnemonicParsing="false" onAction="#edit" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #E2BA56;" styleClass="button_" stylesheets="@Styles/user.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
