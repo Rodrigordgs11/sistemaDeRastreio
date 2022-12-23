@@ -56,7 +56,7 @@ public class UserController implements Initializable {
         return idLog;
     }
 
-    public void switchScene(ActionEvent event) throws IOException, InterruptedException {
+    public void switchScene(ActionEvent event) throws IOException{
         buttonLoginAction();
         if(nExist){
             parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -114,7 +114,7 @@ public class UserController implements Initializable {
         }
     }
 
-    public void handleDashboard(MouseEvent event) throws InterruptedException, IOException {
+    public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
@@ -125,7 +125,6 @@ public class UserController implements Initializable {
 
     @FXML
     private VBox container = new VBox();
-
     public HBox hBox;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
