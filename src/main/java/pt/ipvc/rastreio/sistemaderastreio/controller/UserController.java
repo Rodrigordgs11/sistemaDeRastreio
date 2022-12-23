@@ -163,7 +163,12 @@ public class UserController implements Initializable {
     }
 
     @FXML
-    void CreateUser(ActionEvent event) {
-
+    public void CreateUser(ActionEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("createUser.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create User");
     }
 }
