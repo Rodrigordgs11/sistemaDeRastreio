@@ -83,8 +83,6 @@ public class DashboardController implements Initializable {
         stage.setTitle("Create task");
     }
 
-
-
     private void iniLineChart(){
         XYChart.Series series = new XYChart.Series();
 

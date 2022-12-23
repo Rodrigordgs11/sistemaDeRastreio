@@ -67,7 +67,14 @@ public class editUserController extends UserItemController implements Initializa
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
+    public void handleImage(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("My Settings");
+    }
     public void validator() throws isEmptyException, alreadyExistException, matchException {
         boolean existPhone = false;
         boolean exitUser = false;

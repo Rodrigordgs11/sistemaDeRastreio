@@ -48,24 +48,6 @@ public class UserItemController extends UserController implements Initializable{
     private Stage stage;
     @FXML
     private Scene scene;
-    @FXML
-    private Label userName;
-    @FXML
-    private Label name;
-    @FXML
-    private HBox Utilizadores;
-    @FXML
-    private PasswordField ConfirmPass;
-    @FXML
-    private TextField Name;
-    @FXML
-    private PasswordField Password;
-    @FXML
-    private TextField Phone;
-    @FXML
-    private PasswordField TypeUser;
-    @FXML
-    private TextField UserName;
     public int getId() {
         return id;
     }

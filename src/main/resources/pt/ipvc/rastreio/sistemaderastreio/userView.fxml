@@ -36,7 +36,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                  <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleImage" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                      <image>
                         <Image url="@images/icons8-user-100.png" />
                      </image>
@@ -130,7 +130,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox fx:id="Utilizadores" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                  <HBox fx:id="Utilizadores" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" styleClass="button-container-mouse-moved" stylesheets="@Styles/dashboard.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
@@ -192,49 +192,53 @@
             </Label>
             <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ScrollPane prefHeight="526.0" prefWidth="983.0" styleClass="container" stylesheets="@Styles/dashboard.css">
-                     <content>
-                        <VBox fx:id="container" prefHeight="522.0" prefWidth="962.0" styleClass="container" stylesheets="@Styles/dashboard.css">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0" spacing="10.0" styleClass="light-gray-background" stylesheets="@Styles/user.css">
-                                 <children>
-                                    <Label prefHeight="22.0" prefWidth="197.0" text="Name" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding>
-                                    </Label>
-                                    <Label prefHeight="22.0" prefWidth="181.0" text="Username" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="22.0" prefWidth="156.0" text="Number Phone" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="22.0" prefWidth="175.0" text="Type User" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="22.0" prefWidth="206.0" text="Actions" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                     </content>
+                  <VBox>
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
-                  </ScrollPane>
+                     <children>
+                        <ScrollPane prefHeight="526.0" prefWidth="983.0" styleClass="container" stylesheets="@Styles/dashboard.css">
+                           <content>
+                              <VBox fx:id="container" prefHeight="522.0" prefWidth="962.0" styleClass="container" stylesheets="@Styles/dashboard.css">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0" spacing="10.0" styleClass="light-gray-background" stylesheets="@Styles/user.css">
+                                       <children>
+                                          <Label prefHeight="22.0" prefWidth="197.0" text="Name" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label prefHeight="22.0" prefWidth="181.0" text="Username" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="22.0" prefWidth="156.0" text="Number Phone" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="22.0" prefWidth="175.0" text="Type User" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="22.0" prefWidth="206.0" text="Actions" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
                </children>
             </HBox>
          </children>
