@@ -66,7 +66,7 @@ public class DashboardController implements Initializable {
         stage.setTitle("My Settings");
     }
     public void switchCreateTask(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskEditView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
         stage.setScene(scene);

@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="editUser done">
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="taskEditView update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/images/icons8-correct-58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/mySettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/mySettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskEditView.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,31 +51,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio/src/main/resources/pt/ipvc/rastreio/sistemaderastreio&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Pedro/IdeaProjects/sistemaDeRastreio/src/main/resources/pt/ipvc/rastreio/sistemaderastreio",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Styles" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\images" />
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\java\pt\ipvc\rastreio\sistemaderastreio\gui" />
     </key>
@@ -82,8 +87,8 @@
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pt.ipvc.rastreio.sistemaderastreio" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
+      <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
   </component>
   <component name="RunManager">
@@ -129,7 +134,8 @@
       <workItem from="1671823545499" duration="102000" />
       <workItem from="1671823963139" duration="1045000" />
       <workItem from="1671879685789" duration="407000" />
-      <workItem from="1671880096962" duration="3500000" />
+      <workItem from="1671880096962" duration="8380000" />
+      <workItem from="1671889932359" duration="3580000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -341,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671756585966</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="taskEditView update">
+      <created>1671884199114</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1671884199115</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +372,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="funcionar" />
     <MESSAGE value="create styles" />
     <MESSAGE value="login done" />
     <MESSAGE value="create user class" />
@@ -384,7 +396,8 @@
     <MESSAGE value="Changes by Pedro" />
     <MESSAGE value="users ui done" />
     <MESSAGE value="editUser done" />
-    <option name="LAST_COMMIT_MESSAGE" value="editUser done" />
+    <MESSAGE value="taskEditView update" />
+    <option name="LAST_COMMIT_MESSAGE" value="taskEditView update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

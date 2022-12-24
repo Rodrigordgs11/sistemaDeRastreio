@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
-import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
@@ -30,6 +29,11 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
+
+
+import javafx.event.ActionEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class TaskController implements Initializable {
     @FXML
@@ -60,7 +64,7 @@ public class TaskController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        returnUserLogged();
+        //returnUserLogged();
     }
 
     public void returnUserLogged(){
@@ -112,7 +116,88 @@ public class TaskController implements Initializable {
         }
     }
 
-    public void editTask(){
+    @FXML
+    private HBox Utilizadores;
+
+    @FXML
+    private VBox container;
+
+    @FXML
+    private HBox hBox;
+
+    @FXML
+    void CreateTask(ActionEvent event) {
 
     }
+
+    @FXML
+    void ListALLEMCURSO(ActionEvent event) {
+
+    }
+
+    @FXML
+    public void ListAll() {
+        for (Task t: tasks){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
+            try {
+                hBox = fxmlLoader.load();
+                TaskItemController taskItemController = fxmlLoader.getController();
+                taskItemController.setData(t);
+                container.getChildren().add(hBox); //give id to hbox
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    @FXML
+    void ListAllFINALIZADO(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void handleImage(MouseEvent event) {
+
+    }
+
+    @FXML
+    private Label EndTime;
+
+    @FXML
+    private Label Price;
+
+    @FXML
+    private Label Project;
+
+    @FXML
+    private Label StartTime;
+
+    @FXML
+    private Label State;
+
+    @FXML
+    private Label idUser;
+
+    @FXML
+    void edit(ActionEvent event) {
+
+    }
+
+    @FXML
+    void remove(ActionEvent event) {
+
+    }
+
+    @FXML
+    void terminate(ActionEvent event) {
+
+    }
+
+
+
 }
+
+
+
