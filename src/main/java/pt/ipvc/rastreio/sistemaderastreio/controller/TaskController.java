@@ -137,7 +137,20 @@ public class TaskController implements Initializable {
 
     @FXML
     void ListALLEMCURSO(ActionEvent event) {
-
+        for (Task t: tasks){
+            if(t.getState().equals(TaskState.EMCURSO)) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
+                try {
+                    hBox = fxmlLoader.load();
+                    TaskItemController taskItemController = fxmlLoader.getController();
+                    taskItemController.setData(t);
+                    container.getChildren().add(hBox); //give id to hbox
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 
     @FXML
