@@ -64,7 +64,6 @@ public class TaskController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ListAll();
         //returnUserLogged();
     }
 
@@ -142,7 +141,7 @@ public class TaskController implements Initializable {
     }
 
     @FXML
-    public void ListAll() {
+    public void ListAll(ActionEvent event) {
         for (Task t: tasks){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
