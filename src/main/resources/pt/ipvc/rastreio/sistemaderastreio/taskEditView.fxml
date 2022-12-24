@@ -1,14 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.TaskController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.TaskController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1315.0" styleClass="gradient-background" stylesheets="@Styles/dashboard.css">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="188.0" styleClass="shadow" text="Manage Tasks" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="30.0" />
+                     </font>
+                  </Label>
+                  <Pane maxHeight="-Infinity" prefHeight="1.0" prefWidth="200.0" styleClass="line-color" stylesheets="" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+         </top>
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="290.0" spacing="10.0" styleClass="container" stylesheets="@Styles/dashboard.css" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@Styles/dashboard.css">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleImage" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@../../../../../../../target/classes/pt/ipvc/rastreio/sistemaderastreio/images/icons8-user-50.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="192.0">
+                           <children>
+                              <Label fx:id="userName" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="" text="Rodrigo" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="name" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Software engenier" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1.0" prefWidth="246.0" styleClass="line-color" />
+                  <VBox prefHeight="450.0" prefWidth="290.0" spacing="20.0">
+                     <children>
+                        <HBox alignment="CENTER" onMouseClicked="#handleDashboard" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/icons8-dashboard-layout-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Dashboard" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/project.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="0.0" prefWidth="158.0" text="Projetos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" styleClass="button-container-mouse-moved">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/task.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Tarefas" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/invites.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Convites" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/report.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Relatórios" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="Utilizadores" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                 <image>
+                                    <Image url="@images/users.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Utilizadores" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="983.0">
+                     <children>
+                        <Label prefHeight="42.0" prefWidth="184.0" text="Profile Settings" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="28.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Pane prefHeight="73.0" prefWidth="591.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button layoutX="444.0" layoutY="31.0" mnemonicParsing="false" onAction="#ListALLEMCURSO" prefHeight="31.0" prefWidth="122.0" styleClass="button_" stylesheets="@Styles/user.css" text="List All EMCURSO" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="307.0" layoutY="31.0" mnemonicParsing="false" onAction="#ListAllFINALIZADO" prefHeight="31.0" prefWidth="122.0" styleClass="button_" stylesheets="@Styles/user.css" text="List All FINALIZADO" textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="175.0" layoutY="31.0" mnemonicParsing="false" onAction="#ListAll" prefHeight="31.0" prefWidth="122.0" styleClass="button_" stylesheets="@Styles/user.css" text="List All " textFill="WHITE">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Button mnemonicParsing="false" onAction="#CreateTask" prefHeight="32.0" prefWidth="120.0" styleClass="button_" stylesheets="@Styles/user.css" text="Create Task" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" styleClass="transparent" stylesheets="@Styles/user.css">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/search.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="55.0" prefWidth="184.0" text="Tasks" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB Bold" size="28.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                           <children>
+                              <ScrollPane prefHeight="526.0" prefWidth="983.0" styleClass="container" stylesheets="@Styles/dashboard.css">
+                                 <content>
+                                    <VBox fx:id="container" prefHeight="522.0" prefWidth="962.0" stylesheets="@Styles/dashboard.css">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0" spacing="10.0" styleClass="light-gray-background" stylesheets="@Styles/user.css">
+                                             <children>
+                                                <Label prefHeight="22.0" prefWidth="119.0" text="Description" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                   <HBox.margin>
+                                                      <Insets right="14.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label prefHeight="22.0" prefWidth="89.0" text="StartTime" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="14.0" right="14.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label prefHeight="22.0" prefWidth="95.0" text="EndTime" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="14.0" right="14.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label prefHeight="22.0" prefWidth="78.0" text="State" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="22.0" prefWidth="83.0" text="Project" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="14.0" right="14.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label prefHeight="22.0" prefWidth="146.0" text="Price Per Hour" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="14.0" right="14.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label prefHeight="22.0" prefWidth="109.0" text="Actions" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="14.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>
