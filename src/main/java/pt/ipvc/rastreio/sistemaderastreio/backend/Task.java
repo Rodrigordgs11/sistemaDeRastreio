@@ -4,6 +4,7 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class Task {
+    private int idTask;
     private int idUser;
     private String description;
     private Date startTime;
@@ -19,14 +20,19 @@ public class Task {
         this.idUser = idUser;
     }
 
-    public Task(String description, TaskState state, Date startTime, Date endTime, int idUser){
+    public Task(String description, TaskState state, Date startTime, Date endTime, int idUser, int idTask){
         this.description = description;
         this.state = state;
         this.startTime = startTime;
         this.endTime = endTime;
         this.idUser = idUser;
     }
-
+    public int getIdTask() {
+        return idTask;
+    }
+    public void setIdTask(int idTask) {
+        this.idTask = idTask;
+    }
     public int getidUser() {
         return idUser;
     }
