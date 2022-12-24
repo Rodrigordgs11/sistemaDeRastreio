@@ -24,48 +24,34 @@ import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
 public class TaskItemController extends UserController implements Initializable{
     private static int id;
-
     private Stage stage;
     private Scene scene;
     private Parent parent;
-
     @FXML
     private Label Description;
-
     @FXML
     private Label EndTime;
-
     @FXML
     private Label Price;
-
     @FXML
     private Label Project;
-
     @FXML
     private Label StartTime;
-
     @FXML
     private Label State;
-
     @FXML
     private Label idUser;
-
-
-
     @FXML
     void terminate(ActionEvent event) {
 
     }
-
     public int getId() {
         return id;
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idUser.setVisible(false);
     }
-
     public void setData(Task task){
         Description.setText(task.getDescription());
         StartTime.setText(String.valueOf(task.getStartTime()));
@@ -73,7 +59,6 @@ public class TaskItemController extends UserController implements Initializable{
         State.setText(String.valueOf(task.getState()));
 
     }
-
     @FXML
     public void edit(ActionEvent event) throws IOException {
         userItem();
@@ -90,14 +75,12 @@ public class TaskItemController extends UserController implements Initializable{
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     @FXML
     public void remove(ActionEvent event){
         userItem();
         users.removeIf(u -> Integer.parseInt(idUser.getText()) == u.getId());
         saveUsers();
     }
-
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
