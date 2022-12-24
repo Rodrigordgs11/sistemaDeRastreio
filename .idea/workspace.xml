@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="updated">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/createUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/createUser.fxml" afterDir="false" />
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="editUser done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/mySettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/mySettings.fxml" afterDir="false" />
     </list>
-    <list id="f45e56d6-5c74-492d-8463-05d42979b6cb" name="Changes by Pedro" comment="Changes by Pedro" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,8 +22,8 @@
       <list>
         <option value="Enum" />
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -32,6 +32,14 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -74,8 +82,8 @@
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
+      <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
     </key>
   </component>
   <component name="RunManager">
@@ -116,8 +124,12 @@
       <workItem from="1671657440068" duration="19194000" />
       <workItem from="1671733782841" duration="159000" />
       <workItem from="1671734013000" duration="21653000" />
-      <workItem from="1671760373156" duration="1334000" />
-      <workItem from="1671804614328" duration="5813000" />
+      <workItem from="1671760373156" duration="1104000" />
+      <workItem from="1671816358235" duration="5009000" />
+      <workItem from="1671823545499" duration="102000" />
+      <workItem from="1671823963139" duration="1045000" />
+      <workItem from="1671879685789" duration="407000" />
+      <workItem from="1671880096962" duration="3500000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -329,28 +341,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671756585966</updated>
     </task>
-    <task id="LOCAL-00031" summary="updated">
-      <created>1671761704528</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1671761704528</updated>
-    </task>
-    <task id="LOCAL-00032" summary="updated">
-      <created>1671824800555</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1671824800555</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Changes by Pedro">
-      <created>1671824806878</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1671824806878</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,6 +359,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="funcionar" />
     <MESSAGE value="create styles" />
     <MESSAGE value="login done" />
     <MESSAGE value="create user class" />
@@ -389,11 +381,10 @@
     <MESSAGE value="create task files" />
     <MESSAGE value="update user abstract and update dashboard with userEnumeration" />
     <MESSAGE value="update tasks" />
+    <MESSAGE value="Changes by Pedro" />
     <MESSAGE value="users ui done" />
     <MESSAGE value="editUser done" />
-    <MESSAGE value="updated" />
-    <MESSAGE value="Changes by Pedro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Pedro" />
+    <option name="LAST_COMMIT_MESSAGE" value="editUser done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
+import java.util.Locale;
 
 import static pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;
@@ -45,8 +46,8 @@ public class data {
                 String[] fields = task.split(",");
                 String description = fields[0];
                 TaskState state = TaskState.valueOf(fields[1]);
-                Date startTime = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy").parse(fields[2]);
-                Date endTime = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy").parse(fields[3]);
+                Date startTime = new SimpleDateFormat("EEE MMM dd HH:mm:ss Z yyyy", Locale.UK).parse(fields[2]);
+                Date endTime = new SimpleDateFormat("EEE MMM dd HH:mm:ss Z yyyy", Locale.UK).parse(fields[3]);
                 int idTask = Integer.parseInt(fields[4]);
                 tasks.add(new Task(description, state, startTime, endTime, idTask));
                 task = br.readLine();

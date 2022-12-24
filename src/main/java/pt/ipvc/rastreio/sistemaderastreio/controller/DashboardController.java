@@ -113,7 +113,7 @@ public class DashboardController implements Initializable {
     }
 
     private void setVisibleUsers(){
-        if(Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.admin) || Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userManager))
+        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
             Utilizadores.setVisible(true);
         else
             Utilizadores.setVisible(false);

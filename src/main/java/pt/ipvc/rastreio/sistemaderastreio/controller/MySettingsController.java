@@ -65,6 +65,25 @@ public class MySettingsController implements Initializable {
         stage.show();
         stage.setTitle("Menu Inicial");
     }
+
+    public void switchCreateTask(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create task");
+    }
+
+    public void switchUser(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("userView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create task");
+    }
+
     public void validator() throws isEmptyException, alreadyExistException, matchException {
         boolean existPhone = false;
         boolean exitUser = false;
