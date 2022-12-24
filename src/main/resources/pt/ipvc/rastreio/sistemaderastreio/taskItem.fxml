@@ -9,7 +9,7 @@
 
 <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="983.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.TaskItemController">
    <children>
-      <Label fx:id="Description" prefHeight="22.0" prefWidth="133.0" text="Description">
+      <Label fx:id="description" prefHeight="22.0" prefWidth="133.0" text="Description">
          <padding>
             <Insets left="10.0" />
          </padding>

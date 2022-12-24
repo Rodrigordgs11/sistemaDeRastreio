@@ -155,6 +155,10 @@ public class TaskController implements Initializable {
 
     @FXML
     public void ListAll(ActionEvent event) {
+        taskItem();
+    }
+
+    public void taskItem() {
         for (Task t: tasks){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
@@ -212,7 +216,7 @@ public class TaskController implements Initializable {
     private Label idUser;
 
     @FXML
-    void edit(ActionEvent event) {
+    void edit(ActionEvent event) throws IOException {
 
     }
 

@@ -19,16 +19,15 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.saveUsers;
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
-public class TaskItemController extends UserController implements Initializable{
+public class TaskItemController extends TaskController implements Initializable{
     private static int id;
     private Stage stage;
     private Scene scene;
     private Parent parent;
     @FXML
-    private Label Description;
+    private Label description;
     @FXML
     private Label EndTime;
     @FXML
@@ -53,7 +52,7 @@ public class TaskItemController extends UserController implements Initializable{
         idTask.setVisible(true);
     }
     public void setData(Task task){
-        Description.setText(task.getDescription());
+        description.setText(task.getDescription());
         StartTime.setText(String.valueOf(task.getStartTime()));
         EndTime.setText(String.valueOf(task.getEndTime()));
         State.setText(String.valueOf(task.getState()));
@@ -61,10 +60,10 @@ public class TaskItemController extends UserController implements Initializable{
     }
     @FXML
     public void edit(ActionEvent event) throws IOException {
-        userItem();
-        for (user u: users){
-            if(Integer.parseInt(idTask.getText()) == u.getId()){
-                id = u.getId();
+        taskItem();
+        for (Task t: tasks){
+            if(Integer.parseInt(idTask.getText()) == t.getIdTask()){
+                id = t.getIdTask();
                 System.out.println(getId());
             }
         }
@@ -77,8 +76,8 @@ public class TaskItemController extends UserController implements Initializable{
     }
     @FXML
     public void remove(ActionEvent event){
-        userItem();
-        users.removeIf(u -> Integer.parseInt(idTask.getText()) == u.getId());
+        taskItem();
+        tasks.removeIf(t -> Integer.parseInt(idTask.getText()) == t.getIdTask());
         saveUsers();
     }
     public void handleDashboard(MouseEvent event) throws IOException {
