@@ -40,7 +40,7 @@ public class TaskItemController extends UserController implements Initializable{
     @FXML
     private Label State;
     @FXML
-    private Label idUser;
+    private Label idTask;
     @FXML
     void terminate(ActionEvent event) {
 
@@ -50,20 +50,20 @@ public class TaskItemController extends UserController implements Initializable{
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        idUser.setVisible(false);
+        idTask.setVisible(true);
     }
     public void setData(Task task){
         Description.setText(task.getDescription());
         StartTime.setText(String.valueOf(task.getStartTime()));
         EndTime.setText(String.valueOf(task.getEndTime()));
         State.setText(String.valueOf(task.getState()));
-
+        idTask.setText(String.valueOf(task.getIdTask()));
     }
     @FXML
     public void edit(ActionEvent event) throws IOException {
         userItem();
         for (user u: users){
-            if(Integer.parseInt(idUser.getText()) == u.getId()){
+            if(Integer.parseInt(idTask.getText()) == u.getId()){
                 id = u.getId();
                 System.out.println(getId());
             }
@@ -78,7 +78,7 @@ public class TaskItemController extends UserController implements Initializable{
     @FXML
     public void remove(ActionEvent event){
         userItem();
-        users.removeIf(u -> Integer.parseInt(idUser.getText()) == u.getId());
+        users.removeIf(u -> Integer.parseInt(idTask.getText()) == u.getId());
         saveUsers();
     }
     public void handleDashboard(MouseEvent event) throws IOException {

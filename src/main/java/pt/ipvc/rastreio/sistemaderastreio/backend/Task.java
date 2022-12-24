@@ -4,13 +4,13 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class Task {
-    private int idTask;
+    private int idTask = 1;
     private int idUser;
     private String description;
     private Date startTime;
     private Date endTime;
     private TaskState state;
-    private int numTasks;
+    private static int numTasks = 0;
 
     public Task(String description, TaskState state, int idUser){
         this.description = description;
@@ -20,7 +20,8 @@ public class Task {
         this.idUser = idUser;
     }
 
-    public Task(String description, TaskState state, Date startTime, Date endTime, int idUser, int idTask){
+    public Task(String description, TaskState state, Date startTime, Date endTime, int idUser){
+        this.idTask = ++numTasks;
         this.description = description;
         this.state = state;
         this.startTime = startTime;

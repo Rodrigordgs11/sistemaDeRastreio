@@ -31,7 +31,7 @@ public class data {
     public static void saveTasks(){
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv"))){
             for (Task t: tasks) {
-                    bw.write(t.getDescription() + "," + t.getState().toString() + "," + t.getStartTime() + "," + t.getEndTime() + "," + t.getidUser() + "," + t.getIdTask());
+                    bw.write(t.getDescription() + "," + t.getState().toString() + "," + t.getStartTime() + "," + t.getEndTime() + "," + t.getidUser());
                     bw.newLine();
                 }
         }catch (IOException e){
@@ -49,8 +49,7 @@ public class data {
                 Date startTime = new SimpleDateFormat("EEE MMM dd HH:mm:ss Z yyyy", Locale.UK).parse(fields[2]);
                 Date endTime = new SimpleDateFormat("EEE MMM dd HH:mm:ss Z yyyy", Locale.UK).parse(fields[3]);
                 int idUser = Integer.parseInt(fields[4]);
-                int idTask = Integer.parseInt(fields[5]);
-                tasks.add(new Task(description, state, startTime, endTime, idUser, idTask));
+                tasks.add(new Task(description, state, startTime, endTime, idUser));
                 task = br.readLine();
             }
         }catch (IOException e){
