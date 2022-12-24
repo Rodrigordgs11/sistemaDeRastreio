@@ -57,8 +57,6 @@ public class TaskItemController extends UserController implements Initializable{
 
     }
 
-
-
     public int getId() {
         return id;
     }

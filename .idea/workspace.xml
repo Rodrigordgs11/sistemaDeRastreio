@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="taskEditView update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/images/icons8-correct-58.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskEditView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +130,7 @@
       <workItem from="1671823963139" duration="1045000" />
       <workItem from="1671879685789" duration="407000" />
       <workItem from="1671880096962" duration="8380000" />
-      <workItem from="1671889932359" duration="3580000" />
+      <workItem from="1671889932359" duration="3958000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -354,7 +349,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671884199115</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="taskEditView update">
+      <created>1671894056254</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1671894056254</updated>
+    </task>
+    <task id="LOCAL-00033" summary="taskEditView update">
+      <created>1671894065943</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1671894065943</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

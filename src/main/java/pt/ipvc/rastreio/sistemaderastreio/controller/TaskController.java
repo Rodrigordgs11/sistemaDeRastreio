@@ -64,6 +64,7 @@ public class TaskController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ListAll();
         //returnUserLogged();
     }
 
@@ -120,14 +121,19 @@ public class TaskController implements Initializable {
     private HBox Utilizadores;
 
     @FXML
-    private VBox container;
+    private VBox container = new VBox();
 
     @FXML
     private HBox hBox;
 
     @FXML
-    void CreateTask(ActionEvent event) {
-
+    void CreateTask(ActionEvent event) throws  IOException{
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create Task");
     }
 
     @FXML
