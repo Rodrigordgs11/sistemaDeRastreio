@@ -52,7 +52,7 @@ public class TaskItemController extends TaskController implements Initializable{
     private Label idTask;
 
     @FXML
-    private Button remove;
+    private Button remover;
 
     @FXML
     private Button termination;
@@ -62,10 +62,11 @@ public class TaskItemController extends TaskController implements Initializable{
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        idTask.setVisible(true);
+
     }
 
     public void invisible(){
+        idTask.setVisible(false);
         for (Task t: tasks) {
             if (Integer.parseInt(idTask.getText()) == t.getIdTask()) {
                 if (t.getProjectName() == null) {
@@ -76,7 +77,7 @@ public class TaskItemController extends TaskController implements Initializable{
                     EndTime.setVisible(false);
                 }
                 if (t.getState() == TaskState.PORINICIAR){
-                    remove.setVisible(false);
+                    remover.setVisible(false);
                 }
                 if ((t.getState() == TaskState.FINALIZADO)){
                     termination.setVisible(false);

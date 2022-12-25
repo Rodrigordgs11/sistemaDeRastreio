@@ -11,6 +11,7 @@ public class Task {
     private Date endTime;
     private TaskState state;
     private static int numTasks = 0;
+    private int Horas;
 
     private String projectName;
 

@@ -62,6 +62,15 @@ public class TaskController implements Initializable {
     @FXML
     private TextField Description;
 
+    @FXML
+    private HBox Utilizadores;
+
+    @FXML
+    private VBox container = new VBox();
+
+    @FXML
+    private HBox hBox;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //returnUserLogged();
@@ -118,14 +127,7 @@ public class TaskController implements Initializable {
         }
     }
 
-    @FXML
-    private HBox Utilizadores;
 
-    @FXML
-    private VBox container = new VBox();
-
-    @FXML
-    private HBox hBox;
 
     @FXML
     void CreateTask(ActionEvent event) throws  IOException{
@@ -208,7 +210,7 @@ public class TaskController implements Initializable {
     public void endTask(){
         Date date = new Date();
         for (Task t: tasks){
-            if (t.getEndTime().compareTo(date) <= 0 && !(t.getStartTime().compareTo(t.getEndTime()) == 0)){
+            if (t.getEndTime().compareTo(date) <= 0 && !(t.getStartTime().compareTo(t.getEndTime()) == 0 && t.getState() != TaskState.EMCURSO)){
                 t.setState(TaskState.FINALIZADO);
             }
         }
