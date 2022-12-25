@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Set Visible Update" />
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="updated">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/terminateTaskView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/editTask.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/editTask.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" afterDir="false" />
+    </list>
+    <list id="f45e56d6-5c74-492d-8463-05d42979b6cb" name="Changes by Pedro" comment="Changes by Pedro">
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +34,33 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java">
+      <ranges>
+        <range start1="9" end1="9" start2="9" end2="10" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="11" end1="11" start2="12" end2="13" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="14" end1="14" start2="16" end2="17" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="17" end1="17" start2="20" end2="22" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="20" end1="20" start2="25" end2="28" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="46" end1="47" start2="54" end2="55" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="56" end1="57" start2="64" end2="65" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="60" end1="60" start2="68" end2="69" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="70" end1="71" start2="79" end2="80" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="112" end1="113" start2="121" end2="129" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="117" end1="118" start2="133" end2="134" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+        <range start1="127" end1="127" start2="143" end2="193" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java">
+      <ranges>
+        <range start1="63" end1="63" start2="63" end2="72" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="120" end1="122" start2="129" end2="129" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="123" end1="128" start2="130" end2="130" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="210" end1="211" start2="212" end2="213" changelist="f45e56d6-5c74-492d-8463-05d42979b6cb" />
+        <range start1="220" end1="253" start2="222" end2="222" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,29 +82,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pedro/IdeaProjects/sistemaDeRastreio/src/main/resources/pt/ipvc/rastreio/sistemaderastreio&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Rodrigo/IdeaProjects/sistemaDeRastreio/src/main/resources/pt/ipvc/rastreio/sistemaderastreio",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -93,17 +132,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,12 +166,11 @@
       <workItem from="1671823963139" duration="1045000" />
       <workItem from="1671879685789" duration="407000" />
       <workItem from="1671880096962" duration="8380000" />
-      <workItem from="1671889932359" duration="4286000" />
-      <workItem from="1671897439754" duration="7076000" />
-      <workItem from="1671968533665" duration="50000" />
-      <workItem from="1671968584844" duration="2620000" />
-      <workItem from="1671972926908" duration="311000" />
-      <workItem from="1671974646860" duration="1647000" />
+      <workItem from="1671889932359" duration="3958000" />
+      <workItem from="1671903043864" duration="1868000" />
+      <workItem from="1671904915120" duration="798000" />
+      <workItem from="1671905716215" duration="3419000" />
+      <workItem from="1671988942193" duration="5600000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -376,28 +403,84 @@
       <option name="project" value="LOCAL" />
       <updated>1671894065943</updated>
     </task>
-    <task id="LOCAL-00034" summary="taskEditView update">
-      <created>1671894659890</created>
+    <task id="LOCAL-00034" summary="updated">
+      <created>1671903333433</created>
       <option name="number" value="00034" />
       <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1671894659890</updated>
+      <updated>1671903333433</updated>
     </task>
-    <task id="LOCAL-00035" summary="Set Visible Update">
-      <created>1671971232955</created>
+    <task id="LOCAL-00035" summary="Changes by Pedro">
+      <created>1671903340174</created>
       <option name="number" value="00035" />
       <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1671971232955</updated>
+      <updated>1671903340174</updated>
     </task>
-    <task id="LOCAL-00036" summary="Set Visible Update">
-      <created>1671976131565</created>
+    <task id="LOCAL-00036" summary="updated">
+      <created>1671903451551</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1671976131565</updated>
+      <updated>1671903451551</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Changes by Pedro">
+      <created>1671903458444</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1671903458444</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Changes by Pedro">
+      <created>1671903476180</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1671903476180</updated>
+    </task>
+    <task id="LOCAL-00039" summary="updated">
+      <created>1671903584148</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1671903584148</updated>
+    </task>
+    <task id="LOCAL-00040" summary="updated">
+      <created>1671905536796</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1671905536796</updated>
+    </task>
+    <task id="LOCAL-00041" summary="updated">
+      <created>1671907045750</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1671907045750</updated>
+    </task>
+    <task id="LOCAL-00042" summary="updated">
+      <created>1671907593728</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1671907593728</updated>
+    </task>
+    <task id="LOCAL-00043" summary="updated">
+      <created>1671907598720</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1671907598720</updated>
+    </task>
+    <task id="LOCAL-00044" summary="updated">
+      <created>1671931487724</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1671931487724</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,12 +518,12 @@
     <MESSAGE value="create task files" />
     <MESSAGE value="update user abstract and update dashboard with userEnumeration" />
     <MESSAGE value="update tasks" />
-    <MESSAGE value="Changes by Pedro" />
     <MESSAGE value="users ui done" />
     <MESSAGE value="editUser done" />
     <MESSAGE value="taskEditView update" />
-    <MESSAGE value="Set Visible Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set Visible Update" />
+    <MESSAGE value="Changes by Pedro" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

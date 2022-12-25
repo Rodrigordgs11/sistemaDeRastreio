@@ -152,7 +152,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="41.0" prefWidth="1012.0" text="Edit tasks" textFill="WHITE">
+            <Label prefHeight="41.0" prefWidth="1012.0" text="Terminate tasks" textFill="WHITE">
                <font>
                   <Font name="Agency FB Bold" size="28.0" />
                </font>
@@ -160,9 +160,9 @@
                   <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
                </padding>
             </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1004.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="983.0">
                <children>
-                  <Label prefHeight="49.0" prefWidth="139.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" text="Description" textFill="WHITE">
+                  <Label prefHeight="49.0" prefWidth="72.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" text="Date" textFill="WHITE">
                      <font>
                         <Font name="Agency FB" size="25.0" />
                      </font>
@@ -170,7 +170,7 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="EditDescription" prefHeight="49.0" prefWidth="390.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                  <TextField fx:id="TerminateDate" prefHeight="49.0" prefWidth="456.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
                      <font>
                         <Font size="17.0" />
                      </font></TextField>
@@ -179,12 +179,17 @@
                   <Insets bottom="20.0" />
                </padding>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#editTask" prefHeight="40.0" prefWidth="155.0" stylesheets="@Styles/mySettings.css" text="Edit task" textAlignment="CENTER" textFill="WHITE">
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1004.0">
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </HBox>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#terminateTask" prefHeight="40.0" prefWidth="155.0" stylesheets="@Styles/mySettings.css" text="Terminate task" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Agency FB Bold" size="15.0" />
                </font>
                <VBox.margin>
-                  <Insets left="450.0" top="40.0" />
+                  <Insets left="450.0" top="20.0" />
                </VBox.margin>
             </Button>
          </children>

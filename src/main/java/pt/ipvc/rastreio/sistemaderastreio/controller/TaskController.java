@@ -218,39 +218,6 @@ public class TaskController implements Initializable {
 
     }
 
-    @FXML
-    private Label EndTime;
-
-    @FXML
-    private Label Price;
-
-    @FXML
-    private Label Project;
-
-    @FXML
-    private Label StartTime;
-
-    @FXML
-    private Label State;
-
-    @FXML
-    private Label idUser;
-
-    @FXML
-    void edit(ActionEvent event) throws IOException {
-
-    }
-
-    @FXML
-    void remove(ActionEvent event) {
-
-    }
-
-    @FXML
-    void terminate(ActionEvent event) throws IOException {
-
-    }
-
 
 
 }
