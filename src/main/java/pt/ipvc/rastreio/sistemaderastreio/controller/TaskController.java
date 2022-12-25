@@ -91,6 +91,17 @@ public class TaskController implements Initializable {
         stage.setTitle("Menu Inicial");
     }
 
+
+    @FXML
+    void handleTask(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskEditView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("List Tasks");
+    }
+
     public void ListTasks() {
         for (Task t : tasks) {
             if (t.getidUser() == userLogged().getId()) {

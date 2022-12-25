@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Create task update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" afterDir="false" />
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Tasks update">
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskEditView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskEditView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +151,7 @@
       <workItem from="1671977813659" duration="648000" />
       <workItem from="1671988992894" duration="5291000" />
       <workItem from="1672002388213" duration="80000" />
-      <workItem from="1672002470987" duration="2833000" />
+      <workItem from="1672002470987" duration="3146000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -417,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671976475304</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Tasks update">
+      <created>1672005327257</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1672005327257</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create user class" />
     <MESSAGE value="Login update" />
     <MESSAGE value="Login done" />
     <MESSAGE value="Login done 2" />
@@ -460,7 +461,8 @@
     <MESSAGE value="taskEditView update" />
     <MESSAGE value="Set Visible Update" />
     <MESSAGE value="Create task update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create task update" />
+    <MESSAGE value="Tasks update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tasks update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
