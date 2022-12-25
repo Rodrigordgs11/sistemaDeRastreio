@@ -78,10 +78,11 @@ public class TaskController implements Initializable {
         StarteTimeSearch.setVisible(false);
     }
 
-    public void returnUserLogged(){
+    public void returnUserLogged() {
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
+
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -90,13 +91,15 @@ public class TaskController implements Initializable {
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-    public void ListTasks(){
-        for (Task t: tasks){
-            if(t.getidUser() == userLogged().getId()){
+
+    public void ListTasks() {
+        for (Task t : tasks) {
+            if (t.getidUser() == userLogged().getId()) {
                 System.out.println(t);
             }
         }
     }
+
     public void validator() throws isEmptyException, ParseException {
         if (Description.getText().isEmpty()) throw new isEmptyException("Description field is empty");
     }
@@ -107,13 +110,13 @@ public class TaskController implements Initializable {
             Task task = new Task(Description.getText(), TaskState.PORINICIAR, Objects.requireNonNull(userLogged()).getId());
             Date dateFormat = new Date();
             if (!Date.getText().isEmpty()) {
-                    dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(Date.getText());
-                    task.setStartTime(dateFormat);
-                    task.setEndTime(dateFormat);
-                    tasks.add(task);
-                    userLogged().getTasks().add(task);
-                    //System.out.println(userLogged().getTasks().get(0).getDescription());
-            }else {
+                dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(Date.getText());
+                task.setStartTime(dateFormat);
+                task.setEndTime(dateFormat);
+                tasks.add(task);
+                userLogged().getTasks().add(task);
+                //System.out.println(userLogged().getTasks().get(0).getDescription());
+            } else {
                 task.setState(TaskState.EMCURSO);
                 task.setStartTime(dateFormat);
                 task.setEndTime(dateFormat);
@@ -122,17 +125,16 @@ public class TaskController implements Initializable {
                 //System.out.println(userLogged().getTasks().toString());
             }
             data.saveTasks();
-        }catch(isEmptyException e){
-            Alerts.showAlert("Empty field", "A field is empty",e.getMessage(), Alert.AlertType.WARNING);
+        } catch (isEmptyException e) {
+            Alerts.showAlert("Empty field", "A field is empty", e.getMessage(), Alert.AlertType.WARNING);
         } catch (ParseException e) {
-            Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)",e.getMessage(), Alert.AlertType.WARNING);
+            Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)", e.getMessage(), Alert.AlertType.WARNING);
         }
     }
 
 
-
     @FXML
-    void CreateTask(ActionEvent event) throws  IOException{
+    void CreateTask(ActionEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
@@ -143,8 +145,8 @@ public class TaskController implements Initializable {
 
     @FXML
     void ListALLEMCURSO(ActionEvent event) {
-        for (Task t: tasks){
-            if(t.getState().equals(TaskState.EMCURSO)) {
+        for (Task t : tasks) {
+            if (t.getState().equals(TaskState.EMCURSO)) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
                 try {
@@ -167,7 +169,7 @@ public class TaskController implements Initializable {
     public void taskItem() {
         startTask();
         endTask();
-        for (Task t: tasks){
+        for (Task t : tasks) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
             try {
@@ -183,8 +185,10 @@ public class TaskController implements Initializable {
 
     @FXML
     void ListAllFINALIZADO(ActionEvent event) {
-        for (Task t: tasks){
-            if(t.getState().equals(TaskState.FINALIZADO)) {
+        StarteTimeSearch.setVisible(true);
+        EndTimeSearch.setVisible(true);
+        for (Task t : tasks) {
+            if (t.getState().equals(TaskState.FINALIZADO)) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
                 try {
@@ -199,24 +203,25 @@ public class TaskController implements Initializable {
         }
     }
 
-    public void startTask(){
+    public void startTask() {
         Date date = new Date();
-        for (Task t: tasks){
+        for (Task t : tasks) {
             System.out.println(date);
-            if (t.getStartTime().compareTo(date) <= 0){
+            if (t.getStartTime().compareTo(date) <= 0) {
                 t.setState(TaskState.EMCURSO);
             }
         }
     }
 
-    public void endTask(){
+    public void endTask() {
         Date date = new Date();
-        for (Task t: tasks){
-            if (t.getEndTime().compareTo(date) <= 0 && !(t.getStartTime().compareTo(t.getEndTime()) == 0 && t.getState() != TaskState.EMCURSO)){
+        for (Task t : tasks) {
+            if (t.getEndTime().compareTo(date) <= 0 && !(t.getStartTime().compareTo(t.getEndTime()) == 0 && t.getState() != TaskState.EMCURSO)) {
                 t.setState(TaskState.FINALIZADO);
             }
         }
     }
+
     @FXML
     void handleImage(MouseEvent event) {
 
