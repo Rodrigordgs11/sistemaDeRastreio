@@ -74,6 +74,8 @@ public class TaskController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //returnUserLogged();
+        EndTimeSearch.setVisible(false);
+        StarteTimeSearch.setVisible(false);
     }
 
     public void returnUserLogged(){
@@ -220,9 +222,49 @@ public class TaskController implements Initializable {
 
     }
 
+    @FXML
+    private TextField EndTimeSearch;
 
+    @FXML
+    private TextField StarteTimeSearch;
 
+    @FXML
+    void showText(ActionEvent event) throws ParseException, isEmptyException {
+        try {
+            validatorLOL();
+            for (Task t : tasks) {
+                if (t.getStartTime().after(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(StarteTimeSearch.getText()))
+                        && t.getEndTime().before(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(EndTimeSearch.getText()))) {
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
+                    hBox = fxmlLoader.load();
+                    TaskItemController taskItemController = fxmlLoader.getController();
+                    taskItemController.setData(t);
+                    container.getChildren().add(hBox); //give id to hbox
+                }
+            }
+        } catch(IOException e){
+            throw new RuntimeException(e);
+        }catch(ParseException e){
+            Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)", e.getMessage(), Alert.AlertType.WARNING);
+        }catch(isEmptyException e) {
+            Alerts.showAlert("Empty field", "A field is empty", e.getMessage(), Alert.AlertType.WARNING);
+         }
+    }
+
+    public void validatorLOL() throws isEmptyException, ParseException {
+        Date startTime;
+        Date endTime;
+        if(StarteTimeSearch.getText().isEmpty() || EndTimeSearch.getText().isEmpty()) throw new isEmptyException("Field is empty");
+        if(!StarteTimeSearch.getText().isEmpty()){
+            startTime = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(StarteTimeSearch.getText());
+        }
+        if(!EndTimeSearch.getText().isEmpty()){
+            endTime = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(EndTimeSearch.getText());
+        }
+    }
 }
+
 
 
 
