@@ -67,7 +67,7 @@ public class TaskItemController extends TaskController implements Initializable{
                 System.out.println(getId());
             }
         }
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("editUser.fxml")));
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("editTask.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
         stage.setScene(scene);
@@ -78,7 +78,7 @@ public class TaskItemController extends TaskController implements Initializable{
     public void remove(ActionEvent event){
         taskItem();
         tasks.removeIf(t -> Integer.parseInt(idTask.getText()) == t.getIdTask());
-        saveUsers();
+        saveTasks();
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
