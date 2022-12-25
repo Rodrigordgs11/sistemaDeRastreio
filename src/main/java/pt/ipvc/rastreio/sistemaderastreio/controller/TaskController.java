@@ -98,12 +98,14 @@ public class TaskController implements Initializable {
             if (!Date.getText().isEmpty()) {
                     dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(Date.getText());
                     task.setStartTime(dateFormat);
+                    task.setEndTime(dateFormat);
                     tasks.add(task);
                     userLogged().getTasks().add(task);
                     //System.out.println(userLogged().getTasks().get(0).getDescription());
             }else {
                 task.setState(TaskState.EMCURSO);
                 task.setStartTime(dateFormat);
+                task.setEndTime(dateFormat);
                 userLogged().getTasks().add(task);
                 tasks.add(task);
                 //System.out.println(userLogged().getTasks().toString());
@@ -159,6 +161,8 @@ public class TaskController implements Initializable {
     }
 
     public void taskItem() {
+        startTask();
+        endTask();
         for (Task t: tasks){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
@@ -191,7 +195,24 @@ public class TaskController implements Initializable {
         }
     }
 
+    public void startTask(){
+        Date date = new Date();
+        for (Task t: tasks){
+            System.out.println(date);
+            if (t.getStartTime().compareTo(date) <= 0){
+                t.setState(TaskState.EMCURSO);
+            }
+        }
+    }
 
+    public void endTask(){
+        Date date = new Date();
+        for (Task t: tasks){
+            if (t.getEndTime().compareTo(date) <= 0 && !(t.getStartTime().compareTo(t.getEndTime()) == 0)){
+                t.setState(TaskState.FINALIZADO);
+            }
+        }
+    }
     @FXML
     void handleImage(MouseEvent event) {
 
