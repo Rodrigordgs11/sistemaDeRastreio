@@ -74,6 +74,20 @@
                         </Label>
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/project.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Projetos" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" styleClass="button-container-mouse-moved" stylesheets="@Styles/dashboard.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
@@ -81,7 +95,7 @@
                               <Image url="@images/task.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Create tasks" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Tarefas" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
@@ -92,10 +106,10 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@images/task.png" />
+                              <Image url="@images/invites.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Edit tasks" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Convites" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
@@ -106,24 +120,24 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@images/task.png" />
+                              <Image url="@images/report.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Remove tasks" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Relatórios" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                  <HBox fx:id="Utilizadores" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@images/task.png" />
+                              <Image url="@images/users.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="List tasks" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Utilizadores" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
