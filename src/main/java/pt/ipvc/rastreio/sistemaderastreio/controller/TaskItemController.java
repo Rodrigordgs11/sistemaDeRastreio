@@ -7,11 +7,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
+import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 
 import java.io.IOException;
@@ -40,6 +42,9 @@ public class TaskItemController extends TaskController implements Initializable{
     private Label State;
     @FXML
     private Label idTask;
+
+    @FXML
+    private Button remove;
     @FXML
     void terminate(ActionEvent event) {
 
@@ -51,12 +56,31 @@ public class TaskItemController extends TaskController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idTask.setVisible(true);
     }
+
+    public void invisible(){
+        for (Task t: tasks) {
+            if (Integer.parseInt(idTask.getText()) == t.getIdTask()) {
+                if (t.getProjectName() == null) {
+                    Project.setVisible(false);
+                    Price.setVisible(false);
+                }
+                if (!(t.getState() == TaskState.FINALIZADO)) {
+                    EndTime.setVisible(false);
+                }
+                if (t.getState() == TaskState.PORINICIAR){
+                    remove.setVisible(false);
+                }
+            }
+        }
+    }
+
     public void setData(Task task){
         description.setText(task.getDescription());
         StartTime.setText(String.valueOf(task.getStartTime()));
         EndTime.setText(String.valueOf(task.getEndTime()));
         State.setText(String.valueOf(task.getState()));
         idTask.setText(String.valueOf(task.getIdTask()));
+        invisible();
     }
     @FXML
     public void edit(ActionEvent event) throws IOException {

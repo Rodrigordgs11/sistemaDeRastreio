@@ -12,7 +12,12 @@ public class Task {
     private TaskState state;
     private static int numTasks = 0;
 
+    private String projectName;
+
+    private float priceProject;
+
     public Task(String description, TaskState state, int idUser){
+        this.idTask = ++numTasks;
         this.description = description;
         this.startTime = new Date();
         this.endTime = new Date();
@@ -80,6 +85,22 @@ public class Task {
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public float getPriceProject() {
+        return priceProject;
+    }
+
+    public void setPriceProject(float priceProject) {
+        this.priceProject = priceProject;
     }
 
     @Override
