@@ -74,8 +74,7 @@ public class TaskController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //returnUserLogged();
-        EndTimeSearch.setVisible(false);
-        StarteTimeSearch.setVisible(false);
+
     }
 
     public void returnUserLogged() {
@@ -145,6 +144,7 @@ public class TaskController implements Initializable {
 
     @FXML
     void ListALLEMCURSO(ActionEvent event) {
+        correctDuration();
         for (Task t : tasks) {
             if (t.getState().equals(TaskState.EMCURSO)) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -169,6 +169,7 @@ public class TaskController implements Initializable {
     public void taskItem() {
         startTask();
         endTask();
+        correctDuration();
         for (Task t : tasks) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
@@ -185,6 +186,7 @@ public class TaskController implements Initializable {
 
     @FXML
     void ListAllFINALIZADO(ActionEvent event) {
+        correctDuration();
         StarteTimeSearch.setVisible(true);
         EndTimeSearch.setVisible(true);
         for (Task t : tasks) {
@@ -216,7 +218,7 @@ public class TaskController implements Initializable {
     public void endTask() {
         Date date = new Date();
         for (Task t : tasks) {
-            if (t.getEndTime().compareTo(date) <= 0 && !(t.getStartTime().compareTo(t.getEndTime()) == 0 && t.getState() != TaskState.EMCURSO)) {
+            if (t.getEndTime().compareTo(date) <= 0 && !(t.getStartTime().compareTo(t.getEndTime()) == 0 && !(t.getState() == TaskState.FINALIZADO))) {
                 t.setState(TaskState.FINALIZADO);
             }
         }
@@ -266,6 +268,17 @@ public class TaskController implements Initializable {
         }
         if(!EndTimeSearch.getText().isEmpty()){
             endTime = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(EndTimeSearch.getText());
+        }
+    }
+
+    public void correctDuration(){
+        for (Task t: tasks){
+            if (t.getState() == TaskState.EMCURSO){
+                t.setDuration((new Date().getTime() - t.getStartTime().getTime()) / (1000*60));
+            }
+             if (t.getState() == TaskState.FINALIZADO) {
+                 t.setDuration((t.getEndTime().getTime() - t.getStartTime().getTime()) / (1000*60));
+             }
         }
     }
 }

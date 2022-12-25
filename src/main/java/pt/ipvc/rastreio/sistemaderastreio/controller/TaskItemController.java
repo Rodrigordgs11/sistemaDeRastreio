@@ -49,21 +49,21 @@ public class TaskItemController extends TaskController implements Initializable{
     @FXML
     private Label State;
     @FXML
+    private Label Duration;
+    @FXML
     private Label idTask;
-
     @FXML
     private Button remover;
-
     @FXML
     private Button termination;
+    @FXML
+    private TextField EditDescription;
 
     public int getId() {
         return id;
     }
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     public void invisible(){
         idTask.setVisible(false);
@@ -76,8 +76,13 @@ public class TaskItemController extends TaskController implements Initializable{
                 if (!(t.getState() == TaskState.FINALIZADO)) {
                     EndTime.setVisible(false);
                 }
+                if (!t.getEndTime().equals(t.getStartTime())){
+                    EndTime.setVisible(true);
+                    termination.setVisible(false);
+                }
                 if (t.getState() == TaskState.PORINICIAR){
                     remover.setVisible(false);
+                    Duration.setVisible(false);
                 }
                 if ((t.getState() == TaskState.FINALIZADO)){
                     termination.setVisible(false);
@@ -87,6 +92,7 @@ public class TaskItemController extends TaskController implements Initializable{
     }
 
     public void setData(Task task){
+        Duration.setText(String.valueOf(task.getDuration()));
         description.setText(task.getDescription());
         StartTime.setText(String.valueOf(task.getStartTime()));
         EndTime.setText(String.valueOf(task.getEndTime()));
@@ -169,9 +175,6 @@ public class TaskItemController extends TaskController implements Initializable{
             }
         }
     }
-
-    @FXML
-    private TextField EditDescription;
     @FXML
     void editTask(ActionEvent event) {
         try {

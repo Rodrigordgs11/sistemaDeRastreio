@@ -11,10 +11,10 @@ public class Task {
     private Date endTime;
     private TaskState state;
     private static int numTasks = 0;
-
     private String projectName;
-
     private float priceProject;
+
+    private long duration;
 
     public Task(String description, TaskState state, int idUser){
         this.idTask = ++numTasks;
@@ -23,6 +23,7 @@ public class Task {
         this.endTime = new Date();
         this.state = state;
         this.idUser = idUser;
+        duration = 0;
     }
 
     public Task(String description, TaskState state, Date startTime, Date endTime, int idUser){
@@ -32,6 +33,7 @@ public class Task {
         this.startTime = startTime;
         this.endTime = endTime;
         this.idUser = idUser;
+        duration = 0;
     }
     public int getIdTask() {
         return idTask;
@@ -101,6 +103,14 @@ public class Task {
 
     public void setPriceProject(float priceProject) {
         this.priceProject = priceProject;
+    }
+
+    public long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
     }
 
     @Override
