@@ -226,7 +226,7 @@ public class TaskController implements Initializable {
     }
 
     @FXML
-    void terminate(ActionEvent event) {
+    void terminate(ActionEvent event) throws IOException {
 
     }
 

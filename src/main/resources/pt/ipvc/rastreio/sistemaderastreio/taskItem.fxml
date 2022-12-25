@@ -28,7 +28,7 @@
       <Label fx:id="Price" layoutX="662.0" layoutY="34.0" prefHeight="22.0" prefWidth="110.0" text="Price Per Hour" />
       <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="177.0" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#terminate" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #42bf2f;" styleClass="button_" stylesheets="@Styles/user.css" textFill="#42bf2f">
+            <Button fx:id="termination" mnemonicParsing="false" onAction="#terminate" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #42bf2f;" styleClass="button_" stylesheets="@Styles/user.css" textFill="#42bf2f">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>

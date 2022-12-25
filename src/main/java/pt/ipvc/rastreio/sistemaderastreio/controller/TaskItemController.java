@@ -45,10 +45,10 @@ public class TaskItemController extends TaskController implements Initializable{
 
     @FXML
     private Button remove;
-    @FXML
-    void terminate(ActionEvent event) {
 
-    }
+    @FXML
+    private Button termination;
+
     public int getId() {
         return id;
     }
@@ -69,6 +69,9 @@ public class TaskItemController extends TaskController implements Initializable{
                 }
                 if (t.getState() == TaskState.PORINICIAR){
                     remove.setVisible(false);
+                }
+                if ((t.getState() == TaskState.FINALIZADO)){
+                    termination.setVisible(false);
                 }
             }
         }
@@ -103,6 +106,16 @@ public class TaskItemController extends TaskController implements Initializable{
         taskItem();
         tasks.removeIf(t -> Integer.parseInt(idTask.getText()) == t.getIdTask());
         saveTasks();
+    }
+
+    @FXML
+    void terminate(ActionEvent event) throws IOException{
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create Task");
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));

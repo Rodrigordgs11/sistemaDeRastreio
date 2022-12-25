@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="taskEditView update">
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Set Visible Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/backend/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/taskItem.fxml" afterDir="false" />
@@ -136,7 +136,8 @@
       <workItem from="1671889932359" duration="4286000" />
       <workItem from="1671897439754" duration="7076000" />
       <workItem from="1671968533665" duration="50000" />
-      <workItem from="1671968584844" duration="2478000" />
+      <workItem from="1671968584844" duration="2620000" />
+      <workItem from="1671972926908" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="funcionar">
       <created>1669903971573</created>
@@ -376,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671894659890</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Set Visible Update">
+      <created>1671971232955</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1671971232955</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create styles" />
     <MESSAGE value="login done" />
     <MESSAGE value="create user class" />
     <MESSAGE value="Login update" />
@@ -419,7 +426,8 @@
     <MESSAGE value="users ui done" />
     <MESSAGE value="editUser done" />
     <MESSAGE value="taskEditView update" />
-    <option name="LAST_COMMIT_MESSAGE" value="taskEditView update" />
+    <MESSAGE value="Set Visible Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set Visible Update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
