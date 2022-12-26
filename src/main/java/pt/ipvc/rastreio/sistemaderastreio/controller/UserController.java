@@ -47,6 +47,17 @@ public class UserController implements Initializable {
     private Parent parent;
     private boolean nExist = false;
     private static int idLog;
+
+    @FXML
+    private Label name;
+    @FXML
+    private Label userName;
+    @FXML
+    private HBox Utilizadores;
+    @FXML
+    private VBox container = new VBox();
+    public HBox hBox;
+
     public static int getIdLog() {
         return idLog;
     }
@@ -122,9 +133,7 @@ public class UserController implements Initializable {
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-    @FXML
-    private VBox container = new VBox();
-    public HBox hBox;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userItem();
@@ -145,12 +154,7 @@ public class UserController implements Initializable {
             }
         }
     }
-    @FXML
-    private Label name;
-    @FXML
-    private Label userName;
-    @FXML
-    private HBox Utilizadores;
+
     private void returnUserLogged(){
         System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
