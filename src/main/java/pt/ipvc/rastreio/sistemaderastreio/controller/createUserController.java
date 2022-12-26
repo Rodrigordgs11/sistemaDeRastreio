@@ -83,7 +83,6 @@ public class createUserController extends UserController implements Initializabl
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));

@@ -170,7 +170,7 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="Name" prefHeight="49.0" prefWidth="396.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                  <TextField fx:id="CreateName" prefHeight="49.0" prefWidth="396.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -190,7 +190,7 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="UserName" prefHeight="49.0" prefWidth="375.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                  <TextField fx:id="CreateClientName" prefHeight="49.0" prefWidth="375.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -210,7 +210,7 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="Phone" prefHeight="49.0" prefWidth="404.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                  <TextField fx:id="CreatePrice" prefHeight="49.0" prefWidth="404.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
                      <font>
                         <Font size="17.0" />
                      </font>

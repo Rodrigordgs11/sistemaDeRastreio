@@ -8,17 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
-import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
-import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
-import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
+import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
+import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.alreadyExistException;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
+import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -26,8 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.tasks;
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.userLogged;
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
 public class ProjectController {
 
@@ -48,6 +48,16 @@ public class ProjectController {
 
     @FXML
     private Label userName;
+
+    @FXML
+    private TextField CreateClientName;
+
+    @FXML
+    private TextField CreateName;
+
+    @FXML
+    private TextField CreatePrice;
+
 
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {
@@ -88,6 +98,26 @@ public class ProjectController {
         stage.setTitle("Create Project");
     }
 
+    @FXML
+    public void SaveChanges(ActionEvent event){
+        try {
+            Validator();
+            Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.valueOf(CreatePrice.getText()));
+            projects.add(project);
+        }catch (NumberFormatException e){
+            Alerts.showAlert("Price Per Hour", "Float field with letters",e.getMessage(), Alert.AlertType.ERROR);
+        }catch(isEmptyException e) {
+            Alerts.showAlert("Empty field", "A field is empty", e.getMessage(), Alert.AlertType.WARNING);
+        }
+        data.saveProjects();
+    }
+
+    public void Validator() throws isEmptyException{
+        boolean exist = false;
+        boolean existPhone = false;
+        if(CreateName.getText().isEmpty() || CreateClientName.getText().isEmpty() || CreatePrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
+    }
+
 
     @FXML
     void ListAll(ActionEvent event) {
@@ -103,8 +133,8 @@ public class ProjectController {
     void ListAllShared(ActionEvent event) {
 
     }
-    @FXML
-    public void SaveChanges(ActionEvent event){}
+
+
 
 
 

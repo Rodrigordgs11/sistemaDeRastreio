@@ -50,6 +50,22 @@ public class data {
         }
     }
 
+    public static void loadProjects(){
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv"))){
+            String project = br.readLine();
+            while (project != null){
+                String[] fields = project.split(",");
+                String name = fields[0];
+                String clientName = fields[1];
+                float price = Float.valueOf(fields[2]);
+                projects.add(new Project(name,clientName,price));
+                project = br.readLine();
+            }
+        }catch (IOException e) {
+            System.out.println("Error reading file" + e.getMessage());
+        }
+    }
+
     public static void loadTasks() throws ParseException{
         try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv"))){
             String task = br.readLine();
