@@ -45,7 +45,7 @@ public class ProjectController implements Initializable {
     private HBox Utilizadores;
 
     @FXML
-    private VBox container;
+    private VBox container = new VBox();
 
     @FXML
     private Label name;

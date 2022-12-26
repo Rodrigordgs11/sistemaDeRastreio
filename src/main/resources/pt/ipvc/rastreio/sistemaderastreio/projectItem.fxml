@@ -79,6 +79,6 @@
             <Insets />
          </HBox.margin>
       </HBox>
-      <Label fx:id="idTask" text="idProject" />
+      <Label fx:id="idProject" text="idProject" />
    </children>
 </HBox>

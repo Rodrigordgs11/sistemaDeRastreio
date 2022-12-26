@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
+
 public class ProjectItemController extends ProjectController{
     @FXML
     private Label ClientName;
@@ -27,7 +29,7 @@ public class ProjectItemController extends ProjectController{
     private Label TimeSpent;
 
     @FXML
-    private Label idTask;
+    private Label idProject;
 
     @FXML
     private Button lis;
@@ -41,6 +43,7 @@ public class ProjectItemController extends ProjectController{
         Price.setText(String.valueOf(p.getPricePerHour()));
         TaskNumber.setText(String.valueOf(p.getTasks().size()));
         TimeSpent.setText(String.valueOf(getTotalDuration(p)));
+        idProject.setText(String.valueOf(p.getIdProject()));
     }
 
     public long getTotalDuration(Project p){
@@ -63,6 +66,8 @@ public class ProjectItemController extends ProjectController{
 
     @FXML
     void remove(ActionEvent event) {
-
+        projectItem();
+        projects.removeIf(p -> Integer.parseInt(idProject.getText()) == p.getIdProject());
+        saveProjects();
     }
 }

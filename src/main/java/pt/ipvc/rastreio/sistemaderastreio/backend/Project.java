@@ -4,12 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Project {
+
+    private int idProject = 0;
     private String name;
     private String clientName;
     private float pricePerHour;
     private List<Task> tasks;
 
+    private int numProjects = 0;
+
     public Project(String name, String clientName, float pricePerHour) {
+        this.idProject = ++numProjects;
         this.name = name;
         this.clientName = clientName;
         this.pricePerHour = pricePerHour;
@@ -46,5 +51,21 @@ public class Project {
 
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public int getIdProject() {
+        return idProject;
+    }
+
+    public void setIdProject(int idProject) {
+        this.idProject = idProject;
+    }
+
+    public int getNumProjects() {
+        return numProjects;
+    }
+
+    public void setNumProjects(int numProjects) {
+        this.numProjects = numProjects;
     }
 }
