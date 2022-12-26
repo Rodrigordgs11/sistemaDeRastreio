@@ -79,6 +79,8 @@ public class ProjectItemController extends ProjectController implements Initiali
     private Label name;
     @FXML
     private Label userName;
+    @FXML
+    private Label ProjectName = new Label();
 
     public int getId() {
         return id;
@@ -101,6 +103,7 @@ public class ProjectItemController extends ProjectController implements Initiali
         TimeSpent.setText(String.valueOf(getTotalDuration(p)));
         idProject.setText(String.valueOf(p.getIdProject()));
         Owner.setText(p.getOwner());
+        invisible();
     }
     public long getTotalDuration(Project p){
         long total = 0;

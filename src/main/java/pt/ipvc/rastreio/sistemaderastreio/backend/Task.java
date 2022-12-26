@@ -14,6 +14,8 @@ public class Task {
     private String projectName;
     private float priceProject;
 
+    private int idProject = 0;
+
     private long duration;
 
     public Task(String description, TaskState state, int idUser){
@@ -26,13 +28,14 @@ public class Task {
         duration = 0;
     }
 
-    public Task(String description, TaskState state, Date startTime, Date endTime, int idUser){
+    public Task(String description, TaskState state, Date startTime, Date endTime, int idUser, int idProject){
         this.idTask = ++numTasks;
         this.description = description;
         this.state = state;
         this.startTime = startTime;
         this.endTime = endTime;
         this.idUser = idUser;
+        this.idProject = idProject;
         duration = 0;
     }
     public int getIdTask() {
@@ -112,6 +115,15 @@ public class Task {
     public void setDuration(long duration) {
         this.duration = duration;
     }
+
+    public int getIdProject() {
+        return idProject;
+    }
+
+    public void setIdProject(int idProject) {
+        this.idProject = idProject;
+    }
+
 
     @Override
     public String toString() {

@@ -21,9 +21,6 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 import java.io.IOException;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
@@ -37,8 +34,7 @@ public class ProjectController implements Initializable {
     @FXML
     private HBox Utilizadores;
     @FXML
-    private VBox container = new VBox();
-
+    protected VBox container = new VBox();
     @FXML
     private Label name;
     @FXML
@@ -51,9 +47,7 @@ public class ProjectController implements Initializable {
     private TextField CreatePrice;
     @FXML
     private Button saveChangesButton;
-
-    private HBox hBox;
-
+    protected HBox hBox = new HBox();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
     @FXML
