@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Project {
-
     private int idProject = 1;
     private String name;
+    private String owner;
     private String clientName;
     private float pricePerHour;
     private List<Task> tasks;
 
     private static int numProjects = 0;
 
-    public Project(String name, String clientName, float pricePerHour) {
+    public Project(String name, String clientName, float pricePerHour, String owner) {
+        this.owner = owner;
         this.idProject = ++numProjects;
         this.name = name;
         this.clientName = clientName;
@@ -67,5 +68,12 @@ public class Project {
 
     public void setNumProjects(int numProjects) {
         this.numProjects = numProjects;
+    }
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 }

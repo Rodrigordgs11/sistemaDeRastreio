@@ -91,6 +91,7 @@ public class ProjectItemController extends ProjectController{
         TaskNumber.setText(String.valueOf(p.getTasks().size()));
         TimeSpent.setText(String.valueOf(getTotalDuration(p)));
         idProject.setText(String.valueOf(p.getIdProject()));
+        Owner.setText(p.getOwner());
     }
 
     public long getTotalDuration(Project p){
