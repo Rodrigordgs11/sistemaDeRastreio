@@ -68,10 +68,24 @@ public class ProjectController {
         stage.show();
         stage.setTitle("List Project");
     }
+    @FXML
+    void handleTask(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskEditView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("List Tasks");
+    }
 
     @FXML
-    void CreateProject(ActionEvent event) {
-
+    public void CreateProject(ActionEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("createProject.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create Project");
     }
 
 
@@ -89,6 +103,8 @@ public class ProjectController {
     void ListAllShared(ActionEvent event) {
 
     }
+    @FXML
+    public void SaveChanges(ActionEvent event){}
 
 
 
