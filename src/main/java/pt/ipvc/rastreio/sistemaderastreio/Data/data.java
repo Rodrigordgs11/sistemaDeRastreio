@@ -39,6 +39,17 @@ public class data {
         }
     }
 
+    public static void saveProjects(){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv"))){
+            for (Project p: projects) {
+                bw.write(p.getName() + "," + p.getClientName() + "," + p.getPricePerHour()+ "," + p.getTasks());
+                bw.newLine();
+            }
+        }catch (IOException e){
+            System.out.println("Error writting file"+e.getMessage());
+        }
+    }
+
     public static void loadTasks() throws ParseException{
         try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv"))){
             String task = br.readLine();

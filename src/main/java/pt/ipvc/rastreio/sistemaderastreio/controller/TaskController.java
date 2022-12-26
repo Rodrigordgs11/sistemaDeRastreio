@@ -71,6 +71,12 @@ public class TaskController implements Initializable {
     @FXML
     private HBox hBox;
 
+    @FXML
+    private TextField EndTimeSearch;
+
+    @FXML
+    private TextField StarteTimeSearch;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //returnUserLogged();
@@ -80,6 +86,16 @@ public class TaskController implements Initializable {
     public void returnUserLogged() {
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+
+    @FXML
+    void handleImage(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("My Settings");
     }
 
     public void handleDashboard(MouseEvent event) throws IOException {
@@ -100,6 +116,16 @@ public class TaskController implements Initializable {
         stage.setScene(scene);
         stage.show();
         stage.setTitle("List Tasks");
+    }
+
+    @FXML
+    public void handleProject(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("List Project");
     }
 
     public void ListTasks() {
@@ -235,16 +261,7 @@ public class TaskController implements Initializable {
         }
     }
 
-    @FXML
-    void handleImage(MouseEvent event) {
 
-    }
-
-    @FXML
-    private TextField EndTimeSearch;
-
-    @FXML
-    private TextField StarteTimeSearch;
 
     @FXML
     void showText(ActionEvent event) throws ParseException, isEmptyException {
@@ -285,10 +302,10 @@ public class TaskController implements Initializable {
     public void correctDuration(){
         for (Task t: tasks){
             if (t.getState() == TaskState.EMCURSO){
-                t.setDuration((new Date().getTime() - t.getStartTime().getTime()) / (1000*60));
+                t.setDuration((new Date().getTime() - t.getStartTime().getTime()) / (1000*60^2));
             }
              if (t.getState() == TaskState.FINALIZADO) {
-                 t.setDuration((t.getEndTime().getTime() - t.getStartTime().getTime()) / (1000*60));
+                 t.setDuration((t.getEndTime().getTime() - t.getStartTime().getTime()) / (1000*60^2));
              }
         }
     }
