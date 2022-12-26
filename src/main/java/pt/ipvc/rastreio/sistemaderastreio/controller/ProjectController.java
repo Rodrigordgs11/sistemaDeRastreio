@@ -3,6 +3,7 @@ package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,14 +24,16 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyE
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
 
 import java.io.IOException;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
-public class ProjectController {
+public class ProjectController implements Initializable {
 
     @FXML
     private Parent parent;
@@ -63,6 +66,9 @@ public class ProjectController {
     private Button saveChangesButton;
 
     private HBox hBox;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 
 
     @FXML
@@ -148,17 +154,35 @@ public class ProjectController {
 
     @FXML
     void ListAllMine(ActionEvent event) {
-
+        for (Project p : projects) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
+            try {
+                hBox = fxmlLoader.load();
+                ProjectItemController projectItemController = fxmlLoader.getController();
+                projectItemController.setData(p);
+                container.getChildren().add(hBox); //give id to hbox
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @FXML
     void ListAllShared(ActionEvent event) {
-
+        for (Project p : projects) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
+            try {
+                hBox = fxmlLoader.load();
+                ProjectItemController projectItemController = fxmlLoader.getController();
+                projectItemController.setData(p);
+                container.getChildren().add(hBox); //give id to hbox
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
-
-
-
-
 
     @FXML
     void handleImage(MouseEvent event) {

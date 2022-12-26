@@ -39,6 +39,16 @@ public class ProjectItemController extends ProjectController{
         Name.setText(p.getName());
         ClientName.setText(p.getClientName());
         Price.setText(String.valueOf(p.getPricePerHour()));
+        TaskNumber.setText(String.valueOf(p.getTasks().size()));
+        TimeSpent.setText(String.valueOf(getTotalDuration(p)));
+    }
+
+    public long getTotalDuration(Project p){
+        long total = 0;
+        for (int i = 0; i < p.getTasks().size(); i++){
+            total += p.getTasks().get(i).getDuration();
+        }
+        return total;
     }
 
     @FXML
