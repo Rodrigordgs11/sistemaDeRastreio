@@ -42,7 +42,7 @@ public class data {
     public static void saveProjects(){
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv"))){
             for (Project p: projects) {
-                bw.write(p.getName() + "," + p.getClientName() + "," + p.getPricePerHour()+ "," + p.getTasks());
+                bw.write(p.getName() + "," + p.getClientName() + "," + p.getPricePerHour());
                 bw.newLine();
             }
         }catch (IOException e){

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -58,6 +59,9 @@ public class ProjectController {
     @FXML
     private TextField CreatePrice;
 
+    @FXML
+    private Button saveChangesButton;
+
 
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {
@@ -104,6 +108,7 @@ public class ProjectController {
             Validator();
             Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.valueOf(CreatePrice.getText()));
             projects.add(project);
+            saveChangesButton.setText("Saved!");
         }catch (NumberFormatException e){
             Alerts.showAlert("Price Per Hour", "Float field with letters",e.getMessage(), Alert.AlertType.ERROR);
         }catch(isEmptyException e) {
