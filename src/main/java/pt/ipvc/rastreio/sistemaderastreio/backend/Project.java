@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Project {
 
-    private int idProject = 0;
+    private int idProject = 1;
     private String name;
     private String clientName;
     private float pricePerHour;
     private List<Task> tasks;
 
-    private int numProjects = 0;
+    private static int numProjects = 0;
 
     public Project(String name, String clientName, float pricePerHour) {
         this.idProject = ++numProjects;

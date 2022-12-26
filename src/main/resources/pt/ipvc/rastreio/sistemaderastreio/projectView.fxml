@@ -91,7 +91,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                        <HBox alignment="CENTER" onMouseClicked="#handleTask" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                                  <image>

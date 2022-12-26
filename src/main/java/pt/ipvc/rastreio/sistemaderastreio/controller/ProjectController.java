@@ -126,8 +126,6 @@ public class ProjectController implements Initializable {
     }
 
     public void Validator() throws isEmptyException{
-        boolean exist = false;
-        boolean existPhone = false;
         if(CreateName.getText().isEmpty() || CreateClientName.getText().isEmpty() || CreatePrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
     }
 
