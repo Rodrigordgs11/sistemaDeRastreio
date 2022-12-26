@@ -7,10 +7,7 @@ import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 import static pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;
@@ -57,7 +54,7 @@ public class data {
                 String[] fields = project.split(",");
                 String name = fields[0];
                 String clientName = fields[1];
-                float price = Float.valueOf(fields[2]);
+                float price = Float.parseFloat(fields[2]);
                 projects.add(new Project(name,clientName,price));
                 project = br.readLine();
             }

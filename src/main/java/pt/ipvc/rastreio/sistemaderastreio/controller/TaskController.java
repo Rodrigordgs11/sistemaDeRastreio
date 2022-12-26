@@ -302,10 +302,10 @@ public class TaskController implements Initializable {
     public void correctDuration(){
         for (Task t: tasks){
             if (t.getState() == TaskState.EMCURSO){
-                t.setDuration((new Date().getTime() - t.getStartTime().getTime()) / (1000*60^2));
+                t.setDuration((new Date().getTime() - t.getStartTime().getTime()) / (1000*60)/60);
             }
              if (t.getState() == TaskState.FINALIZADO) {
-                 t.setDuration((t.getEndTime().getTime() - t.getStartTime().getTime()) / (1000*60^2));
+                 t.setDuration((t.getEndTime().getTime() - t.getStartTime().getTime()) / (1000*60^2)/60);
              }
         }
     }
