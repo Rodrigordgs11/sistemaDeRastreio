@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="775.0" prefWidth="1296.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.ProjectController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.0" prefWidth="1303.0" styleClass="gradient-background" stylesheets="@Styles/dashboard.css">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1315.0" styleClass="gradient-background" stylesheets="@Styles/dashboard.css">
          <top>
             <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
@@ -157,30 +159,48 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="983.0">
                      <children>
-                        <Pane prefHeight="73.0" prefWidth="591.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <Button layoutX="444.0" layoutY="31.0" mnemonicParsing="false" onAction="#ListAllShared" prefHeight="31.0" prefWidth="122.0" styleClass="button_" stylesheets="@Styles/user.css" text="List All Shared" textFill="WHITE">
-                                 <font>
-                                    <Font name="Agency FB Bold" size="15.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="307.0" layoutY="31.0" mnemonicParsing="false" onAction="#ListAllMine" prefHeight="31.0" prefWidth="122.0" styleClass="button_" stylesheets="@Styles/user.css" text="List All Mine" textFill="WHITE">
-                                 <font>
-                                    <Font name="Agency FB Bold" size="15.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="175.0" layoutY="31.0" mnemonicParsing="false" onAction="#ListAll" prefHeight="31.0" prefWidth="122.0" styleClass="button_" stylesheets="@Styles/user.css" text="List All " textFill="WHITE">
-                                 <font>
-                                    <Font name="Agency FB Bold" size="15.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </Pane>
-                        <Button mnemonicParsing="false" onAction="#CreateProject" prefHeight="32.0" prefWidth="120.0" styleClass="button_" stylesheets="@Styles/user.css" text="Create Project" textFill="WHITE">
+                        <Label fx:id="ProjectName" prefHeight="42.0" prefWidth="491.0" text="Project" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="28.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Pane prefHeight="92.0" prefWidth="276.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#AddTask" prefHeight="32.0" prefWidth="120.0" styleClass="button_" stylesheets="@Styles/user.css" text="Add Task" textFill="WHITE">
                            <font>
                               <Font name="Agency FB Bold" size="15.0" />
                            </font>
                         </Button>
+                        <Pane prefHeight="92.0" prefWidth="67.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="984.0">
+                     <children>
+                        <Label prefHeight="55.0" prefWidth="106.0" text="Tasks" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="28.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Pane prefHeight="58.0" prefWidth="302.0" />
+                        <TextField fx:id="StarteTimeSearch" prefHeight="26.0" prefWidth="223.0" promptText="Start time" stylesheets="@Styles/login.css" visible="false">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="input_register" />
+                           </styleClass>
+                        </TextField>
+                        <Pane prefHeight="58.0" prefWidth="62.0" styleClass="transparent" stylesheets="@Styles/login.css" />
+                        <TextField fx:id="EndTimeSearch" prefHeight="26.0" prefWidth="223.0" promptText="End Time" stylesheets="@Styles/login.css" visible="false">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="input_register" />
+                           </styleClass>
+                        </TextField>
+                        <Pane prefHeight="58.0" prefWidth="3.0" styleClass="transparent" stylesheets="@Styles/login.css" />
                         <Button mnemonicParsing="false" styleClass="transparent" stylesheets="@Styles/user.css">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -189,20 +209,9 @@
                                  </image>
                               </ImageView>
                            </graphic>
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
-                  <Label prefHeight="55.0" prefWidth="184.0" text="Projects" textFill="WHITE">
-                     <font>
-                        <Font name="Agency FB Bold" size="28.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </Label>
                   <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
                         <VBox>
@@ -212,9 +221,9 @@
                            <children>
                               <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0" spacing="10.0" styleClass="light-gray-background" stylesheets="@Styles/user.css">
                                  <children>
-                                    <Label prefHeight="22.0" prefWidth="109.0" text="Name" textFill="WHITE">
+                                    <Label prefHeight="22.0" prefWidth="110.0" text="Description" textFill="WHITE">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                        <padding>
                                           <Insets left="10.0" />
@@ -223,44 +232,46 @@
                                           <Insets right="14.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="89.0" text="ClientName" textFill="WHITE">
+                                    <Label prefHeight="22.0" prefWidth="89.0" text="StartTime" textFill="WHITE">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="14.0" right="14.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="95.0" text="Owner" textFill="WHITE">
+                                    <Label prefHeight="22.0" prefWidth="95.0" text="EndTime" textFill="WHITE">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets left="10.0" right="14.0" />
+                                          <Insets left="14.0" right="14.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="103.0" text="TaskNumber" textFill="WHITE">
+                                    <Label prefHeight="22.0" prefWidth="78.0" text="State" textFill="WHITE">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="408.0" layoutY="27.0" prefHeight="22.0" prefWidth="101.0" text="Duration(hour)" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="22.0" prefWidth="83.0" text="Project" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets right="14.0" />
+                                          <Insets left="14.0" right="14.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <Label prefHeight="22.0" prefWidth="115.0" text="Price Per Hour" textFill="WHITE">
+                                    <Label prefHeight="22.0" prefWidth="146.0" text="Price Per Hour" textFill="WHITE">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets right="14.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label prefHeight="22.0" prefWidth="110.0" text="TimeSpent" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets right="14.0" />
+                                          <Insets left="14.0" right="14.0" />
                                        </HBox.margin>
                                     </Label>
                                     <Label prefHeight="22.0" prefWidth="109.0" text="Actions" textFill="WHITE">
@@ -268,7 +279,7 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets left="14.0" right="14.0" />
+                                          <Insets right="14.0" />
                                        </HBox.margin>
                                     </Label>
                                  </children>

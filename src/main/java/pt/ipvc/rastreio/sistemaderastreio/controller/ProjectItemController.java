@@ -3,6 +3,7 @@ package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,11 +21,13 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
-public class ProjectItemController extends ProjectController{
+public class ProjectItemController extends ProjectController implements Initializable {
 
     private static int id;
 
@@ -74,7 +77,6 @@ public class ProjectItemController extends ProjectController{
 
     @FXML
     private Label name;
-
     @FXML
     private Label userName;
 
@@ -82,8 +84,15 @@ public class ProjectItemController extends ProjectController{
         return id;
     }
 
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        for (Project p: projects)
+            if(p.getIdProject() == getId())
+                setNameProject(p);
+    }
     public void invisible(){idProject.setVisible(false);}
-
+    public void setNameProject(Project p){
+        ProjectName.setText("Project " + p.getName());
+    }
     public void setData(Project p){
         Name.setText(p.getName());
         ClientName.setText(p.getClientName());
@@ -93,7 +102,6 @@ public class ProjectItemController extends ProjectController{
         idProject.setText(String.valueOf(p.getIdProject()));
         Owner.setText(p.getOwner());
     }
-
     public long getTotalDuration(Project p){
         long total = 0;
         for (int i = 0; i < p.getTasks().size(); i++){
@@ -101,12 +109,39 @@ public class ProjectItemController extends ProjectController{
         }
         return total;
     }
-
     @FXML
-    void ListTasks(ActionEvent event) {
-
+    void ListTasks(ActionEvent event) throws IOException {
+        projectItem();
+        for (Project p: projects){
+            if(Integer.parseInt(idProject.getText()) == p.getIdProject()){
+                id = p.getIdProject();
+                System.out.println(getId());
+            }
+        }
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectTasks.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Menu Inicial");
+        for (Project p: projects) {
+            for (Task t : p.getTasks()) {
+                if (t.getidUser() == Objects.requireNonNull(userLogged()).getId()) {
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
+                    try {
+                        hBox = fxmlLoader.load();
+                        TaskItemController taskItemController = fxmlLoader.getController();
+                        taskItemController.setData(t);
+                        setNameProject(p);
+                        container.getChildren().add(hBox);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
     }
-
     @FXML
     void edit(ActionEvent event) throws IOException {
         projectItem();
@@ -172,5 +207,24 @@ public class ProjectItemController extends ProjectController{
     @FXML
     void handleTask(MouseEvent event) {
 
+    }
+
+    @FXML
+    void AddTask(ActionEvent event) {
+        container.getChildren().clear();
+        for (Task t : tasks) {
+            if(t.getIdProject() == 0){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(App.class.getResource("taskItemAddProject.fxml"));
+                    try {
+                        hBox = fxmlLoader.load();
+                        TaskItemController taskItemController = fxmlLoader.getController();
+                        taskItemController.setData(t);
+                        container.getChildren().add(hBox); //give id to hbox
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+            }
+        }
     }
 }

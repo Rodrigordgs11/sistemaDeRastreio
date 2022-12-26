@@ -1,5 +1,4 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,10 +18,7 @@ import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
-import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.alreadyExistException;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
-import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
@@ -30,11 +26,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
-
 public class ProjectController implements Initializable {
-
     @FXML
     private Parent parent;
     @FXML
@@ -43,25 +36,19 @@ public class ProjectController implements Initializable {
     private Stage stage;
     @FXML
     private HBox Utilizadores;
-
     @FXML
     private VBox container = new VBox();
 
     @FXML
     private Label name;
-
     @FXML
     private Label userName;
-
     @FXML
     private TextField CreateClientName;
-
     @FXML
     private TextField CreateName;
-
     @FXML
     private TextField CreatePrice;
-
     @FXML
     private Button saveChangesButton;
 
@@ -69,8 +56,6 @@ public class ProjectController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
-
-
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -80,7 +65,6 @@ public class ProjectController implements Initializable {
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     @FXML
     public void handleProject(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectView.fxml")));
@@ -99,7 +83,6 @@ public class ProjectController implements Initializable {
         stage.show();
         stage.setTitle("List Tasks");
     }
-
     @FXML
     public void CreateProject(ActionEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("createProject.fxml")));
@@ -109,12 +92,11 @@ public class ProjectController implements Initializable {
         stage.show();
         stage.setTitle("Create Project");
     }
-
     @FXML
     public void SaveChanges(ActionEvent event){
         try {
             Validator();
-            Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.valueOf(CreatePrice.getText()), Objects.requireNonNull(userLogged()).getUsername());
+            Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.parseFloat(CreatePrice.getText()), Objects.requireNonNull(userLogged()).getUsername());
             projects.add(project);
             saveChangesButton.setText("Saved!");
         }catch (NumberFormatException e){
@@ -124,18 +106,15 @@ public class ProjectController implements Initializable {
         }
         data.saveProjects();
     }
-
     public void Validator() throws isEmptyException{
         if(CreateName.getText().isEmpty() || CreateClientName.getText().isEmpty() || CreatePrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
     }
-
-
     @FXML
     void ListAll(ActionEvent event) {
         projectItem();
     }
-
     public void projectItem(){
+        container.getChildren().clear();
         for (Project p : projects) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
@@ -143,13 +122,12 @@ public class ProjectController implements Initializable {
                 hBox = fxmlLoader.load();
                 ProjectItemController projectItemController = fxmlLoader.getController();
                 projectItemController.setData(p);
-                container.getChildren().add(hBox); //give id to hbox
+                container.getChildren().add(hBox);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
     }
-
     @FXML
     void ListAllMine(ActionEvent event) {
         for (Project p : projects) {
@@ -165,7 +143,6 @@ public class ProjectController implements Initializable {
             }
         }
     }
-
     @FXML
     void ListAllShared(ActionEvent event) {
         for (Project p : projects) {
@@ -181,12 +158,8 @@ public class ProjectController implements Initializable {
             }
         }
     }
-
     @FXML
     void handleImage(MouseEvent event) {
 
     }
-
 }
-
-
