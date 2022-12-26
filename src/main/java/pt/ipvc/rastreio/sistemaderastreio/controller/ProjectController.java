@@ -114,7 +114,7 @@ public class ProjectController implements Initializable {
     public void SaveChanges(ActionEvent event){
         try {
             Validator();
-            Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.valueOf(CreatePrice.getText()));
+            Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.valueOf(CreatePrice.getText()), Objects.requireNonNull(userLogged()).getUsername());
             projects.add(project);
             saveChangesButton.setText("Saved!");
         }catch (NumberFormatException e){
