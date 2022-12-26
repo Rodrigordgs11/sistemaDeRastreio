@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
+import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 
-public class ProjectItemController {
+public class ProjectItemController extends ProjectController{
     @FXML
     private Label ClientName;
 
@@ -32,6 +34,12 @@ public class ProjectItemController {
 
     @FXML
     private Button remove;
+
+    public void setData(Project p){
+        Name.setText(p.getName());
+        ClientName.setText(p.getClientName());
+        Price.setText(String.valueOf(p.getPricePerHour()));
+    }
 
     @FXML
     void ListTasks(ActionEvent event) {

@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="983.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt/ipvc/rastreio/sistemaderastreio/controller/ProjectItemController.java">
+<HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="983.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController">
    <children>
       <Label fx:id="Name" prefHeight="22.0" prefWidth="133.0" text="Name">
          <padding>

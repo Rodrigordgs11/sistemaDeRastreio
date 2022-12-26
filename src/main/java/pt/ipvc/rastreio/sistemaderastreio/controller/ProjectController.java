@@ -62,6 +62,8 @@ public class ProjectController {
     @FXML
     private Button saveChangesButton;
 
+    private HBox hBox;
+
 
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {
@@ -126,7 +128,22 @@ public class ProjectController {
 
     @FXML
     void ListAll(ActionEvent event) {
+        projectItem();
+    }
 
+    public void projectItem(){
+        for (Project p : projects) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
+            try {
+                hBox = fxmlLoader.load();
+                ProjectItemController projectItemController = fxmlLoader.getController();
+                projectItemController.setData(p);
+                container.getChildren().add(hBox); //give id to hbox
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @FXML
