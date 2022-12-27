@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
+import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 
 import java.io.IOException;
@@ -84,6 +85,16 @@ public class DashboardController implements Initializable {
         stage.setTitle("List Project");
     }
 
+    @FXML
+    public void handleInvite(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("invitesView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create and view invites");
+    }
+
     public void switchUser(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("userView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -127,5 +138,15 @@ public class DashboardController implements Initializable {
             Utilizadores.setVisible(true);
         else
             Utilizadores.setVisible(false);
+    }
+    @FXML
+    void logout(MouseEvent event) throws IOException {
+        UserController.setIdLog(0);
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("appView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create task");
     }
 }

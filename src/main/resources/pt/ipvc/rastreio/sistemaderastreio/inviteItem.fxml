@@ -10,7 +10,7 @@
 
 <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="983.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.InviteItemController">
    <children>
-      <Label fx:id="NameUser" prefHeight="22.0" prefWidth="196.0" text="Sender">
+      <Label fx:id="Sender" prefHeight="22.0" prefWidth="196.0" text="Sender">
          <font>
             <Font size="15.0" />
          </font>
@@ -18,28 +18,33 @@
             <Insets left="10.0" />
          </padding>
       </Label>
-      <Label fx:id="UsernameUser" prefHeight="22.0" prefWidth="183.0" text="Receiver">
+      <Label fx:id="receiver" prefHeight="22.0" prefWidth="155.0" text="Receiver">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="NumberPhoneUser" prefHeight="22.0" prefWidth="156.0" text="Project">
+      <Label fx:id="Project" prefHeight="22.0" prefWidth="147.0" text="Project">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="TypeUserUser" prefHeight="22.0" prefWidth="169.0" text="Description">
+      <Label fx:id="description" prefHeight="22.0" prefWidth="169.0" text="Description">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="204.0" spacing="15.0">
+      <Label fx:id="State" prefHeight="22.0" prefWidth="151.0" text="State">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="204.0" spacing="15.0">
          <children>
             <Button mnemonicParsing="false" onAction="#Accept" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #E2BA56;" styleClass="button_" stylesheets="@Styles/user.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/edit.png" />
+                        <Image url="@images/accept.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -48,7 +53,7 @@
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/remove.png" />
+                        <Image url="@images/recuse.png" />
                      </image>
                   </ImageView>
                </graphic>

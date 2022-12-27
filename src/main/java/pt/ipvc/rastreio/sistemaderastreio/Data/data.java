@@ -1,17 +1,13 @@
 package pt.ipvc.rastreio.sistemaderastreio.Data;
 
-
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
-
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
 import static pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;
-
 public class data {
     static String userDirectory = System.getProperty("user.dir");
     public static void saveUsers(){
@@ -24,7 +20,6 @@ public class data {
             System.out.println("Error writting file"+e.getMessage());
         }
     }
-
     public static void saveTasks(){
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv"))){
             for (Task t: tasks) {
@@ -88,7 +83,6 @@ public class data {
             System.out.println("Error reading file" + e.getMessage());
         }
     }
-
     public static void loadTasks() throws ParseException{
         try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv"))){
             String task = br.readLine();
@@ -109,7 +103,6 @@ public class data {
             throw new RuntimeException(e);
         }
     }
-
     public static void loadUsers(){
         try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv"))){
             String user = br.readLine();
@@ -133,7 +126,6 @@ public class data {
             System.out.println("Error reading file"+ e.getMessage());
         }
     }
-
     public static List<user> users = new ArrayList<>();
     public static List<Task> tasks = new ArrayList<>();
     public static List<Project> projects = new ArrayList<>();

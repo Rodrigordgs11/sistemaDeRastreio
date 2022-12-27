@@ -61,6 +61,11 @@ public class UserController implements Initializable {
     public static int getIdLog() {
         return idLog;
     }
+
+    public static void setIdLog(int idLog) {
+        UserController.idLog = idLog;
+    }
+
     public void switchScene(ActionEvent event) throws IOException{
         buttonLoginAction();
         if(nExist){

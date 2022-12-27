@@ -104,7 +104,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                  <HBox alignment="CENTER" onMouseClicked="#handleInvite" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
@@ -140,6 +140,20 @@
                            </image>
                         </ImageView>
                         <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Users" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="Utilizadores1" alignment="CENTER" onMouseClicked="#logout" prefHeight="60.0" prefWidth="200.0" spacing="20.0" stylesheets="@Styles/dashboard.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                           <image>
+                              <Image url="@images/logout.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Logout" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
