@@ -198,6 +198,8 @@ public class TaskController implements Initializable {
 
     @FXML
     public void ListAll(ActionEvent event) {
+        StarteTimeSearch.setVisible(false);
+        EndTimeSearch.setVisible(false);
         taskItem();
     }
 
@@ -206,8 +208,6 @@ public class TaskController implements Initializable {
         endTask();
         correctDuration();
         container.getChildren().clear();
-        StarteTimeSearch.setVisible(false);
-        EndTimeSearch.setVisible(false);
         for (Task t : tasks) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
@@ -215,6 +215,7 @@ public class TaskController implements Initializable {
                 hBox = fxmlLoader.load();
                 TaskItemController taskItemController = fxmlLoader.getController();
                 taskItemController.setData(t);
+                taskItemController.invisible();
                 container.getChildren().add(hBox); //give id to hbox
             } catch (IOException e) {
                 throw new RuntimeException(e);

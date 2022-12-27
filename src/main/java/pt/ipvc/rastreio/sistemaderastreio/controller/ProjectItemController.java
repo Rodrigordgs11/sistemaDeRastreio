@@ -82,6 +82,9 @@ public class ProjectItemController extends ProjectController implements Initiali
     @FXML
     private Label ProjectName = new Label();
 
+    @FXML
+    private Button editButton;
+
     public int getId() {
         return id;
     }
@@ -93,7 +96,16 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
         }
     }
-    public void invisible(){idProject.setVisible(false);}
+    public void invisible(){idProject.setVisible(false);
+        for (Project p: projects){
+            if (Integer.parseInt(idProject.getText()) == p.getIdProject()) {
+                if (!p.getOwner().equals(userLogged().getUsername())) {
+                    remove.setVisible(false);
+                    editButton.setVisible(false);
+                }
+            }
+        }
+    }
     public void setNameProject(Project p){
         ProjectName.setText("Project " + p.getName());
     }
@@ -104,7 +116,11 @@ public class ProjectItemController extends ProjectController implements Initiali
         TaskNumber.setText(String.valueOf(p.getTasks().size()));
         TimeSpent.setText(String.valueOf(getTotalDuration(p)));
         idProject.setText(String.valueOf(p.getIdProject()));
-        Owner.setText(p.getOwner());
+        if (p.getOwner().equals(userLogged().getUsername())) {
+            Owner.setText("Me");
+        } else{
+            Owner.setText(p.getOwner());
+        }
         invisible();
     }
     public long getTotalDuration(Project p){

@@ -65,6 +65,9 @@ public class TaskItemController extends TaskController implements Initializable{
     @FXML
     private Button terminateTaskButton;
 
+    @FXML
+    private Button addButton;
+
     public int getId() {
         return id;
     }
@@ -72,15 +75,11 @@ public class TaskItemController extends TaskController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     public void invisible(){
-        idTask.setVisible(false);
         for (Task t: tasks) {
             if (Integer.parseInt(idTask.getText()) == t.getIdTask()) {
                 if (t.getProjectName() == null) {
                     Project.setVisible(false);
                     Price.setVisible(false);
-                }
-                if (!(t.getState() == TaskState.FINALIZADO)) {
-                    EndTime.setVisible(false);
                 }
                 if (!t.getEndTime().equals(t.getStartTime())){
                     EndTime.setVisible(true);
@@ -104,8 +103,16 @@ public class TaskItemController extends TaskController implements Initializable{
         EndTime.setText(String.valueOf(task.getEndTime()));
         State.setText(String.valueOf(task.getState()));
         idTask.setText(String.valueOf(task.getIdTask()));
-        invisible();
+        idTask.setVisible(false);
+        for (Task t: tasks) {
+            if (Integer.parseInt(idTask.getText()) == t.getIdTask()) {
+                if (!(t.getState() == TaskState.FINALIZADO)) {
+                    EndTime.setVisible(false);
+                }
+            }
+        }
     }
+
     @FXML
     public void edit(ActionEvent event) throws IOException {
         taskItem();

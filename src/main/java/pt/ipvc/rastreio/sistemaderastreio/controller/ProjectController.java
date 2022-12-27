@@ -126,15 +126,17 @@ public class ProjectController implements Initializable {
     void ListAllMine(ActionEvent event) {
         container.getChildren().clear();
         for (Project p : projects) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
-            try {
-                hBox = fxmlLoader.load();
-                ProjectItemController projectItemController = fxmlLoader.getController();
-                projectItemController.setData(p);
-                container.getChildren().add(hBox); //give id to hbox
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            if (p.getOwner().equals(userLogged().getUsername())) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
+                try {
+                    hBox = fxmlLoader.load();
+                    ProjectItemController projectItemController = fxmlLoader.getController();
+                    projectItemController.setData(p);
+                    container.getChildren().add(hBox); //give id to hbox
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
@@ -142,15 +144,17 @@ public class ProjectController implements Initializable {
     void ListAllShared(ActionEvent event) {
         container.getChildren().clear();
         for (Project p : projects) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
-            try {
-                hBox = fxmlLoader.load();
-                ProjectItemController projectItemController = fxmlLoader.getController();
-                projectItemController.setData(p);
-                container.getChildren().add(hBox); //give id to hbox
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            if (!p.getOwner().equals(userLogged().getUsername())) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
+                try {
+                    hBox = fxmlLoader.load();
+                    ProjectItemController projectItemController = fxmlLoader.getController();
+                    projectItemController.setData(p);
+                    container.getChildren().add(hBox); //give id to hbox
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
