@@ -195,4 +195,9 @@ public class TaskItemController extends TaskController implements Initializable{
     public void validatorEdit() throws isEmptyException{
         if(EditDescription.getText().isEmpty()) throw new isEmptyException("The field is empty");
     }
+
+    @FXML
+    void addTaskAction(ActionEvent event) {
+
+    }
 }

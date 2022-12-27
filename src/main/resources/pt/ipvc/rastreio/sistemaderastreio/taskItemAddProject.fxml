@@ -52,7 +52,7 @@
          </font></Label>
       <HBox alignment="CENTER" prefHeight="70.0" prefWidth="177.0" spacing="15.0">
          <children>
-            <Button fx:id="termination" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #42bf2f;" styleClass="button_" stylesheets="@Styles/user.css" textFill="#42bf2f">
+            <Button fx:id="termination" mnemonicParsing="false" onAction="#addTaskAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #42bf2f;" styleClass="button_" stylesheets="@Styles/user.css" textFill="#42bf2f">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
