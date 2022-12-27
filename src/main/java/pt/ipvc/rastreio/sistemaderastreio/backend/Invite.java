@@ -1,16 +1,16 @@
 package pt.ipvc.rastreio.sistemaderastreio.backend;
 public class Invite {
     private int id;
-    private int numInvite;
-    private int idSender;
-    private int idReceiver;
+    private static int numInvite = 0;
+    private String Sender;
+    private String Receiver;
     private String description;
     private int idProject;
     private InviteState inviteState;
     public Invite(String sender, String receiver, String description, int idProject, InviteState inviteState) {
         this.id = ++numInvite;
-        this.idSender = sender;
-        this.idReceiver = receiver;
+        this.Sender = sender;
+        this.Receiver = receiver;
         this.description = description;
         this.idProject = idProject;
         this.inviteState = inviteState;

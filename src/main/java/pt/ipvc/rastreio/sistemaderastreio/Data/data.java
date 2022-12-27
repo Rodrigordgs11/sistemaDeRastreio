@@ -55,10 +55,10 @@ public class data {
             String invite = br.readLine();
             while (invite != null){
                 String[] fields = invite.split(",");
-                int sender = Integer.parseInt(fields[0]);
-                int receiver = Integer.parseInt(fields[1]);
-                int idProject = Integer.parseInt(fields[2]);
-                String description = fields[3];
+                String sender = fields[0];
+                String receiver = fields[1];
+                String description = fields[2];
+                int idProject = Integer.parseInt(fields[3]);
                 InviteState inviteState = InviteState.valueOf(fields[4]);
                 invites.add(new Invite(sender, receiver, description, idProject, inviteState));
                 invite = br.readLine();
