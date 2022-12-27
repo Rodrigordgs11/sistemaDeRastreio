@@ -85,7 +85,7 @@ public class ProjectItemController extends ProjectController implements Initiali
     @FXML
     private Button editButton;
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
@@ -145,24 +145,33 @@ public class ProjectItemController extends ProjectController implements Initiali
         stage.setScene(scene);
         stage.show();
         stage.setTitle("Menu Inicial");
-        for (Project p: projects) {
-            for (Task t : p.getTasks()) {
-                if (t.getidUser() == Objects.requireNonNull(userLogged()).getId()) {
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
-                    try {
-                        hBox = fxmlLoader.load();
-                        TaskItemController taskItemController = fxmlLoader.getController();
-                        taskItemController.setData(t);
-                        setNameProject(p);
-                        container.getChildren().add(hBox);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+    }
+
+    public void projectTaskList () {
+        for (Project p : projects) {
+            System.out.println(p.getTasks());
+            if (p.getIdProject() == getId()) {
+                for (Task t : tasks) {
+                    System.out.println(getId());
+                    if (t.getIdProject() == getId()) {
+                        FXMLLoader fxmlLoader = new FXMLLoader();
+                        fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
+                        try {
+                            hBox = fxmlLoader.load();
+                            TaskItemController taskItemController = fxmlLoader.getController();
+                            taskItemController.setData(t);
+                            taskItemController.invisible();
+                            setNameProject(p);
+                            container.getChildren().add(hBox);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
             }
         }
     }
+
     @FXML
     void edit(ActionEvent event) throws IOException {
         projectItem();
@@ -248,5 +257,14 @@ public class ProjectItemController extends ProjectController implements Initiali
         }
     }
 
+    public void addTaskToProject(){
+        for (Project p : projects){
+            for (Task t: tasks){
+                if (t.getIdProject() == p.getIdProject()){
+                    p.getTasks().add(t);
+                }
+            }
 
+        }
+    }
 }

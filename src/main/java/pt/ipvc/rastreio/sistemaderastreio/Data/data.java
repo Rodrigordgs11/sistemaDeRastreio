@@ -35,7 +35,6 @@ public class data {
             System.out.println("Error writting file"+e.getMessage());
         }
     }
-
     public static void saveProjects(){
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv"))){
             for (Project p: projects) {
@@ -46,7 +45,33 @@ public class data {
             System.out.println("Error writting file"+e.getMessage());
         }
     }
-
+    public static void saveInvites(){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/invites.csv"))){
+            for (Invite i: invites) {
+                bw.write(i.getSender() + "," + i.getReceiver() + "," + i.getDescription() + "," + i.getIdProject() + "," + i.getInviteState());
+                bw.newLine();
+            }
+        }catch (IOException e){
+            System.out.println("Error writting file"+e.getMessage());
+        }
+    }
+    public static void loadInvites(){
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/invites.csv"))){
+            String invite = br.readLine();
+            while (invite != null){
+                String[] fields = invite.split(",");
+                int sender = Integer.parseInt(fields[0]);
+                int receiver = Integer.parseInt(fields[1]);
+                int idProject = Integer.parseInt(fields[2]);
+                String description = fields[3];
+                InviteState inviteState = InviteState.valueOf(fields[4]);
+                invites.add(new Invite(sender, receiver, description, idProject, inviteState));
+                invite = br.readLine();
+            }
+        }catch (IOException e) {
+            System.out.println("Error reading file" + e.getMessage());
+        }
+    }
     public static void loadProjects(){
         try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv"))){
             String project = br.readLine();

@@ -215,6 +215,16 @@ public class TaskItemController extends TaskController implements Initializable{
 
     @FXML
     void addTaskAction(ActionEvent event) {
-
+        for (Task t: tasks){
+            if(Integer.parseInt(idTask.getText()) == t.getIdTask()){
+                id = t.getIdTask();
+                System.out.println(ProjectItemController.getId());
+                t.setIdProject(ProjectItemController.getId());
+            }
+        }
+        for(Task tk: tasks){
+            System.out.println(tk);
+        }
+        saveTasks();
     }
 }

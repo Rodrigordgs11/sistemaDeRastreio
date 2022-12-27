@@ -19,6 +19,7 @@ public class App extends Application {
             loadUsers();
             loadTasks();
             loadProjects();
+            loadInvites();
             Parent parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("appView.fxml")));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);

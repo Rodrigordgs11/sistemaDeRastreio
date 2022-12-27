@@ -14,7 +14,7 @@ public class Task {
     private String projectName;
     private float priceProject;
 
-    private int idProject = 0;
+    private int idProject;
 
     private long duration;
 
@@ -124,14 +124,19 @@ public class Task {
         this.idProject = idProject;
     }
 
-
     @Override
     public String toString() {
         return "Task{" +
-                "description='" + description + '\'' +
+                "idTask=" + idTask +
+                ", idUser=" + idUser +
+                ", description='" + description + '\'' +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 ", state=" + state +
+                ", projectName='" + projectName + '\'' +
+                ", priceProject=" + priceProject +
+                ", idProject=" + idProject +
+                ", duration=" + duration +
                 '}';
     }
 }
