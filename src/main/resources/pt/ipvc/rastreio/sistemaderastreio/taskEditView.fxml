@@ -237,77 +237,74 @@
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
                            <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0" spacing="10.0" styleClass="light-gray-background" stylesheets="@Styles/user.css">
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="110.0" text="Description" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets right="14.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="22.0" prefWidth="89.0" text="StartTime" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="14.0" right="14.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="22.0" prefWidth="95.0" text="EndTime" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="14.0" right="14.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="22.0" prefWidth="78.0" text="State" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="408.0" layoutY="27.0" prefHeight="22.0" prefWidth="101.0" text="Duration(hour)" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="22.0" prefWidth="83.0" text="Project" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="14.0" right="14.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="22.0" prefWidth="146.0" text="Price Per Hour" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="14.0" right="14.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label prefHeight="22.0" prefWidth="109.0" text="Actions" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="14.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
                               <ScrollPane prefHeight="526.0" prefWidth="983.0" styleClass="container" stylesheets="@Styles/dashboard.css">
                                  <content>
-                                    <VBox fx:id="container" prefHeight="522.0" prefWidth="962.0" stylesheets="@Styles/dashboard.css">
-                                       <children>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="200.0" spacing="10.0" styleClass="light-gray-background" stylesheets="@Styles/user.css">
-                                             <children>
-                                                <Label prefHeight="22.0" prefWidth="110.0" text="Description" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                   <padding>
-                                                      <Insets left="10.0" />
-                                                   </padding>
-                                                   <HBox.margin>
-                                                      <Insets right="14.0" />
-                                                   </HBox.margin>
-                                                </Label>
-                                                <Label prefHeight="22.0" prefWidth="89.0" text="StartTime" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                   <HBox.margin>
-                                                      <Insets left="14.0" right="14.0" />
-                                                   </HBox.margin>
-                                                </Label>
-                                                <Label prefHeight="22.0" prefWidth="95.0" text="EndTime" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                   <HBox.margin>
-                                                      <Insets left="14.0" right="14.0" />
-                                                   </HBox.margin>
-                                                </Label>
-                                                <Label prefHeight="22.0" prefWidth="78.0" text="State" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="408.0" layoutY="27.0" prefHeight="22.0" prefWidth="101.0" text="Duration(hour)" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label prefHeight="22.0" prefWidth="83.0" text="Project" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                   <HBox.margin>
-                                                      <Insets left="14.0" right="14.0" />
-                                                   </HBox.margin>
-                                                </Label>
-                                                <Label prefHeight="22.0" prefWidth="146.0" text="Price Per Hour" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="13.0" />
-                                                   </font>
-                                                   <HBox.margin>
-                                                      <Insets left="14.0" right="14.0" />
-                                                   </HBox.margin>
-                                                </Label>
-                                                <Label prefHeight="22.0" prefWidth="109.0" text="Actions" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="15.0" />
-                                                   </font>
-                                                   <HBox.margin>
-                                                      <Insets right="14.0" />
-                                                   </HBox.margin>
-                                                </Label>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
+                                    <VBox fx:id="container" prefHeight="522.0" prefWidth="962.0" stylesheets="@Styles/dashboard.css" />
                                  </content>
                               </ScrollPane>
                            </children>

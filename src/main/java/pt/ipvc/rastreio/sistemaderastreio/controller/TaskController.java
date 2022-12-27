@@ -77,6 +77,9 @@ public class TaskController implements Initializable {
     @FXML
     private TextField StarteTimeSearch;
 
+    @FXML
+    private Button createTaskButton;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
@@ -158,6 +161,7 @@ public class TaskController implements Initializable {
         } catch (ParseException e) {
             Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)", e.getMessage(), Alert.AlertType.WARNING);
         }
+        createTaskButton.setText("Created!");
     }
 
     @FXML
@@ -173,6 +177,9 @@ public class TaskController implements Initializable {
     @FXML
     void ListALLEMCURSO(ActionEvent event) {
         correctDuration();
+        StarteTimeSearch.setVisible(false);
+        EndTimeSearch.setVisible(false);
+        container.getChildren().clear();
         for (Task t : tasks) {
             if (t.getState().equals(TaskState.EMCURSO)) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -198,6 +205,9 @@ public class TaskController implements Initializable {
         startTask();
         endTask();
         correctDuration();
+        container.getChildren().clear();
+        StarteTimeSearch.setVisible(false);
+        EndTimeSearch.setVisible(false);
         for (Task t : tasks) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
@@ -215,6 +225,7 @@ public class TaskController implements Initializable {
     @FXML
     void ListAllFINALIZADO(ActionEvent event) {
         correctDuration();
+        container.getChildren().clear();
         StarteTimeSearch.setVisible(true);
         EndTimeSearch.setVisible(true);
         for (Task t : tasks) {

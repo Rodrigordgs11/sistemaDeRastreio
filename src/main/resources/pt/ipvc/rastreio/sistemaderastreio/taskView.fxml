@@ -198,7 +198,7 @@
                   <Insets bottom="20.0" />
                </padding>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#createTask" prefHeight="40.0" prefWidth="155.0" stylesheets="@Styles/mySettings.css" text="Create task" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="createTaskButton" alignment="CENTER" mnemonicParsing="false" onAction="#createTask" prefHeight="40.0" prefWidth="155.0" stylesheets="@Styles/mySettings.css" text="Create task" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Agency FB Bold" size="15.0" />
                </font>

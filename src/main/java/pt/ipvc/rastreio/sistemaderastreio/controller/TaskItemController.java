@@ -59,6 +59,12 @@ public class TaskItemController extends TaskController implements Initializable{
     @FXML
     private TextField EditDescription;
 
+    @FXML
+    private Button editTaskButton;
+
+    @FXML
+    private Button terminateTaskButton;
+
     public int getId() {
         return id;
     }
@@ -121,6 +127,7 @@ public class TaskItemController extends TaskController implements Initializable{
         taskItem();
         tasks.removeIf(t -> Integer.parseInt(idTask.getText()) == t.getIdTask());
         saveTasks();
+        remover.setVisible(false);
     }
 
     @FXML
@@ -138,6 +145,7 @@ public class TaskItemController extends TaskController implements Initializable{
         stage.setScene(scene);
         stage.show();
         stage.setTitle("Terminate Task");
+        termination.setVisible(false);
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -157,6 +165,7 @@ public class TaskItemController extends TaskController implements Initializable{
         }catch (ParseException e){
             Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)",e.getMessage(), Alert.AlertType.WARNING);
         }
+        terminateTaskButton.setText("Terminated!!");
         data.saveTasks();
     }
 
@@ -189,6 +198,7 @@ public class TaskItemController extends TaskController implements Initializable{
         } catch (isEmptyException e) {
             Alerts.showAlert("Empty field", "A field is empty",e.getMessage(), Alert.AlertType.WARNING);
         }
+        editTaskButton.setText("Edited!");
         saveTasks();
     }
 

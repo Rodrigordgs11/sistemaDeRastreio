@@ -55,7 +55,7 @@ public class data {
                 String name = fields[0];
                 String clientName = fields[1];
                 float price = Float.parseFloat(fields[2]);
-                String owner = fields[3];
+                String owner = fields[4];
                 projects.add(new Project(name,clientName,price, owner));
                 project = br.readLine();
             }

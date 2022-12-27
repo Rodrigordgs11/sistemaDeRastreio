@@ -55,6 +55,9 @@ public class editUserController extends UserItemController implements Initializa
 
     @FXML
     private TextField UserName;
+
+    @FXML
+    private Button saveChngesButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
@@ -107,6 +110,7 @@ public class editUserController extends UserItemController implements Initializa
         }catch(matchException e){
             Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
         }
+        saveChngesButton.setText("Saved!");
         data.saveUsers();
     }
 
