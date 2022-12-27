@@ -18,20 +18,20 @@ public class Invite {
         this.inviteState = inviteState;
     }
 
-    public user getSender() {
-        return sender;
+    public int getSender() {
+        return idSender;
     }
 
-    public void setSender(user sender) {
-        this.sender = sender;
+    public void setSender(int sender) {
+        this.idSender = sender;
     }
 
-    public user getReceiver() {
-        return receiver;
+    public int getReceiver() {
+        return idReceiver;
     }
 
-    public void setReceiver(user receiver) {
-        this.receiver = receiver;
+    public void setReceiver(int idReceiver) {
+        this.idReceiver = idReceiver;
     }
 
     public String getDescription() {

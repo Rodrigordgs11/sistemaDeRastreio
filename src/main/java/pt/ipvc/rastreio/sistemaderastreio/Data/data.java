@@ -137,6 +137,7 @@ public class data {
     public static List<user> users = new ArrayList<>();
     public static List<Task> tasks = new ArrayList<>();
     public static List<Project> projects = new ArrayList<>();
+    public static List<Invite> invites = new ArrayList<>();
     public static user userLogged() {
         for (user u : users) {
             if(getIdLog() == u.getId()){

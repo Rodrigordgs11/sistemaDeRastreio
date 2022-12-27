@@ -95,6 +95,8 @@ public class ProjectItemController extends ProjectController implements Initiali
                 setNameProject(p);
             }
         }
+        projectTaskList();
+        addTaskToProject();
     }
     public void invisible(){idProject.setVisible(false);
         for (Project p: projects){
@@ -109,6 +111,7 @@ public class ProjectItemController extends ProjectController implements Initiali
     public void setNameProject(Project p){
         ProjectName.setText("Project " + p.getName());
     }
+
     public void setData(Project p){
         Name.setText(p.getName());
         ClientName.setText(p.getClientName());
@@ -125,8 +128,8 @@ public class ProjectItemController extends ProjectController implements Initiali
     }
     public long getTotalDuration(Project p){
         long total = 0;
-        for (int i = 0; i < p.getTasks().size(); i++){
-            total += p.getTasks().get(i).getDuration();
+        for (Task t: p.getTasks()){
+            total += t.getDuration();
         }
         return total;
     }
