@@ -87,9 +87,11 @@ public class ProjectItemController extends ProjectController implements Initiali
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        for (Project p: projects)
-            if(p.getIdProject() == getId())
+        for (Project p: projects) {
+            if (p.getIdProject() == getId()) {
                 setNameProject(p);
+            }
+        }
     }
     public void invisible(){idProject.setVisible(false);}
     public void setNameProject(Project p){
@@ -193,9 +195,8 @@ public class ProjectItemController extends ProjectController implements Initiali
         projectItem();
         projects.removeIf(p -> Integer.parseInt(idProject.getText()) == p.getIdProject());
         saveProjects();
+        remove.setVisible(false);
     }
-
-
 
     @FXML
     void handleDashboard(MouseEvent event) {
@@ -230,5 +231,6 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
         }
     }
+
 
 }

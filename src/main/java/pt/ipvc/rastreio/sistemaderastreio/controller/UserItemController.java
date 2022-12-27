@@ -55,6 +55,7 @@ public class UserItemController extends UserController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idUser.setVisible(false);
+        //returnUserLogged();
     }
 
     public void setData(user User){

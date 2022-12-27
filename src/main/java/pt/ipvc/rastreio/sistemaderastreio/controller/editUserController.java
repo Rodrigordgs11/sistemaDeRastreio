@@ -57,7 +57,6 @@ public class editUserController extends UserItemController implements Initializa
     private TextField UserName;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -110,4 +109,5 @@ public class editUserController extends UserItemController implements Initializa
         }
         data.saveUsers();
     }
+
 }

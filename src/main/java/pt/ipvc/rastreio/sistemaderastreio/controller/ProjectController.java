@@ -124,6 +124,7 @@ public class ProjectController implements Initializable {
     }
     @FXML
     void ListAllMine(ActionEvent event) {
+        container.getChildren().clear();
         for (Project p : projects) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
@@ -139,6 +140,7 @@ public class ProjectController implements Initializable {
     }
     @FXML
     void ListAllShared(ActionEvent event) {
+        container.getChildren().clear();
         for (Project p : projects) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
@@ -156,4 +158,5 @@ public class ProjectController implements Initializable {
     void handleImage(MouseEvent event) {
 
     }
+
 }

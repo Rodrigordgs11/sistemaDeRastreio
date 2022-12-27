@@ -79,13 +79,6 @@ public class TaskController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //returnUserLogged();
-
-    }
-
-    public void returnUserLogged() {
-        name.setText(Objects.requireNonNull(userLogged()).getName());
-        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
 
     @FXML
@@ -106,7 +99,6 @@ public class TaskController implements Initializable {
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
 
     @FXML
     void handleTask(MouseEvent event) throws IOException {
@@ -167,7 +159,6 @@ public class TaskController implements Initializable {
             Alerts.showAlert("Date format", "The Date format is incorrect(DD-MM-YY HH:MM:SS)", e.getMessage(), Alert.AlertType.WARNING);
         }
     }
-
 
     @FXML
     void CreateTask(ActionEvent event) throws IOException {
@@ -260,8 +251,6 @@ public class TaskController implements Initializable {
             }
         }
     }
-
-
 
     @FXML
     void showText(ActionEvent event) throws ParseException, isEmptyException {

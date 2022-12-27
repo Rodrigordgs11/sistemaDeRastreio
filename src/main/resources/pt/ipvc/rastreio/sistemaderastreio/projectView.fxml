@@ -41,7 +41,7 @@
                      <children>
                         <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#handleImage" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                            <image>
-                              <Image url="@../../../../../../../target/classes/pt/ipvc/rastreio/sistemaderastreio/images/icons8-user-50.png" />
+                              <Image url="@images/icons8-user-50.png" />
                            </image>
                         </ImageView>
                         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="192.0">
@@ -84,7 +84,7 @@
                                     <Image url="@images/project.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="0.0" prefWidth="158.0" text="Projetos" textFill="WHITE">
+                              <Label prefHeight="0.0" prefWidth="158.0" text="Projects" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="28.0" />
                                  </font>
@@ -98,7 +98,7 @@
                                     <Image url="@images/task.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Tarefas" textFill="WHITE">
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Tasks" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="28.0" />
                                  </font>
@@ -112,7 +112,7 @@
                                     <Image url="@images/invites.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Convites" textFill="WHITE">
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Invites" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="28.0" />
                                  </font>
@@ -126,7 +126,7 @@
                                     <Image url="@images/report.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Relatórios" textFill="WHITE">
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Reports" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="28.0" />
                                  </font>
@@ -140,7 +140,7 @@
                                     <Image url="@images/users.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Utilizadores" textFill="WHITE">
+                              <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" text="Users" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="28.0" />
                                  </font>

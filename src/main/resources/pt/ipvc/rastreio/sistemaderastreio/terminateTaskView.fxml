@@ -81,7 +81,7 @@
                               <Image url="@images/project.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Projetos" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Projects" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
@@ -95,7 +95,7 @@
                               <Image url="@images/task.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Tarefas" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Tasks" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
@@ -109,7 +109,7 @@
                               <Image url="@images/invites.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Convites" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Invites" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
@@ -123,7 +123,7 @@
                               <Image url="@images/report.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Relatórios" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Reports" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
@@ -137,7 +137,7 @@
                               <Image url="@images/users.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Utilizadores" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Users" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="28.0" />
                            </font>
