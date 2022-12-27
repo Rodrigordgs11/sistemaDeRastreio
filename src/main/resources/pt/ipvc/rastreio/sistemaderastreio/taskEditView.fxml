@@ -271,7 +271,7 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="408.0" layoutY="27.0" prefHeight="22.0" prefWidth="101.0" text="Duration(hour)" textFill="WHITE">
+                                    <Label layoutX="408.0" layoutY="27.0" prefHeight="22.0" prefWidth="107.0" text="Duration(hour)" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>

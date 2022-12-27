@@ -10,7 +10,7 @@
 
 <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="983.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.TaskItemController">
    <children>
-      <Label fx:id="description" prefHeight="22.0" prefWidth="133.0" text="Description">
+      <Label fx:id="description" prefHeight="22.0" prefWidth="103.0" text="Description">
          <padding>
             <Insets left="10.0" />
          </padding>
@@ -29,7 +29,7 @@
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="EndTime" prefHeight="22.0" prefWidth="104.0" text="EndTime">
+      <Label fx:id="EndTime" prefHeight="22.0" prefWidth="115.0" text="EndTime">
          <font>
             <Font size="10.0" />
          </font></Label>
@@ -37,7 +37,7 @@
          <font>
             <Font size="10.0" />
          </font></Label>
-      <Label fx:id="Duration" layoutX="407.0" layoutY="34.0" prefHeight="22.0" prefWidth="93.0" text="Duration">
+      <Label fx:id="Duration" layoutX="407.0" layoutY="34.0" prefHeight="22.0" prefWidth="73.0" text="Duration">
          <font>
             <Font size="10.0" />
          </font>
@@ -46,7 +46,7 @@
          <font>
             <Font size="10.0" />
          </font></Label>
-      <Label fx:id="Price" layoutX="662.0" layoutY="34.0" prefHeight="22.0" prefWidth="110.0" text="Price Per Hour">
+      <Label fx:id="Price" layoutX="662.0" layoutY="34.0" prefHeight="22.0" prefWidth="71.0" text="Price Per Hour">
          <font>
             <Font size="10.0" />
          </font></Label>
