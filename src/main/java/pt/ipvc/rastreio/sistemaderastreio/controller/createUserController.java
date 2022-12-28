@@ -29,7 +29,6 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
-
 public class createUserController extends UserController implements Initializable {
     @FXML
     private Scene scene;
@@ -39,31 +38,22 @@ public class createUserController extends UserController implements Initializabl
     private Parent parent;
     @FXML
     private PasswordField ConfirmPass;
-
     @FXML
     private TextField Name;
-
     @FXML
     private PasswordField Password;
-
     @FXML
     private TextField Phone;
-
     @FXML
     private TextField TypeUser;
-
     @FXML
     private TextField UserName;
-
     @FXML
     private HBox Utilizadores;
-
     @FXML
     private Label name;
-
     @FXML
     private Label userName;
-
     @FXML
     void SaveChanges(ActionEvent event) {
         try {

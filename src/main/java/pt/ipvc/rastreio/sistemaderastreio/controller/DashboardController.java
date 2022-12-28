@@ -28,9 +28,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.userLogged;
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.UserController.getIdLog;
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
 public class DashboardController implements Initializable {
     @FXML
@@ -51,12 +50,19 @@ public class DashboardController implements Initializable {
     private ImageView imageSwitchMy;
     @FXML
     private HBox Utilizadores;
+    @FXML
+    private Label ClientStat;
+    @FXML
+    private Label ProjectsStat;
+    @FXML
+    private Label taskStat;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         iniLineChart();
         iniPieChart();
         returnUserLogged();
         setVisibleUsers();
+        setStats();
     }
     public void handleImage(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
@@ -148,5 +154,10 @@ public class DashboardController implements Initializable {
         stage.setScene(scene);
         stage.show();
         stage.setTitle("Create task");
+    }
+    public void setStats(){
+        ClientStat.setText(String.valueOf(users.size()));
+        ProjectsStat.setText(String.valueOf(projects.size()));
+        taskStat.setText(String.valueOf(tasks.size()));
     }
 }

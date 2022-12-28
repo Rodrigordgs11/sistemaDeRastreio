@@ -290,7 +290,7 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container" stylesheets="@Styles/dashboard.css" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label prefHeight="38.0" prefWidth="202.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Upcomming projects" textFill="WHITE">
+                        <Label prefHeight="38.0" prefWidth="202.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Tasks" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="30.0" />
                            </font>
@@ -300,7 +300,7 @@
                         </Label>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="5" textFill="WHITE">
+                              <Label fx:id="taskStat" alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="5" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="96.0" />
                                  </font>
@@ -321,7 +321,7 @@
                         </Label>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="5" textFill="WHITE">
+                              <Label fx:id="ProjectsStat" alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="5" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="96.0" />
                                  </font>
@@ -332,7 +332,7 @@
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container" stylesheets="@Styles/dashboard.css" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Clients" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="Users" textFill="WHITE">
                            <font>
                               <Font name="Agency FB" size="30.0" />
                            </font>
@@ -342,7 +342,7 @@
                         </Label>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="5" textFill="WHITE">
+                              <Label fx:id="ClientStat" alignment="CENTER" prefHeight="0.0" prefWidth="158.0" styleClass="shadow" stylesheets="@Styles/dashboard.css" text="5" textFill="WHITE">
                                  <font>
                                     <Font name="Agency FB" size="96.0" />
                                  </font>
