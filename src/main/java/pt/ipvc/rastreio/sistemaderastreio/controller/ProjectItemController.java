@@ -88,7 +88,6 @@ public class ProjectItemController extends ProjectController implements Initiali
     public static int getId() {
         return id;
     }
-
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for (Project p: projects) {
             if (p.getIdProject() == getId()) {
@@ -111,7 +110,6 @@ public class ProjectItemController extends ProjectController implements Initiali
     public void setNameProject(Project p){
         ProjectName.setText("Project " + p.getName());
     }
-
     public void setData(Project p){
         Name.setText(p.getName());
         ClientName.setText(p.getClientName());
@@ -149,7 +147,6 @@ public class ProjectItemController extends ProjectController implements Initiali
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     public void projectTaskList () {
         for (Project p : projects) {
             System.out.println(p.getTasks());
@@ -174,7 +171,6 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
         }
     }
-
     @FXML
     void edit(ActionEvent event) throws IOException {
         projectItem();
@@ -191,7 +187,6 @@ public class ProjectItemController extends ProjectController implements Initiali
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     @FXML
     void EditProject(ActionEvent event) {
         try {
@@ -213,11 +208,9 @@ public class ProjectItemController extends ProjectController implements Initiali
         }
         saveProjects();
     }
-
     public void ValidatorEdit() throws isEmptyException{
         if(EditName.getText().isEmpty() || EditClientName.getText().isEmpty() || EditPrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
     }
-
     @FXML
     void remove(ActionEvent event) {
         projectItem();
@@ -225,22 +218,18 @@ public class ProjectItemController extends ProjectController implements Initiali
         saveProjects();
         remove.setVisible(false);
     }
-
     @FXML
     void handleDashboard(MouseEvent event) {
 
     }
-
     @FXML
     void handleImage(MouseEvent event) {
 
     }
-
     @FXML
     void handleTask(MouseEvent event) {
 
     }
-
     @FXML
     void AddTask(ActionEvent event) {
         container.getChildren().clear();
@@ -259,7 +248,6 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
         }
     }
-
     public void addTaskToProject(){
         for (Project p : projects){
             for (Task t: tasks){

@@ -1,6 +1,7 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Invite;
 import pt.ipvc.rastreio.sistemaderastreio.backend.InviteState;
@@ -22,6 +23,10 @@ public class InviteItemController extends InviteController{
     private Label idUser;
     @FXML
     private Label State;
+    @FXML
+    private Button acceptButton;
+    @FXML
+    private Button recuseButton;
 
     public static int getId() {
         return id;
@@ -31,6 +36,17 @@ public class InviteItemController extends InviteController{
         InviteItemController.id = id;
     }
 
+    public void invisible(){
+        for (Invite i: invites){
+            if (Integer.parseInt(idUser.getText()) == i.getId()) {
+                if (i.getSender().equals(userLogged().getUsername()) || !i.getInviteState().equals(InviteState.WITHOUTANSWER)) {
+                    acceptButton.setVisible(false);
+                    recuseButton.setVisible(false);
+                }
+            }
+        }
+    }
+
     public void setData(Invite i){
         receiver.setText(String.valueOf(i.getReceiver()));
         Sender.setText(String.valueOf(i.getSender()));
@@ -38,13 +54,14 @@ public class InviteItemController extends InviteController{
         description.setText(i.getDescription());
         Project.setText(String.valueOf(i.getIdProject()));
         idUser.setText(String.valueOf(i.getId()));
-        idUser.setVisible(true);
+        idUser.setVisible(false);
+        invisible();
     }
     @FXML
     void Accept(ActionEvent event) {
         for(Invite i: invites){
             if(Integer.parseInt(idUser.getText()) == i.getId()){
-                i.setInviteState(InviteState.ACCEPT);
+                i.setInviteState(InviteState.ACCEPTED);
             }
         }
         saveInvites();
@@ -53,7 +70,7 @@ public class InviteItemController extends InviteController{
     void recused(ActionEvent event) {
         for(Invite i: invites){
             if(Integer.parseInt(idUser.getText()) == i.getId()){
-                i.setInviteState(InviteState.RECUSE);
+                i.setInviteState(InviteState.RECUSED);
             }
         }
         saveInvites();

@@ -1,7 +1,7 @@
 package pt.ipvc.rastreio.sistemaderastreio.backend;
 
 public enum InviteState {
-    RECUSE,
-    ACCEPT,
+    RECUSED,
+    ACCEPTED,
     WITHOUTANSWER
 }
