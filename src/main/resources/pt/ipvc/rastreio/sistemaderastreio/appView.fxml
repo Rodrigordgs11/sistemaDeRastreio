@@ -18,9 +18,9 @@
          <children>
             <VBox maxWidth="-Infinity" prefHeight="74.0" prefWidth="409.0">
                <children>
-                  <Label prefHeight="48.0" prefWidth="432.0" text="Task time tracking system">
+                  <Label prefHeight="48.0" prefWidth="432.0" text="Task Time Tracking System">
                      <font>
-                        <Font name="Bell MT" size="36.0" />
+                        <Font name="Bell MT" size="33.0" />
                      </font>
                   </Label>
                   <Label contentDisplay="CENTER" prefHeight="39.0" prefWidth="226.0" text="Username and password" textFill="#153250">

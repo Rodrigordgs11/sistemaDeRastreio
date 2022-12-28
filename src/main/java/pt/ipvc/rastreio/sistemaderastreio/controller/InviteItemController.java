@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Invite;
 import pt.ipvc.rastreio.sistemaderastreio.backend.InviteState;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
+import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
@@ -31,11 +32,9 @@ public class InviteItemController extends InviteController{
     public static int getId() {
         return id;
     }
-
     public static void setId(int id) {
         InviteItemController.id = id;
     }
-
     public void invisible(){
         for (Invite i: invites){
             if (Integer.parseInt(idUser.getText()) == i.getId()) {
@@ -46,7 +45,6 @@ public class InviteItemController extends InviteController{
             }
         }
     }
-
     public void setData(Invite i){
         receiver.setText(String.valueOf(i.getReceiver()));
         Sender.setText(String.valueOf(i.getSender()));
@@ -62,6 +60,16 @@ public class InviteItemController extends InviteController{
         for(Invite i: invites){
             if(Integer.parseInt(idUser.getText()) == i.getId()){
                 i.setInviteState(InviteState.ACCEPTED);
+                acceptButton.setVisible(false);
+                for (Project p: projects){
+                    if(i.getIdProject() == p.getIdProject()){
+                        for (user u : users) {
+                            if (u.getName().equals(i.getReceiver())) {
+                                p.getSharedUsers().add(u.getId());
+                            }
+                        }
+                    }
+                }
             }
         }
         saveInvites();

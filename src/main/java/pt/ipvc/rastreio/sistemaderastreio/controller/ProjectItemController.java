@@ -30,58 +30,43 @@ import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 public class ProjectItemController extends ProjectController implements Initializable {
 
     private static int id;
-
     private Stage stage;
     private Scene scene;
     private Parent parent;
     @FXML
     private Label ClientName;
-
     @FXML
     private Label Name;
-
     @FXML
     private Label Owner;
-
     @FXML
     private Label Price;
-
     @FXML
     private Label TaskNumber;
-
     @FXML
     private Label TimeSpent;
-
     @FXML
     private Label idProject;
-
     @FXML
     private Button lis;
-
     @FXML
     private Button remove;
     @FXML
     private TextField EditClientName;
-
     @FXML
     private TextField EditName;
-
     @FXML
     private TextField EditPrice;
-
     @FXML
     private HBox Utilizadores;
-
     @FXML
     private Button editChangesButton;
-
     @FXML
     private Label name;
     @FXML
     private Label userName;
     @FXML
     private Label ProjectName = new Label();
-
     @FXML
     private Button editButton;
 
@@ -230,6 +215,8 @@ public class ProjectItemController extends ProjectController implements Initiali
     void handleTask(MouseEvent event) {
 
     }
+    @FXML
+    void handleInvites(MouseEvent event) {}
     @FXML
     void AddTask(ActionEvent event) {
         container.getChildren().clear();

@@ -48,6 +48,7 @@ public class ProjectController implements Initializable {
     @FXML
     private Button saveChangesButton;
     protected HBox hBox = new HBox();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
     @FXML
