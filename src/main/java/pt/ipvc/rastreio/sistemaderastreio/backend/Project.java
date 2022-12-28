@@ -1,5 +1,6 @@
 package pt.ipvc.rastreio.sistemaderastreio.backend;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class Project {
     private float pricePerHour;
     private List<Task> tasks;
     private static int numProjects = 0;
-    private List<Integer> sharedUsers;
+    private List<String> sharedUsers;
 
     public Project(String name, String clientName, float pricePerHour, String owner, List<String> usersProject) {
         this.owner = owner;
@@ -59,16 +60,17 @@ public class Project {
     public void setNumProjects(int numProjects) {
         this.numProjects = numProjects;
     }
+
     public String getOwner() {
         return owner;
     }
-    public void setOwner(String owner) {
+    public void sSetOwner(String owner) {
         this.owner = owner;
     }
-    public List<Integer> getSharedUsers() {
+    public List<String> getSharedUsers() {
         return sharedUsers;
     }
-    public void setSharedUsers(List<Integer> sharedUsers) {
+    public void setSharedUsers(List<String> sharedUsers) {
         this.sharedUsers = sharedUsers;
     }
 

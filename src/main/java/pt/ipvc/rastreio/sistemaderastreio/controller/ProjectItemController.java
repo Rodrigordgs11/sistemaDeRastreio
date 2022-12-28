@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
+import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 
@@ -80,7 +81,6 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
         }
         projectTaskList();
-        addTaskToProject();
     }
     public void invisible(){idProject.setVisible(false);
         for (Project p: projects){
@@ -96,6 +96,7 @@ public class ProjectItemController extends ProjectController implements Initiali
         ProjectName.setText("Project " + p.getName());
     }
     public void setData(Project p){
+        addTaskToProject();
         Name.setText(p.getName());
         ClientName.setText(p.getClientName());
         Price.setText(String.valueOf(p.getPricePerHour()));

@@ -63,24 +63,26 @@ public class InviteItemController extends InviteController{
             if (Integer.parseInt(idUser.getText()) == i.getId()) {
                 i.setInviteState(InviteState.ACCEPTED);
                 acceptButton.setVisible(false);
-                for (Project p: projects){
-                    if(i.getIdProject() == p.getIdProject()){
-                        for (user u : users) {
-                            if (u.getName().equals(i.getReceiver())) {
-                                p.getSharedUsers().add(u.getId());
-                            }
-                        }
-                    }
+                id = i.getId();
+            }
+        }
+        for (Project p : projects) {
+            for (Invite i : invites){
+                if (i.getIdProject() == p.getIdProject() && !p.getSharedUsers().contains(Objects.requireNonNull(userLogged()).getId())) {
+                    p.getSharedUsers().add(String.valueOf(Objects.requireNonNull(userLogged()).getId()));
                 }
+            System.out.println(p);
             }
         }
         saveInvites();
+        saveProjects();
     }
     @FXML
     void recused(ActionEvent event) {
         for(Invite i: invites){
             if(Integer.parseInt(idUser.getText()) == i.getId()){
                 i.setInviteState(InviteState.RECUSED);
+                recuseButton.setVisible(false);
             }
         }
         saveInvites();

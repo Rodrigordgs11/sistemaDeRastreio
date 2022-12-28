@@ -13,7 +13,7 @@ public abstract class user {
     private String password;
     private int numberPhone;
     private int numOfWork;
-    private List<Project> projects;
+    private List <Integer> projects;
     private List<Task> tasks;
     private static int numUsers = 0;
 
@@ -101,9 +101,9 @@ public abstract class user {
         this.numOfWork = numOfWork;
     }
 
-    public List<Project> getProjects(){return this.projects;}
+    public List<Integer> getProjects(){return this.projects;}
 
-    public void setProjects(List<Project> projects){this.projects = projects;}
+    public void setProjects(List<Integer> projects){this.projects = projects;}
 
     @Override
     public String toString() {

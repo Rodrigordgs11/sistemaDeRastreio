@@ -3,6 +3,7 @@ package pt.ipvc.rastreio.sistemaderastreio.Data;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -33,7 +34,7 @@ public class data {
     public static void saveProjects(){
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv"))){
             for (Project p: projects) {
-                bw.write(p.getName() + "," + p.getClientName() + "," + p.getPricePerHour() + "," + p.getIdProject()  + "," + p.getOwner());
+                bw.write(p.getName() + ";" + p.getClientName() + ";" + p.getPricePerHour() + ";" + p.getIdProject()  + ";" + p.getOwner() + ";" + p.getSharedUsers());
                 bw.newLine();
             }
         }catch (IOException e){
@@ -71,12 +72,13 @@ public class data {
         try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv"))){
             String project = br.readLine();
             while (project != null){
-                String[] fields = project.split(",");
+                String[] fields = project.split(";");
                 String name = fields[0];
                 String clientName = fields[1];
                 float price = Float.parseFloat(fields[2]);
                 String owner = fields[4];
-                projects.add(new Project(name,clientName,price, owner));
+                List<String> sharedUsers =  new ArrayList<String>(Arrays.asList(fields[5].split(", ")));
+                projects.add(new Project(name,clientName,price, owner, sharedUsers));
                 project = br.readLine();
             }
         }catch (IOException e) {
