@@ -13,14 +13,14 @@ public class Project {
     private static int numProjects = 0;
     private List<Integer> sharedUsers;
 
-    public Project(String name, String clientName, float pricePerHour, String owner) {
+    public Project(String name, String clientName, float pricePerHour, String owner, List<String> usersProject) {
         this.owner = owner;
         this.idProject = ++numProjects;
         this.name = name;
         this.clientName = clientName;
         this.pricePerHour = pricePerHour;
         this.tasks = new ArrayList<>();
-        this.sharedUsers = new ArrayList<>();
+        this.sharedUsers = usersProject;
     }
 
     public String getName() {
@@ -70,5 +70,18 @@ public class Project {
     }
     public void setSharedUsers(List<Integer> sharedUsers) {
         this.sharedUsers = sharedUsers;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "idProject=" + idProject +
+                ", name='" + name + '\'' +
+                ", owner='" + owner + '\'' +
+                ", clientName='" + clientName + '\'' +
+                ", pricePerHour=" + pricePerHour +
+                ", tasks=" + tasks +
+                ", sharedUsers=" + sharedUsers +
+                '}';
     }
 }

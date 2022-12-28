@@ -21,6 +21,7 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
@@ -91,7 +92,7 @@ public class ProjectController implements Initializable {
     public void SaveChanges(ActionEvent event){
         try {
             Validator();
-            Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.parseFloat(CreatePrice.getText()), Objects.requireNonNull(userLogged()).getUsername());
+            Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.parseFloat(CreatePrice.getText()), Objects.requireNonNull(userLogged()).getUsername(), new ArrayList<>());
             projects.add(project);
             saveChangesButton.setText("Saved!");
         }catch (NumberFormatException e){
@@ -145,14 +146,15 @@ public class ProjectController implements Initializable {
     void ListAllShared(ActionEvent event) {
         container.getChildren().clear();
         for (Project p : projects) {
-            if (!p.getOwner().equals(userLogged().getUsername())) {
+            if (!p.getOwner().equals(Objects.requireNonNull(userLogged()).getUsername())
+                && p.getSharedUsers().contains(String.valueOf(Objects.requireNonNull(userLogged()).getId()))) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
                 try {
                     hBox = fxmlLoader.load();
                     ProjectItemController projectItemController = fxmlLoader.getController();
                     projectItemController.setData(p);
-                    container.getChildren().add(hBox); //give id to hbox
+                    container.getChildren().add(hBox);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -168,4 +170,5 @@ public class ProjectController implements Initializable {
         stage.show();
         stage.setTitle("My Settings");
     }
+
 }

@@ -40,6 +40,15 @@
       </Label>
       <HBox alignment="CENTER" prefHeight="70.0" prefWidth="204.0" spacing="15.0">
          <children>
+            <Button fx:id="removeButton" mnemonicParsing="false" onAction="#remove" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: ff0000;" styleClass="button_" stylesheets="@Styles/user.css">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/remove.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Button fx:id="acceptButton" mnemonicParsing="false" onAction="#Accept" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #42bf2f;" styleClass="button_" stylesheets="@Styles/user.css">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
