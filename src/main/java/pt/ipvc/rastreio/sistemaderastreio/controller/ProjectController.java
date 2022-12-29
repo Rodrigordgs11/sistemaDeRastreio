@@ -51,7 +51,10 @@ public class ProjectController implements Initializable {
     protected HBox hBox = new HBox();
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        returnUserLogged();
+        setVisibleUsers();
+    }
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -135,7 +138,7 @@ public class ProjectController implements Initializable {
                     hBox = fxmlLoader.load();
                     ProjectItemController projectItemController = fxmlLoader.getController();
                     projectItemController.setData(p);
-                    container.getChildren().add(hBox); //give id to hbox
+                    container.getChildren().add(hBox);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -170,5 +173,34 @@ public class ProjectController implements Initializable {
         stage.show();
         stage.setTitle("My Settings");
     }
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
 
+    private void setVisibleUsers(){
+        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
+            Utilizadores.setVisible(true);
+        else
+            Utilizadores.setVisible(false);
+    }
+    @FXML
+    public void handleInvite(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("invitesView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create and view invites");
+    }
+
+    public void handleUser(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("userView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create task");
+    }
 }

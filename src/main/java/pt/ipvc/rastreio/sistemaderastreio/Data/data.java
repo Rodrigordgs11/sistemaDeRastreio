@@ -1,5 +1,8 @@
 package pt.ipvc.rastreio.sistemaderastreio.Data;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user.typeUser;
 import java.io.*;

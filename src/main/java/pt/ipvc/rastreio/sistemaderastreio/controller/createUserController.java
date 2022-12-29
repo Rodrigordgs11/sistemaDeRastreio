@@ -28,6 +28,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.userLogged;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 public class createUserController extends UserController implements Initializable {
     @FXML
@@ -73,6 +74,31 @@ public class createUserController extends UserController implements Initializabl
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        returnUserLogged();
+        setVisibleUsers();
+    }
+    public void Validator() throws isEmptyException, alreadyExistException, matchException {
+        boolean exist = false;
+        boolean existPhone = false;
+        if(Name.getText().isEmpty() || UserName.getText().isEmpty() || Password.getText().isEmpty() || ConfirmPass.getText().isEmpty() || Phone.getText().isEmpty() /*TypeUser.getText().isEmpty()*/) throw new isEmptyException("Text field is empty");
+        for(user u : users) if (UserName.getText().equals(u.getUsername())) exist = true;
+        if(exist) throw new alreadyExistException("Username already used");
+        for(user u : users) if (Integer.parseInt(Phone.getText()) == u.getNumberPhone()) existPhone = true;
+        if(existPhone) throw new alreadyExistException("Phone already exists");
+        if(Phone.getText().length() != 9) throw new NumberFormatException("Phone field must have 9 numbers");
+        if(!(Password.getText().equals(ConfirmPass.getText()))) throw new matchException("Passwords aren't matching");
+    }
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+
+    private void setVisibleUsers(){
+        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
+            Utilizadores.setVisible(true);
+        else
+            Utilizadores.setVisible(false);
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -90,15 +116,22 @@ public class createUserController extends UserController implements Initializabl
         stage.show();
         stage.setTitle("My Settings");
     }
-    public void Validator() throws isEmptyException, alreadyExistException, matchException {
-        boolean exist = false;
-        boolean existPhone = false;
-        if(Name.getText().isEmpty() || UserName.getText().isEmpty() || Password.getText().isEmpty() || ConfirmPass.getText().isEmpty() || Phone.getText().isEmpty() /*TypeUser.getText().isEmpty()*/) throw new isEmptyException("Text field is empty");
-        for(user u : users) if (UserName.getText().equals(u.getUsername())) exist = true;
-        if(exist) throw new alreadyExistException("Username already used");
-        for(user u : users) if (Integer.parseInt(Phone.getText()) == u.getNumberPhone()) existPhone = true;
-        if(existPhone) throw new alreadyExistException("Phone already exists");
-        if(Phone.getText().length() != 9) throw new NumberFormatException("Phone field must have 9 numbers");
-        if(!(Password.getText().equals(ConfirmPass.getText()))) throw new matchException("Passwords aren't matching");
+    @FXML
+    public void handleProject(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("List Project");
+    }
+    @FXML
+    public void handleInvite(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("invitesView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create and view invites");
     }
 }

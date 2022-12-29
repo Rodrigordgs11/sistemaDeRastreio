@@ -16,6 +16,7 @@ import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
+import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 
@@ -82,6 +83,8 @@ public class TaskController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        returnUserLogged();
+        setVisibleUsers();
     }
 
     @FXML
@@ -309,6 +312,35 @@ public class TaskController implements Initializable {
                  t.setDuration((t.getEndTime().getTime() - t.getStartTime().getTime()) / (1000*60^2)/60);
              }
         }
+    }
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+    private void setVisibleUsers(){
+        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
+            Utilizadores.setVisible(true);
+        else
+            Utilizadores.setVisible(false);
+    }
+    @FXML
+    public void handleInvite(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("invitesView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create and view invites");
+    }
+
+    public void handleUser(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("userView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Create task");
     }
 }
 

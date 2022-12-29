@@ -60,6 +60,8 @@ public class editUserController extends UserItemController implements Initializa
     private Button saveChngesButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        returnUserLogged();
+        setVisibleUsers();
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
@@ -113,5 +115,16 @@ public class editUserController extends UserItemController implements Initializa
         saveChngesButton.setText("Saved!");
         data.saveUsers();
     }
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
 
+    private void setVisibleUsers(){
+        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
+            Utilizadores.setVisible(true);
+        else
+            Utilizadores.setVisible(false);
+    }
 }

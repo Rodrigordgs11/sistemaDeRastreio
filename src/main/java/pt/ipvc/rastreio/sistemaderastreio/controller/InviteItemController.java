@@ -40,7 +40,7 @@ public class InviteItemController extends InviteController{
     public void invisible(){
         for (Invite i: invites){
             if (Integer.parseInt(idUser.getText()) == i.getId()) {
-                if (i.getSender().equals(userLogged().getUsername()) || !i.getInviteState().equals(InviteState.WITHOUTANSWER)) {
+                if (i.getSender().equals(Objects.requireNonNull(userLogged()).getUsername()) || !i.getInviteState().equals(InviteState.WITHOUTANSWER)) {
                     acceptButton.setVisible(false);
                     recuseButton.setVisible(false);
                 }

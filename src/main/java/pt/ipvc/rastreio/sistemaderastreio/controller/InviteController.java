@@ -55,6 +55,8 @@ public class InviteController implements Initializable {
     private Button saveChangesButton;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        returnUserLogged();
+        setVisibleUsers();
     }
     public void Validator() throws isEmptyException, alreadyExistException {
         boolean existUser = false;
@@ -158,4 +160,17 @@ public class InviteController implements Initializable {
         stage.show();
         stage.setTitle("List Tasks");
     }
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+
+    private void setVisibleUsers(){
+        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
+            Utilizadores.setVisible(true);
+        else
+            Utilizadores.setVisible(false);
+    }
+
 }
