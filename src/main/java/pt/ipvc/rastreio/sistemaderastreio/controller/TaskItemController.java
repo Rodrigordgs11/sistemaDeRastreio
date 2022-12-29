@@ -113,7 +113,7 @@ public class TaskItemController extends TaskController implements Initializable{
     }
     @FXML
     public void edit(ActionEvent event) throws IOException {
-        taskItem();
+        ListAllMethod();
         for (Task t: tasks){
             if(Integer.parseInt(idTask.getText()) == t.getIdTask()){
                 id = t.getIdTask();
@@ -129,14 +129,14 @@ public class TaskItemController extends TaskController implements Initializable{
     }
     @FXML
     public void remove(ActionEvent event){
-        taskItem();
+        ListAllMethod();
         tasks.removeIf(t -> Integer.parseInt(idTask.getText()) == t.getIdTask());
         saveTasks();
         remover.setVisible(false);
     }
     @FXML
     void terminate(ActionEvent event) throws IOException{
-        taskItem();
+        ListAllMethod();
         for (Task t: tasks){
             if(Integer.parseInt(idTask.getText()) == t.getIdTask()){
                 id = t.getIdTask();

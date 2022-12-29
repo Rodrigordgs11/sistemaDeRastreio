@@ -95,9 +95,9 @@ public class TaskController implements Initializable {
     }
     @FXML
     public void ListAll(ActionEvent event) {
-        StarteTimeSearch.setVisible(false);
         EndTimeSearch.setVisible(false);
-        taskItem();
+        StarteTimeSearch.setVisible(false);
+        ListAllMethod();
     }
     @FXML
     public void ListALLEMCURSO(ActionEvent event) {
