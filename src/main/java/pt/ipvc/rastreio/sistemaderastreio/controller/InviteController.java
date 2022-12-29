@@ -4,13 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -25,6 +21,7 @@ import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.alreadyExistException;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
+import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
 
 import java.io.IOException;
 import java.net.URL;
@@ -58,11 +55,14 @@ public class InviteController implements Initializable {
         returnUserLogged();
         setVisibleUsers();
     }
-    public void Validator() throws isEmptyException, alreadyExistException {
+    public void Validator() throws isEmptyException, alreadyExistException, matchException {
+        boolean itsOwner = false;
         boolean existUser = false;
         boolean existProject = false;
         if(Receiver.getText().isEmpty() || Description.getText().isEmpty() || idProject.getText().isEmpty()) throw new isEmptyException("Text field is empty");
         for (user u: users) if(Receiver.getText().equals(u.getUsername())) existUser = true;
+        for (Project p: projects) if(Objects.requireNonNull(userLogged()).getUsername().equals(p.getOwner()) && p.getIdProject() == Integer.parseInt(idProject.getText()))  itsOwner = true;
+        if(!itsOwner) throw new matchException("The project isn't yours");
         if(!existUser) throw new alreadyExistException("User don't exists");
         for (Project p: projects) if(Integer.parseInt(idProject.getText()) == p.getIdProject()) existProject = true;
         if(!existProject) throw new alreadyExistException("Project don't exists");
@@ -80,6 +80,8 @@ public class InviteController implements Initializable {
             Alerts.showAlert("User or project does not exists", "Introduce another project or user",e.getMessage(), Alert.AlertType.ERROR);
         }catch(isEmptyException e) {
             Alerts.showAlert("Empty field", "A field is empty", e.getMessage(), Alert.AlertType.WARNING);
+        }catch (matchException e){
+            Alerts.showAlert("idProject field", "You must be the owner of this project", e.getMessage(), Alert.AlertType.ERROR);
         }
         data.saveInvites();
     }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="944.0" spacing="10.0" stylesheets="@Styles/user.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.ipvc.rastreio.sistemaderastreio.controller.ReportItemController">
+   <children>
+      <Label fx:id="Date" prefHeight="22.0" prefWidth="265.0" text="Date">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <HBox.margin>
+            <Insets right="14.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="Hours" prefHeight="22.0" prefWidth="206.0" text="Number of hours">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="TotalPrice" prefHeight="22.0" prefWidth="216.0" text="Total price">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="204.0" spacing="15.0">
+         <children>
+            <Button fx:id="ListTasksId" mnemonicParsing="false" onAction="#ListTasks" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #42bf2f;" styleClass="button_" stylesheets="@Styles/user.css">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8-list-30.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="idDate" prefHeight="1.0" prefWidth="1.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</HBox>

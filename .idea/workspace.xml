@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="otimizate code">
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="otimizate code and update tasks and projects">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/reportItem.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/reportsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/invites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/invites.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/projects.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/tasks.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/files/users.csv" afterDir="false" />
-    </list>
-    <list id="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" name="Changes by Pedro" comment="Changes by Pedro">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/Data/data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,72 +45,6 @@
         <option name="url" value="https://github.com/Rodrigordgs11/sistemaDeRastreio.git" />
       </UrlAndAccount>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java">
-      <ranges>
-        <range start1="66" end1="67" start2="66" end2="66" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="69" end1="70" start2="68" end2="68" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="75" end1="76" start2="73" end2="73" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="98" end1="99" start2="95" end2="95" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="117" end1="118" start2="113" end2="113" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="120" end1="121" start2="115" end2="116" changelist="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" />
-        <range start1="136" end1="137" start2="131" end2="132" changelist="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" />
-        <range start1="141" end1="142" start2="136" end2="136" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="144" end1="145" start2="138" end2="139" changelist="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" />
-        <range start1="167" end1="168" start2="161" end2="161" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="213" end1="214" start2="206" end2="206" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="217" end1="218" start2="209" end2="209" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="233" end1="234" start2="224" end2="224" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java">
-      <ranges>
-        <range start1="10" end1="11" start2="10" end2="10" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="21" end1="22" start2="20" end2="20" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="30" end1="31" start2="28" end2="28" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="32" end1="34" start2="29" end2="29" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="37" end1="38" start2="32" end2="32" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="39" end1="49" start2="33" end2="33" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="61" end1="62" start2="45" end2="45" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="64" end1="65" start2="47" end2="47" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="67" end1="68" start2="49" end2="49" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="70" end1="71" start2="51" end2="51" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="73" end1="74" start2="53" end2="53" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="76" end1="77" start2="55" end2="55" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="79" end1="80" start2="57" end2="57" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="82" end1="83" start2="59" end2="59" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="88" end1="136" start2="64" end2="64" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="139" end1="140" start2="67" end2="67" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="150" end1="151" start2="77" end2="78" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="156" end1="157" start2="83" end2="84" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="168" end1="201" start2="95" end2="95" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="203" end1="204" start2="97" end2="97" changelist="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" />
-        <range start1="205" end1="206" start2="98" end2="100" changelist="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" />
-        <range start1="207" end1="209" start2="101" end2="105" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="214" end1="224" start2="110" end2="172" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="227" end1="228" start2="175" end2="175" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="235" end1="245" start2="182" end2="207" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="249" end1="250" start2="211" end2="211" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="259" end1="260" start2="220" end2="220" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="268" end1="269" start2="228" end2="228" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="271" end1="271" start2="230" end2="231" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="272" end1="273" start2="232" end2="233" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="284" end1="285" start2="244" end2="245" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="286" end1="287" start2="246" end2="247" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="288" end1="289" start2="248" end2="249" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="290" end1="291" start2="250" end2="251" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="292" end1="294" start2="252" end2="253" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="296" end1="298" start2="255" end2="258" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="300" end1="301" start2="260" end2="261" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="304" end1="309" start2="264" end2="268" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="310" end1="313" start2="269" end2="272" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="315" end1="316" start2="274" end2="275" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="320" end1="325" start2="279" end2="281" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="335" end1="336" start2="291" end2="291" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-        <range start1="344" end1="350" start2="299" end2="344" changelist="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -172,8 +102,8 @@
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pt.ipvc.rastreio.sistemaderastreio.backend" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
+      <recent name="pt.ipvc.rastreio.sistemaderastreio.backend" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
   </component>
@@ -248,28 +178,7 @@
       <workItem from="1672232841102" duration="20001000" />
       <workItem from="1672265989926" duration="8616000" />
       <workItem from="1672323118713" duration="132000" />
-      <workItem from="1672323253090" duration="5666000" />
-    </task>
-    <task id="LOCAL-00015" summary="Dashboard UI done">
-      <created>1671415729026</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1671415729026</updated>
-    </task>
-    <task id="LOCAL-00016" summary="switch dash with log in done">
-      <created>1671467447933</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1671467447933</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Dash UI">
-      <created>1671500613002</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1671500613002</updated>
+      <workItem from="1672323253090" duration="23466000" />
     </task>
     <task id="LOCAL-00018" summary="Changes by Pedro">
       <created>1671500644408</created>
@@ -593,7 +502,28 @@
       <option name="project" value="LOCAL" />
       <updated>1672285320575</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="otimizate code and update tasks and projects">
+      <created>1672328948034</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1672328948035</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Changes by Pedro">
+      <created>1672328958999</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1672328958999</updated>
+    </task>
+    <task id="LOCAL-00066" summary="otimizate code and update tasks and projects">
+      <created>1672329148649</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1672329148649</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="read and write files update" />
     <MESSAGE value="dashboard create" />
     <MESSAGE value="dashboard controller create" />
     <MESSAGE value="Dashboard UI done" />
@@ -631,12 +560,13 @@
     <MESSAGE value="Tasks update" />
     <MESSAGE value="Projects update" />
     <MESSAGE value="update projects and create invite state" />
-    <MESSAGE value="Changes by Pedro" />
     <MESSAGE value="create log out and change icons" />
     <MESSAGE value="update dashboard" />
     <MESSAGE value="update files" />
     <MESSAGE value="otimizate code" />
-    <option name="LAST_COMMIT_MESSAGE" value="otimizate code" />
+    <MESSAGE value="Changes by Pedro" />
+    <MESSAGE value="otimizate code and update tasks and projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="otimizate code and update tasks and projects" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

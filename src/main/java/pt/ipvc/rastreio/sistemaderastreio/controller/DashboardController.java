@@ -78,4 +78,8 @@ public class DashboardController implements Initializable {
     public void switchUser(MouseEvent event) throws IOException {
         routes.handleGeneric(event, "Create task", "userView.fxml");
     }
+    @FXML
+    public void handleReport(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create report", "reportsView.fxml");
+    }
 }
