@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
+import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Invite;
 import pt.ipvc.rastreio.sistemaderastreio.backend.InviteState;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
@@ -31,7 +32,6 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
-
 public class InviteController implements Initializable {
     private Stage stage;
     private Scene scene;
@@ -117,60 +117,30 @@ public class InviteController implements Initializable {
     }
     @FXML
     void CreateInvite(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("createinvite.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create invite");
+        routes.handleGeneric(event, "Create invite", "createinvite.fxml");
     }
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
+        routes.handleGeneric(event, "Menu Inicial", "dashboardView.fxml");
     }
     @FXML
     void handleImage(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("My Settings");
+        routes.handleGeneric(event, "My settings", "mySettings.fxml");
     }
     @FXML
     void handleProject(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("List Project");
+        routes.handleGeneric(event, "List Project", "projectView.fxml");
     }
     @FXML
     void handleTask(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskEditView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("List Tasks");
+        routes.handleGeneric(event, "List Tasks", "taskEditView.fxml");
     }
     private void returnUserLogged(){
         System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
-
     private void setVisibleUsers(){
-        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
-            Utilizadores.setVisible(true);
-        else
-            Utilizadores.setVisible(false);
+        Utilizadores.setVisible(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd));
     }
-
 }

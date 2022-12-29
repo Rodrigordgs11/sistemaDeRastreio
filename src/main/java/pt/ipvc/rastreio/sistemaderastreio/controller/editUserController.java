@@ -1,6 +1,5 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,12 +15,10 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.alreadyExistException;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.userLogged;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.users;
 
@@ -40,44 +37,22 @@ public class editUserController extends UserItemController implements Initializa
     private Scene scene;
     @FXML
     private PasswordField ConfirmPass;
-
     @FXML
     private TextField Name;
-
     @FXML
     private PasswordField Password;
-
     @FXML
     private TextField Phone;
-
     @FXML
     private TextField TypeUser;
-
     @FXML
     private TextField UserName;
-
     @FXML
     private Button saveChngesButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         returnUserLogged();
         setVisibleUsers();
-    }
-    public void handleDashboard(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
-    }
-    public void handleImage(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("My Settings");
     }
     public void validator() throws isEmptyException, alreadyExistException, matchException {
         boolean existPhone = false;
@@ -90,7 +65,6 @@ public class editUserController extends UserItemController implements Initializa
         if(!(Password.getText().equals(ConfirmPass.getText()))) throw new matchException("Passwords aren't matching");
         //if(!TypeUser.getText().isEmpty()) if(TypeUser.getText().equals(user.typeUser.userStd))
     }
-
     public void SaveChanges() throws matchException, alreadyExistException, isEmptyException {
         try {
             validator();
@@ -120,11 +94,23 @@ public class editUserController extends UserItemController implements Initializa
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
-
     private void setVisibleUsers(){
-        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
-            Utilizadores.setVisible(true);
-        else
-            Utilizadores.setVisible(false);
+        Utilizadores.setVisible(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd));
+    }
+    public void handleDashboard(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Menu Inicial");
+    }
+    public void handleImage(MouseEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("My Settings");
     }
 }

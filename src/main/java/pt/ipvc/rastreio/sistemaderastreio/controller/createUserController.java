@@ -22,7 +22,6 @@ import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.alreadyExistException;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -93,12 +92,8 @@ public class createUserController extends UserController implements Initializabl
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
-
     private void setVisibleUsers(){
-        if(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd))
-            Utilizadores.setVisible(true);
-        else
-            Utilizadores.setVisible(false);
+        Utilizadores.setVisible(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd));
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));

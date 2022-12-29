@@ -7,20 +7,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
-import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
-import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
-import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.alreadyExistException;
-import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
-import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,17 +38,14 @@ public class UserItemController extends UserController implements Initializable{
     private Stage stage;
     @FXML
     private Scene scene;
-
     public int getId() {
         return id;
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idUser.setVisible(false);
         //returnUserLogged();
     }
-
     public void setData(user User){
         idUser.setText(String.valueOf(User.getId()));
         NameUser.setText(User.getName());
@@ -65,7 +53,6 @@ public class UserItemController extends UserController implements Initializable{
         TypeUserUser.setText(String.valueOf(User.getTipoUser()));
         UsernameUser.setText(User.getUsername());
     }
-
     @FXML
     public void edit(ActionEvent event) throws IOException {
         userItem();
@@ -82,14 +69,12 @@ public class UserItemController extends UserController implements Initializable{
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     @FXML
     public void remove(ActionEvent event){
         userItem();
         users.removeIf(u -> Integer.parseInt(idUser.getText()) == u.getId());
         saveUsers();
     }
-
     public void handleDashboard(MouseEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
