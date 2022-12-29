@@ -37,13 +37,13 @@ public class InviteController implements Initializable {
     private Scene scene;
     private Parent parent;
     @FXML
-    private HBox Utilizadores;
+    private HBox Utilizadores = new HBox();
     @FXML
     private VBox container = new VBox();
     @FXML
-    private Label name;
+    private Label name = new Label();
     @FXML
-    private Label userName;
+    private Label userName = new Label();
     private HBox hBox;
     @FXML
     private TextField Description;
@@ -74,6 +74,8 @@ public class InviteController implements Initializable {
             Invite invite = new Invite(Objects.requireNonNull(userLogged()).getUsername(), Receiver.getText(), Description.getText(), Integer.parseInt(idProject.getText()), InviteState.WITHOUTANSWER);
             invites.add(invite);
             saveChangesButton.setText("Saved!");
+        }catch (NumberFormatException e){
+            Alerts.showAlert("idProject", "Integer field with letters",e.getMessage(), Alert.AlertType.ERROR);
         }catch (alreadyExistException e){
             Alerts.showAlert("User or project does not exists", "Introduce another project or user",e.getMessage(), Alert.AlertType.ERROR);
         }catch(isEmptyException e) {

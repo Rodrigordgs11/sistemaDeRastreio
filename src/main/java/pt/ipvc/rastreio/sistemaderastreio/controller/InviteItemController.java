@@ -30,6 +30,8 @@ public class InviteItemController extends InviteController{
     private Button acceptButton;
     @FXML
     private Button recuseButton;
+    @FXML
+    private Button removeButton;
 
     public static int getId() {
         return id;
@@ -43,6 +45,9 @@ public class InviteItemController extends InviteController{
                 if (i.getSender().equals(Objects.requireNonNull(userLogged()).getUsername()) || !i.getInviteState().equals(InviteState.WITHOUTANSWER)) {
                     acceptButton.setVisible(false);
                     recuseButton.setVisible(false);
+                }
+                if (!i.getSender().equals(Objects.requireNonNull(userLogged()).getUsername()) || i.getInviteState().equals(InviteState.REMOVED)){
+                    removeButton.setVisible(false);
                 }
             }
         }
@@ -68,7 +73,7 @@ public class InviteItemController extends InviteController{
         }
         for (Project p : projects) {
             for (Invite i : invites){
-                if (i.getIdProject() == p.getIdProject() && !p.getSharedUsers().contains(Objects.requireNonNull(userLogged()).getId())) {
+                if (Integer.parseInt(idUser.getText()) == i.getId() && i.getIdProject() == p.getIdProject() && !p.getSharedUsers().contains(Objects.requireNonNull(userLogged()).getId())) {
                     p.getSharedUsers().add(String.valueOf(Objects.requireNonNull(userLogged()).getId()));
                 }
             System.out.println(p);
@@ -91,11 +96,12 @@ public class InviteItemController extends InviteController{
     void remove(ActionEvent event) {
         for (Project p : projects) {
             for (Invite i : invites){
-                if (i.getIdProject() == p.getIdProject() && i.getInviteState() == InviteState.ACCEPTED) {
+                if (Integer.parseInt(idUser.getText()) == i.getId()) {
                     i.setInviteState(InviteState.REMOVED);
+                    removeButton.setVisible(false);
                 }
                 for (user u : users){
-                    if(i.getReceiver().equals(u.getUsername())){
+                    if(Integer.parseInt(idUser.getText()) == i.getId() && i.getReceiver().equals(u.getUsername()) && i.getIdProject() == p.getIdProject()){
                         System.out.println(i);
                         System.out.println(u);
                         p.getSharedUsers().remove(String.valueOf(u.getId()));

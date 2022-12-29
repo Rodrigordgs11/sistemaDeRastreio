@@ -303,7 +303,7 @@ public class TaskController implements Initializable {
         }
     }
 
-    public void correctDuration(){
+    public static void correctDuration(){
         for (Task t: tasks){
             if (t.getState() == TaskState.EMCURSO){
                 t.setDuration((new Date().getTime() - t.getStartTime().getTime()) / (1000*60)/60);

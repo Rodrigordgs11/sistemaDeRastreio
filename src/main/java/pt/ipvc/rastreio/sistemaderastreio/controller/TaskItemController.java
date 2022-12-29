@@ -41,9 +41,9 @@ public class TaskItemController extends TaskController implements Initializable{
     @FXML
     private Label EndTime;
     @FXML
-    private Label Price;
+    private Label Price = new Label();
     @FXML
-    private Label Project;
+    private Label Project = new Label();
     @FXML
     private Label StartTime;
     @FXML
@@ -87,6 +87,7 @@ public class TaskItemController extends TaskController implements Initializable{
                 }
                 if (t.getState() == TaskState.PORINICIAR){
                     remover.setVisible(false);
+                    termination.setVisible(false);
                     Duration.setVisible(false);
                 }
                 if ((t.getState() == TaskState.FINALIZADO)){
@@ -102,6 +103,8 @@ public class TaskItemController extends TaskController implements Initializable{
         StartTime.setText(String.valueOf(task.getStartTime()));
         EndTime.setText(String.valueOf(task.getEndTime()));
         State.setText(String.valueOf(task.getState()));
+        Project.setText(task.getProjectName());
+        Price.setText(String.valueOf(task.getPriceProject()));
         idTask.setText(String.valueOf(task.getIdTask()));
         idTask.setVisible(false);
         for (Task t: tasks) {

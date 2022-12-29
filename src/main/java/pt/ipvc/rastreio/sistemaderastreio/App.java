@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.util.Objects;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
+import static pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController.addTaskToProject;
 
 public class App extends Application {
     @Override

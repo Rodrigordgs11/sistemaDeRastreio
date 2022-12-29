@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
+import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
@@ -27,6 +28,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
+import static pt.ipvc.rastreio.sistemaderastreio.controller.TaskController.correctDuration;
 
 public class ProjectItemController extends ProjectController implements Initializable {
 
@@ -80,6 +82,7 @@ public class ProjectItemController extends ProjectController implements Initiali
                 setNameProject(p);
             }
         }
+        addTaskToProject();
         projectTaskList();
     }
     public void invisible(){idProject.setVisible(false);
@@ -96,7 +99,6 @@ public class ProjectItemController extends ProjectController implements Initiali
         ProjectName.setText("Project " + p.getName());
     }
     public void setData(Project p){
-        addTaskToProject();
         Name.setText(p.getName());
         ClientName.setText(p.getClientName());
         Price.setText(String.valueOf(p.getPricePerHour()));
@@ -115,6 +117,7 @@ public class ProjectItemController extends ProjectController implements Initiali
         for (Task t: p.getTasks()){
             total += t.getDuration();
         }
+        System.out.println(total);
         return total;
     }
     @FXML
@@ -134,6 +137,7 @@ public class ProjectItemController extends ProjectController implements Initiali
         stage.setTitle("Menu Inicial");
     }
     public void projectTaskList () {
+        correctDuration();
         for (Project p : projects) {
             System.out.println(p.getTasks());
             if (p.getIdProject() == getId()) {
@@ -221,8 +225,9 @@ public class ProjectItemController extends ProjectController implements Initiali
     @FXML
     void AddTask(ActionEvent event) {
         container.getChildren().clear();
+        correctDuration();
         for (Task t : tasks) {
-            if(t.getIdProject() == 0){
+            if(t.getIdProject() == 0 && t.getState() == TaskState.PORINICIAR){
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(App.class.getResource("taskItemAddProject.fxml"));
                     try {
@@ -236,11 +241,13 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
         }
     }
-    public void addTaskToProject(){
+    public static void addTaskToProject(){
         for (Project p : projects){
             for (Task t: tasks){
-                if (t.getIdProject() == p.getIdProject()){
+                if (t.getIdProject() == p.getIdProject() && !p.getTasks().contains(t)){
                     p.getTasks().add(t);
+                    t.setPriceProject(p.getPricePerHour());
+                    t.setProjectName(p.getName());
                 }
             }
 
