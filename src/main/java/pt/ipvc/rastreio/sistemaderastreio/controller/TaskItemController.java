@@ -64,16 +64,13 @@ public class TaskItemController extends TaskController implements Initializable{
 
     @FXML
     private Button terminateTaskButton;
-
     @FXML
     private Button addButton;
-
     public int getId() {
         return id;
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
-
     public void invisible(){
         for (Task t: tasks) {
             if (Integer.parseInt(idTask.getText()) == t.getIdTask()) {
@@ -96,7 +93,6 @@ public class TaskItemController extends TaskController implements Initializable{
             }
         }
     }
-
     public void setData(Task task){
         Duration.setText(String.valueOf(task.getDuration()));
         description.setText(task.getDescription());
@@ -115,7 +111,6 @@ public class TaskItemController extends TaskController implements Initializable{
             }
         }
     }
-
     @FXML
     public void edit(ActionEvent event) throws IOException {
         taskItem();
@@ -139,7 +134,6 @@ public class TaskItemController extends TaskController implements Initializable{
         saveTasks();
         remover.setVisible(false);
     }
-
     @FXML
     void terminate(ActionEvent event) throws IOException{
         taskItem();
@@ -165,7 +159,6 @@ public class TaskItemController extends TaskController implements Initializable{
         stage.show();
         stage.setTitle("Menu Inicial");
     }
-
     @FXML
     private TextField TerminateDate;
     @FXML
@@ -211,11 +204,9 @@ public class TaskItemController extends TaskController implements Initializable{
         editTaskButton.setText("Edited!");
         saveTasks();
     }
-
     public void validatorEdit() throws isEmptyException{
         if(EditDescription.getText().isEmpty()) throw new isEmptyException("The field is empty");
     }
-
     @FXML
     void addTaskAction(ActionEvent event) {
         for (Task t: tasks){
