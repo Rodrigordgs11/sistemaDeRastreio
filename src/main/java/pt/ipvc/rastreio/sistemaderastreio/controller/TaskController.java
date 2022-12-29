@@ -65,7 +65,7 @@ public class TaskController implements Initializable {
     public void validator() throws isEmptyException, ParseException {
         if (Description.getText().isEmpty()) throw new isEmptyException("Description field is empty");
     }
-    public void createTask() throws isEmptyException {
+    public void createTask() {
         try {
             validator();
             Task task = new Task(Description.getText(), TaskState.PORINICIAR, Objects.requireNonNull(userLogged()).getId());
@@ -227,7 +227,7 @@ public class TaskController implements Initializable {
         }
     }
     @FXML
-    void showText(ActionEvent event) throws ParseException, isEmptyException {
+    void showText(ActionEvent event) {
         container.getChildren().clear();
         try {
             validatorDate();
