@@ -23,6 +23,8 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
+import static pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController.addTaskToProject;
+
 import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -51,6 +53,7 @@ public class TaskController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         returnUserLogged();
         setVisibleUsers();
+        addTaskToProject();
     }
     public void validator() throws isEmptyException, ParseException {
         if (Description.getText().isEmpty()) throw new isEmptyException("Description field is empty");

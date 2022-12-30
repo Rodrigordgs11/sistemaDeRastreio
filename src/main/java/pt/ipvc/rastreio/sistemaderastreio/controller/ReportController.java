@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
@@ -31,6 +33,7 @@ import java.util.ResourceBundle;
 
 import static java.lang.Thread.sleep;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
+import static pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController.addTaskToProject;
 
 public class ReportController implements Initializable {
     @FXML
@@ -44,7 +47,7 @@ public class ReportController implements Initializable {
     @FXML
     private HBox Utilizadores = new HBox();
     @FXML
-    private VBox container = new VBox();
+    public VBox container = new VBox();
     @FXML
     private Label name = new Label();
     @FXML
@@ -53,7 +56,7 @@ public class ReportController implements Initializable {
     private Label userName = new Label();
     @FXML
     private Label totalHoursMonth;
-
+    public static LocalDate DatePicked;
     private HBox hBox;
     private int id = 0;
     @Override
@@ -62,16 +65,16 @@ public class ReportController implements Initializable {
         setVisibleUsers();
     }
     public String getDateSplited(){
-        LocalDate datePicker = DateId.getValue();
+        LocalDate datePicker = DatePicked;
         String NewDatePicker = datePicker.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
         return NewDatePicker;
     }
     public int getDayPicked(){
-        LocalDate datePicker = this.DateId.getValue();
+        LocalDate datePicker = DatePicked;
         return Integer.parseInt(datePicker.format(DateTimeFormatter.ofPattern("dd")));
     }
     public int getSumPicked(){
-        LocalDate datePicker = this.DateId.getValue();
+        LocalDate datePicker = DatePicked;
         Integer day = Integer.parseInt(datePicker.format(DateTimeFormatter.ofPattern("dd")));
         Integer month = datePicker.lengthOfMonth();
         return month;
@@ -79,7 +82,10 @@ public class ReportController implements Initializable {
     public long getTotalHoursDay(int i){
         long Total = 0;
         for (Task t: tasks){
-            if (i == getDayPicked() && t.getState() == TaskState.FINALIZADO){
+            LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+            int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
+            String comparasion = lol.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
+            if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO){
                 Total += t.getDuration();
             }
         }
@@ -101,15 +107,15 @@ public class ReportController implements Initializable {
         timeline.play();
     }
     public float getTotalPriceDay(int i){
-        long Total = 0;
+        float Total = 0;
         for (Task t: tasks){
-
-            System.out.println(getDayPicked());
-            if (i == getDayPicked() && t.getState() == TaskState.FINALIZADO){
+            LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+            int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
+            String comparasion = lol.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
+            if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO){
                 Total += t.getPriceProject();
             }
         }
-        System.out.println(Total);
         return Total;
     }
     public float getTotalPriceMonth(){
@@ -122,7 +128,7 @@ public class ReportController implements Initializable {
     public void listDays(){
         container.getChildren().clear();
         System.out.println("LOL23");
-        for (int i = getDayPicked(); i < getSumPicked(); i++) {
+        for (int i = getDayPicked(); i <= getSumPicked(); i++) {
             System.out.println("LOL");
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("reportItem.fxml"));
@@ -139,6 +145,7 @@ public class ReportController implements Initializable {
     @FXML
      public void DateOnAction(ActionEvent event) throws InterruptedException {
         System.out.println(DateId.getValue());
+        DatePicked = DateId.getValue();
         LocalDate datePicker = this.DateId.getValue();
         String NewDatePicker = datePicker.format(DateTimeFormatter.ofPattern("MM-yyyy"));
         ReportMonth.setText("Report of month: " + NewDatePicker);

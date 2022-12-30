@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Objects;
 
-import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;;
+import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
+import static pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController.addTaskToProject;;
 
 public class App extends Application {
     @Override
@@ -20,6 +21,7 @@ public class App extends Application {
             loadTasks();
             loadProjects();
             loadInvites();
+            addTaskToProject();
             Parent parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("appView.fxml")));
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);

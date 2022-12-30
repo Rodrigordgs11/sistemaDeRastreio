@@ -209,6 +209,7 @@ public class ProjectItemController extends ProjectController implements Initiali
         }
     }
     public static void addTaskToProject(){
+        correctDuration();
         for (Project p : projects){
             for (Task t: tasks){
                 if (t.getIdProject() == p.getIdProject() && !p.getTasks().contains(t)){
