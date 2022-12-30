@@ -58,7 +58,7 @@ public class ReportController implements Initializable {
     private Label totalHoursMonth;
     public static LocalDate DatePicked;
     private HBox hBox;
-    private int id = 0;
+    private static int id = 0;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         returnUserLogged();
@@ -98,7 +98,6 @@ public class ReportController implements Initializable {
         }
         return Total;
     }
-
     public void setAnimaitionText() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds( 4), evt -> totalHoursMonth.setText(getTotalHoursMonth() + " hours used on this month")),

@@ -121,7 +121,7 @@ public class TaskController implements Initializable {
                         TaskItemController taskItemController = fxmlLoader.getController();
                         taskItemController.setData(t);
                         taskItemController.invisible();
-                        container.getChildren().add(hBox); //give id to hbox
+                        container.getChildren().add(hBox);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
