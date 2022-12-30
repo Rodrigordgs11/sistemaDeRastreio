@@ -4,13 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
 import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
@@ -30,9 +27,6 @@ import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 public class InviteController implements Initializable {
-    private Stage stage;
-    private Scene scene;
-    private Parent parent;
     @FXML
     private HBox Utilizadores = new HBox();
     @FXML
@@ -119,6 +113,14 @@ public class InviteController implements Initializable {
             }
         }
     }
+    private void returnUserLogged(){
+        System.out.println(userLogged());
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+    private void setVisibleUsers(){
+        Utilizadores.setVisible(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd));
+    }
     @FXML
     void CreateInvite(ActionEvent event) throws IOException {
         routes.handleGeneric(event, "Create invite", "createinvite.fxml");
@@ -139,12 +141,12 @@ public class InviteController implements Initializable {
     void handleTask(MouseEvent event) throws IOException {
         routes.handleGeneric(event, "List Tasks", "taskEditView.fxml");
     }
-    private void returnUserLogged(){
-        System.out.println(userLogged());
-        name.setText(Objects.requireNonNull(userLogged()).getName());
-        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    @FXML
+    public void handleReport(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create report", "reportsView.fxml");
     }
-    private void setVisibleUsers(){
-        Utilizadores.setVisible(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd));
+    @FXML
+    public void handleInvite(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create and view invites", "invitesView.fxml");
     }
 }

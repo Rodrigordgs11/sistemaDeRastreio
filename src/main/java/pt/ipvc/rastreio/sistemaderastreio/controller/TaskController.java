@@ -3,16 +3,13 @@ package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
+import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
@@ -25,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
@@ -35,12 +31,6 @@ public class TaskController implements Initializable {
     private Label name;
     @FXML
     private Label userName;
-    @FXML
-    private Parent parent;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Stage stage;
     @FXML
     private TextField Date;
     @FXML
@@ -76,14 +66,12 @@ public class TaskController implements Initializable {
                 task.setEndTime(dateFormat);
                 tasks.add(task);
                 Objects.requireNonNull(userLogged()).getTasks().add(task);
-                //System.out.println(userLogged().getTasks().get(0).getDescription());
             } else {
                 task.setState(TaskState.EMCURSO);
                 task.setStartTime(dateFormat);
                 task.setEndTime(dateFormat);
                 Objects.requireNonNull(userLogged()).getTasks().add(task);
                 tasks.add(task);
-                //System.out.println(userLogged().getTasks().toString());
             }
             data.saveTasks();
         } catch (isEmptyException e) {
@@ -239,7 +227,7 @@ public class TaskController implements Initializable {
                     hBox = fxmlLoader.load();
                     TaskItemController taskItemController = fxmlLoader.getController();
                     taskItemController.setData(t);
-                    container.getChildren().add(hBox); //give id to hbox
+                    container.getChildren().add(hBox);
                 }
             }
         } catch (IOException e) {
@@ -282,63 +270,28 @@ public class TaskController implements Initializable {
     }
     @FXML
     public void handleInvite(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("invitesView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create and view invites");
+        routes.handleGeneric(event, "Create and view invites", "invitesView.fxml");
     }
     public void handleUser(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("userView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create task");
+        routes.handleGeneric(event, "Create task", "userView.fxml");
     }
     @FXML
     void handleImage(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("My Settings");
+        routes.handleGeneric(event, "My Settings", "mySettings.fxml");
     }
     public void handleDashboard(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
+        routes.handleGeneric(event, "Inicial menu", "dashboardView.fxml");
     }
     @FXML
     void handleTask(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskEditView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("List Tasks");
+        routes.handleGeneric(event, "List Tasks", "taskEditView.fxml");
     }
     @FXML
     public void handleProject(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("List Project");
+        routes.handleGeneric(event, "List Project", "projectView.fxml");
     }
     @FXML
     void CreateTask(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create Task");
+        routes.handleGeneric(event, "Create Task", "taskView.fxml");
     }
 }

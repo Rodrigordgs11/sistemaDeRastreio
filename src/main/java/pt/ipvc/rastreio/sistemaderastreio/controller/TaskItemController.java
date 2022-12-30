@@ -2,25 +2,18 @@ package pt.ipvc.rastreio.sistemaderastreio.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
+import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
-import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
@@ -33,9 +26,6 @@ import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 
 public class TaskItemController extends TaskController implements Initializable{
     private static int id;
-    private Stage stage;
-    private Scene scene;
-    private Parent parent;
     @FXML
     private Label description;
     @FXML
@@ -120,12 +110,7 @@ public class TaskItemController extends TaskController implements Initializable{
                 System.out.println(getId());
             }
         }
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("editTask.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
+        routes.handleGeneric(event, "Edit task", "editTask.fxml");
     }
     @FXML
     public void remove(ActionEvent event){
@@ -143,21 +128,11 @@ public class TaskItemController extends TaskController implements Initializable{
                 System.out.println(getId());
             }
         }
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("terminateTaskView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Terminate Task");
+        routes.handleGeneric(event, "Terminate Task", "terminateTaskView.fxml");
         termination.setVisible(false);
     }
     public void handleDashboard(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
+        routes.handleGeneric(event, "Initial menu", "dashboardView.fxml");
     }
     @FXML
     private TextField TerminateDate;
@@ -171,7 +146,6 @@ public class TaskItemController extends TaskController implements Initializable{
         terminateTaskButton.setText("Terminated!!");
         data.saveTasks();
     }
-
     public void ValidatorTerminate() throws ParseException{
         java.util.Date dateFormat = new Date();
         for (Task t: tasks) {

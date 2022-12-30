@@ -68,8 +68,7 @@ public class ReportController implements Initializable {
     }
     public int getDayPicked(){
         LocalDate datePicker = DateId.getValue();
-        Integer day = Integer.parseInt(datePicker.format(DateTimeFormatter.ofPattern("dd")));
-        return day;
+        return Integer.parseInt(datePicker.format(DateTimeFormatter.ofPattern("dd")));
     }
     public int getSumPicked(){
         LocalDate datePicker = DateId.getValue();

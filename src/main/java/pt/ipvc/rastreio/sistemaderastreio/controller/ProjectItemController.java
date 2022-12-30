@@ -4,24 +4,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
+import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
-import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -31,11 +26,7 @@ import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.TaskController.correctDuration;
 
 public class ProjectItemController extends ProjectController implements Initializable {
-
     private static int id;
-    private Stage stage;
-    private Scene scene;
-    private Parent parent;
     @FXML
     private Label ClientName;
     @FXML
@@ -85,10 +76,13 @@ public class ProjectItemController extends ProjectController implements Initiali
         addTaskToProject();
         projectTaskList();
     }
+    public void ValidatorEdit() throws isEmptyException{
+        if(EditName.getText().isEmpty() || EditClientName.getText().isEmpty() || EditPrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
+    }
     public void invisible(){idProject.setVisible(false);
         for (Project p: projects){
             if (Integer.parseInt(idProject.getText()) == p.getIdProject()) {
-                if (!p.getOwner().equals(userLogged().getUsername())) {
+                if (!p.getOwner().equals(Objects.requireNonNull(userLogged()).getUsername())) {
                     remove.setVisible(false);
                     editButton.setVisible(false);
                 }
@@ -105,7 +99,7 @@ public class ProjectItemController extends ProjectController implements Initiali
         TaskNumber.setText(String.valueOf(p.getTasks().size()));
         TimeSpent.setText(String.valueOf(getTotalDuration(p)));
         idProject.setText(String.valueOf(p.getIdProject()));
-        if (p.getOwner().equals(userLogged().getUsername())) {
+        if (p.getOwner().equals(Objects.requireNonNull(userLogged()).getUsername())) {
             Owner.setText("Me");
         } else{
             Owner.setText(p.getOwner());
@@ -129,12 +123,7 @@ public class ProjectItemController extends ProjectController implements Initiali
                 System.out.println(getId());
             }
         }
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectTasks.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
+        routes.handleGeneric(event, "Menu Inicial", "projectTasks.fxml");
     }
     public void projectTaskList () {
         correctDuration();
@@ -170,12 +159,7 @@ public class ProjectItemController extends ProjectController implements Initiali
                 System.out.println(getId());
             }
         }
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("editProject.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
+        routes.handleGeneric(event, "Edit projects", "editProject.fxml");
     }
     @FXML
     void EditProject(ActionEvent event) {
@@ -198,9 +182,6 @@ public class ProjectItemController extends ProjectController implements Initiali
         }
         saveProjects();
     }
-    public void ValidatorEdit() throws isEmptyException{
-        if(EditName.getText().isEmpty() || EditClientName.getText().isEmpty() || EditPrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
-    }
     @FXML
     void remove(ActionEvent event) {
         projectItem();
@@ -208,20 +189,6 @@ public class ProjectItemController extends ProjectController implements Initiali
         saveProjects();
         remove.setVisible(false);
     }
-    @FXML
-    void handleDashboard(MouseEvent event) {
-
-    }
-    @FXML
-    void handleImage(MouseEvent event) {
-
-    }
-    @FXML
-    void handleTask(MouseEvent event) {
-
-    }
-    @FXML
-    void handleInvites(MouseEvent event) {}
     @FXML
     void AddTask(ActionEvent event) {
         container.getChildren().clear();
@@ -252,5 +219,21 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
 
         }
+    }
+    @FXML
+    void handleDashboard(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Menu Inicial", "dashboardView.fxml");
+    }
+    @FXML
+    void handleImage(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "My settings", "mySettings.fxml");
+    }
+    @FXML
+    void handleTask(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create task", "taskEditView.fxml");
+    }
+    @FXML
+    void handleInvites(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create and view invites", "invitesView.fxml");
     }
 }

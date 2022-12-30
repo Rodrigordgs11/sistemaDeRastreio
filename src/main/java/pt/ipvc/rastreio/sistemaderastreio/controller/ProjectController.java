@@ -3,9 +3,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,25 +10,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Data.data;
+import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 public class ProjectController implements Initializable {
-    @FXML
-    private Parent parent;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Stage stage;
     @FXML
     private HBox Utilizadores;
     @FXML
@@ -55,6 +45,9 @@ public class ProjectController implements Initializable {
         returnUserLogged();
         setVisibleUsers();
     }
+    public void Validator() throws isEmptyException{
+        if(CreateName.getText().isEmpty() || CreateClientName.getText().isEmpty() || CreatePrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
+    }
     @FXML
     public void SaveChanges(ActionEvent event){
         try {
@@ -68,9 +61,6 @@ public class ProjectController implements Initializable {
             Alerts.showAlert("Empty field", "A field is empty", e.getMessage(), Alert.AlertType.WARNING);
         }
         data.saveProjects();
-    }
-    public void Validator() throws isEmptyException{
-        if(CreateName.getText().isEmpty() || CreateClientName.getText().isEmpty() || CreatePrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
     }
     @FXML
     void ListAll(ActionEvent event) {
@@ -135,9 +125,7 @@ public class ProjectController implements Initializable {
     void ListAllShared(ActionEvent event) {
         container.getChildren().clear();
         for (Project p : projects) {
-            //System.out.println(p.getSharedUsers());
-            //System.out.println(userLogged().getId());
-            if(p.getSharedUsers().contains(String.valueOf(userLogged().getId()))) {
+            if(p.getSharedUsers().contains(String.valueOf(Objects.requireNonNull(userLogged()).getId()))) {
                 System.out.println("LOLAS" + p);
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(App.class.getResource("projectItem.fxml"));
@@ -162,64 +150,29 @@ public class ProjectController implements Initializable {
     }
     @FXML
     void handleImage(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("My Settings");
+        routes.handleGeneric(event, "My Settings", "mySettings.fxml");
     }
     @FXML
     public void handleInvite(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("invitesView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create and view invites");
+        routes.handleGeneric(event, "Create and view invites", "invitesView.fxml");
     }
     public void handleUser(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("userView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create task");
+        routes.handleGeneric(event, "Create task", "userView.fxml");
     }
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
+        routes.handleGeneric(event, "Menu Inicial", "dashboardView.fxml");
     }
     @FXML
     public void handleProject(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("projectView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("List Project");
+        routes.handleGeneric(event, "List Project", "projectView.fxml");
     }
     @FXML
     void handleTask(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("taskEditView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("List Tasks");
+        routes.handleGeneric(event, "List Tasks", "taskEditView.fxml");
     }
     @FXML
     public void CreateProject(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("createProject.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create Project");
+        routes.handleGeneric(event, "Create Project", "createProject.fxml");
     }
 }

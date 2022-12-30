@@ -1,26 +1,24 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.App;
+import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
-
 import javafx.fxml.FXML;
 import pt.ipvc.rastreio.sistemaderastreio.utils.*;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.*;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
-
 public class UserController implements Initializable {
+    private boolean nExist = false;
+    private static int idLog;
     @FXML
     private TextField userNameLogin;
     @FXML
@@ -40,15 +38,6 @@ public class UserController implements Initializable {
     @FXML
     private Button buttonRegister;
     @FXML
-    private Scene scene;
-    @FXML
-    private Stage stage;
-    @FXML
-    private Parent parent;
-    private boolean nExist = false;
-    private static int idLog;
-
-    @FXML
     private Label name;
     @FXML
     private Label userName;
@@ -57,7 +46,6 @@ public class UserController implements Initializable {
     @FXML
     private VBox container = new VBox();
     public HBox hBox;
-
     public static int getIdLog() {
         return idLog;
     }
@@ -65,25 +53,11 @@ public class UserController implements Initializable {
     public static void setIdLog(int idLog) {
         UserController.idLog = idLog;
     }
-
-    public void switchScene(ActionEvent event) throws IOException{
-        buttonLoginAction();
-        if(nExist){
-            parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(parent);
-            stage.setScene(scene);
-            stage.show();
-            stage.setTitle("Menu inicial");
-        }
-    }
-    public void handleImage(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("mySettings.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("My Settings");
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        userItem();
+        //returnUserLogged();
+        //setVisibleUsers();
     }
     public void validator() throws alreadyExistException, matchException, isEmptyException {
         boolean exist = false;
@@ -130,21 +104,6 @@ public class UserController implements Initializable {
             Alerts.showAlert("Invalid username or password", "You must put valid username or password",e.getMessage(), Alert.AlertType.ERROR);
         }
     }
-    public void handleDashboard(MouseEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("dashboardView.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Menu Inicial");
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        userItem();
-        //returnUserLogged();
-        //setVisibleUsers();
-    }
     public void userItem(){
         for (user u: users){
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -153,31 +112,34 @@ public class UserController implements Initializable {
                 hBox = fxmlLoader.load();
                 UserItemController userItemController = fxmlLoader.getController();
                 userItemController.setData(u);
-                container.getChildren().add(hBox); //give id to hbox
+                container.getChildren().add(hBox);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
     }
-
     private void returnUserLogged(){
         System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
     private void setVisibleUsers(){
-        if(Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.admin) || Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userManager))
-            Utilizadores.setVisible(true);
-        else Utilizadores.setVisible(false);
+        Utilizadores.setVisible(Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.admin) || Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userManager));
     }
-
     @FXML
     public void CreateUser(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("createUser.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Create User");
+        routes.handleGeneric(event, "Create User", "createUser.fxml");
+    }
+    public void handleDashboard(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Initial menu", "dashboardView.fxml");
+    }
+    public void switchScene(ActionEvent event) throws IOException{
+        buttonLoginAction();
+        if(nExist){
+            routes.handleGeneric(event, "Initial menu", "dashboardView.fxml");
+        }
+    }
+    public void handleImage(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "My settings", "mySettings.fxml");
     }
 }

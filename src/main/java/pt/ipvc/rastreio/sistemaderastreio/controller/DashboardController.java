@@ -1,13 +1,10 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
 import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import java.io.IOException;
@@ -20,11 +17,6 @@ public class DashboardController implements Initializable {
     private Label name;
     @FXML
     private Label userName;
-    private Scene scene;
-    @FXML
-    private Stage stage;
-    @FXML
-    private Parent parent;
     @FXML
     private ImageView imageSwitchMy;
     @FXML
