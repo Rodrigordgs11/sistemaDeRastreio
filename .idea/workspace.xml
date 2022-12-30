@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="otimizate code and update tasks and projects">
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Reports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/MySettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/createUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/createUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/editUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/editUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportItemController.java" afterDir="false" />
     </list>
+    <list id="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" name="Changes by Pedro" comment="Changes by Pedro" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +76,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -102,8 +97,8 @@
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio.backend" />
+      <recent name="pt.ipvc.rastreio.sistemaderastreio.controller" />
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
     </key>
   </component>
@@ -173,12 +168,44 @@
       <workItem from="1672102691777" duration="1921000" />
       <workItem from="1672151410127" duration="78000" />
       <workItem from="1672151489797" duration="8254000" />
-      <workItem from="1672172367234" duration="16802000" />
-      <workItem from="1672232782394" duration="57000" />
-      <workItem from="1672232841102" duration="20001000" />
-      <workItem from="1672265989926" duration="8616000" />
-      <workItem from="1672323118713" duration="132000" />
-      <workItem from="1672323253090" duration="25235000" />
+      <workItem from="1672172367234" duration="15663000" />
+      <workItem from="1672225482155" duration="153000" />
+      <workItem from="1672229145515" duration="753000" />
+      <workItem from="1672231581376" duration="6915000" />
+      <workItem from="1672254834034" duration="66000" />
+      <workItem from="1672254902631" duration="1393000" />
+      <workItem from="1672256362305" duration="113000" />
+      <workItem from="1672305530622" duration="51000" />
+      <workItem from="1672305584008" duration="325000" />
+      <workItem from="1672307039018" duration="8132000" />
+      <workItem from="1672318056138" duration="58000" />
+      <workItem from="1672322893906" duration="394000" />
+      <workItem from="1672323812510" duration="742000" />
+      <workItem from="1672325063518" duration="6069000" />
+      <workItem from="1672407743287" duration="53000" />
+      <workItem from="1672407798023" duration="878000" />
+      <workItem from="1672409816159" duration="3521000" />
+    </task>
+    <task id="LOCAL-00016" summary="switch dash with log in done">
+      <created>1671467447933</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1671467447933</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Dash UI">
+      <created>1671500613002</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671500613002</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Changes by Pedro">
+      <created>1671500644408</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1671500644408</updated>
     </task>
     <task id="LOCAL-00019" summary="Correct error and create mySetings files">
       <created>1671551334337</created>
@@ -467,63 +494,42 @@
       <option name="project" value="LOCAL" />
       <updated>1672182168934</updated>
     </task>
-    <task id="LOCAL-00060" summary="update dashboard">
-      <created>1672194355995</created>
+    <task id="LOCAL-00060" summary="Invite visibility chages">
+      <created>1672229881363</created>
       <option name="number" value="00060" />
       <option name="presentableId" value="LOCAL-00060" />
       <option name="project" value="LOCAL" />
-      <updated>1672194355995</updated>
+      <updated>1672229881363</updated>
     </task>
-    <task id="LOCAL-00061" summary="update files">
-      <created>1672283236793</created>
+    <task id="LOCAL-00061" summary="Invite visibility chages">
+      <created>1672232743753</created>
       <option name="number" value="00061" />
       <option name="presentableId" value="LOCAL-00061" />
       <option name="project" value="LOCAL" />
-      <updated>1672283236794</updated>
+      <updated>1672232743754</updated>
     </task>
-    <task id="LOCAL-00062" summary="update files">
-      <created>1672283247522</created>
+    <task id="LOCAL-00062" summary="Invites update">
+      <created>1672313152633</created>
       <option name="number" value="00062" />
       <option name="presentableId" value="LOCAL-00062" />
       <option name="project" value="LOCAL" />
-      <updated>1672283247523</updated>
+      <updated>1672313152634</updated>
     </task>
-    <task id="LOCAL-00063" summary="otimizate code">
-      <created>1672285320575</created>
+    <task id="LOCAL-00063" summary="Invites update">
+      <created>1672313735809</created>
       <option name="number" value="00063" />
       <option name="presentableId" value="LOCAL-00063" />
       <option name="project" value="LOCAL" />
-      <updated>1672285320575</updated>
+      <updated>1672313735809</updated>
     </task>
-    <task id="LOCAL-00064" summary="otimizate code and update tasks and projects">
-      <created>1672328948034</created>
+    <task id="LOCAL-00064" summary="Reports">
+      <created>1672315196374</created>
       <option name="number" value="00064" />
       <option name="presentableId" value="LOCAL-00064" />
       <option name="project" value="LOCAL" />
-      <updated>1672328948035</updated>
+      <updated>1672315196374</updated>
     </task>
-    <task id="LOCAL-00065" summary="Changes by Pedro">
-      <created>1672328958999</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1672328958999</updated>
-    </task>
-    <task id="LOCAL-00066" summary="otimizate code and update tasks and projects">
-      <created>1672329148649</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1672329148649</updated>
-    </task>
-    <task id="LOCAL-00067" summary="otimizate code and update tasks and projects">
-      <created>1672358244366</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1672358244366</updated>
-    </task>
-    <option name="localTasksCounter" value="68" />
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,6 +547,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="read and write files update" />
     <MESSAGE value="dashboard create" />
     <MESSAGE value="dashboard controller create" />
     <MESSAGE value="Dashboard UI done" />
@@ -560,13 +567,12 @@
     <MESSAGE value="Tasks update" />
     <MESSAGE value="Projects update" />
     <MESSAGE value="update projects and create invite state" />
-    <MESSAGE value="create log out and change icons" />
-    <MESSAGE value="update dashboard" />
-    <MESSAGE value="update files" />
-    <MESSAGE value="otimizate code" />
     <MESSAGE value="Changes by Pedro" />
-    <MESSAGE value="otimizate code and update tasks and projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="otimizate code and update tasks and projects" />
+    <MESSAGE value="create log out and change icons" />
+    <MESSAGE value="Invite visibility chages" />
+    <MESSAGE value="Invites update" />
+    <MESSAGE value="Reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reports" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

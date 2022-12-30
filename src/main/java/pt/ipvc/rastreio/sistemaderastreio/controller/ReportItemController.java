@@ -35,9 +35,9 @@ public class ReportItemController extends ReportController{
         ReportItemController.id = id;
     }
     public void setData(int i){
-        Date.setText(i + getDateSplited());
-        Hours.setText(String.valueOf(getTotalHoursDay(i)));
-        TotalPrice.setText(String.valueOf(getTotalPriceDay(i)));
+        Date.setText(String.valueOf(i) /*+ getDateSplited()*/);
+        //Hours.setText(String.valueOf(getTotalHoursDay(i)));
+        //TotalPrice.setText(String.valueOf(getTotalPriceDay(i)));
         idDate.setText(String.valueOf(i));
     }
 }
