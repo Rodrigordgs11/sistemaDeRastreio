@@ -39,6 +39,8 @@ public class editUserController extends UserItemController implements Initializa
     private TextField UserName;
     @FXML
     private Button saveChngesButton;
+    @FXML
+    private TextField NumberOfHours;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         returnUserLogged();
@@ -65,6 +67,7 @@ public class editUserController extends UserItemController implements Initializa
                     if (!Phone.getText().isEmpty()) u.setNumberPhone(Integer.parseInt(Phone.getText()));
                     if (!Password.getText().isEmpty()) u.setPassword(Password.getText());
                     if (!UserName.getText().isEmpty()) u.setUsername(UserName.getText());
+                    if (!NumberOfHours.getText().isEmpty()) u.setNumOfWork(Integer.parseInt(NumberOfHours.getText()));
                 }
             }
         }catch (NumberFormatException e){

@@ -28,6 +28,8 @@ public class MySettingsController implements Initializable {
     @FXML
     private TextField UserName;
     @FXML
+    private PasswordField WorkHours;
+    @FXML
     private Label name;
     @FXML
     private Label userName;
@@ -48,7 +50,7 @@ public class MySettingsController implements Initializable {
         if(exitUser) throw new alreadyExistException("Username already exists");
         if(!(Password.getText().equals(ConfirmPass.getText()))) throw new matchException("Passwords aren't matching");
     }
-    public void buttonSaveChanges() throws matchException, alreadyExistException, isEmptyException {
+    public void buttonSaveChanges(){
         try {
             validator();
             for (user u : users) {
@@ -57,6 +59,7 @@ public class MySettingsController implements Initializable {
                     if (!Phone.getText().isEmpty()) u.setNumberPhone(Integer.parseInt(Phone.getText()));
                     if (!Password.getText().isEmpty()) u.setPassword(Password.getText());
                     if (!UserName.getText().isEmpty()) u.setUsername(UserName.getText());
+                    if (!WorkHours.getText().isEmpty()) u.setNumOfWork(Integer.parseInt(WorkHours.getText()));
                 }
             }
             System.out.println(userLogged());

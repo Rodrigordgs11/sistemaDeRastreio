@@ -16,6 +16,7 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 
@@ -43,6 +44,11 @@ public class ReportItemController extends ReportController implements Initializa
     public void ListTasks(ActionEvent event) throws IOException {
         id = Integer.parseInt(idDate.getText());
         routes.handleGeneric(event, "Edit projects", "reportTasks.fxml");
+    }
+    public boolean exceedHours(){
+        boolean exceed = false;
+
+        return exceed;
     }
     public void ListTask(ActionEvent event) {
         container.getChildren().clear();
@@ -83,5 +89,8 @@ public class ReportItemController extends ReportController implements Initializa
         Hours.setText(String.valueOf(getTotalHoursDay(i)));
         TotalPrice.setText(String.valueOf(getTotalPriceDay(i)));
         idDate.setText(String.valueOf(i));
+        if (Objects.requireNonNull(userLogged()).getNumOfWork() < getTotalHoursDay(i)){
+            Hours.setStyle("-fx-font-weight: bold");
+        }
     }
 }

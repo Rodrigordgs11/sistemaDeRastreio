@@ -280,6 +280,26 @@
                      </font>
                   </TextField>
                </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1004.0">
+               <children>
+                  <Label prefHeight="49.0" prefWidth="123.0" styleClass="text-input" stylesheets="@Styles/mySettings.css" text="Work Hours" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="25.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="NumberOfHours" prefHeight="49.0" prefWidth="377.0" styleClass="text-input" stylesheets="@Styles/mySettings.css">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </TextField>
+               </children>
             </HBox>
             <Button fx:id="saveChngesButton" alignment="CENTER" mnemonicParsing="false" onAction="#SaveChanges" prefHeight="40.0" prefWidth="155.0" stylesheets="@Styles/mySettings.css" text="Save changes" textAlignment="CENTER" textFill="WHITE">
                <font>
