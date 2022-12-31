@@ -34,6 +34,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController.addTaskToProject;
+import static pt.ipvc.rastreio.sistemaderastreio.controller.TaskController.correctDuration;
 
 public class ReportController implements Initializable {
     @FXML
@@ -139,7 +140,7 @@ public class ReportController implements Initializable {
     }
     public long getTotalHoursMonth(){
         long Total = 0;
-        for (int i = getDayPicked(); i < getSumPicked(); i++){
+        for (int i = getDayPicked(); i <= getSumPicked(); i++){
             Total += getTotalHoursDay(i);
         }
         return Total;
@@ -184,7 +185,7 @@ public class ReportController implements Initializable {
     }
     public float getTotalPriceMonth(){
         long totalPriceMonth = 0;
-        for (int i = getDayPicked(); i < getSumPicked(); i++){
+        for (int i = getDayPicked(); i <= getSumPicked(); i++){
             totalPriceMonth += getTotalPriceDay(i);
         }
         return totalPriceMonth;
