@@ -55,23 +55,46 @@ public class ReportItemController extends ReportController implements Initializa
         for (Task t : tasks) {
             LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
             int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
-            if(day == getId()){
+            if(day == getId()) {
                 for (int i = getDayPicked(); i <= getSumPicked(); i++) {
-                    if (getId() == i && t.getState() == TaskState.FINALIZADO) {
-                        System.out.println(i);
-                        System.out.println(getId());
-                        System.out.println(day);
-                        System.out.println("LDEGFH");
-                        FXMLLoader fxmlLoader = new FXMLLoader();
-                        fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
-                        try {
-                            HBox hBox = fxmlLoader.load();
-                            TaskItemController taskItemController = fxmlLoader.getController();
-                            taskItemController.setData(t);
-                            taskItemController.invisible();
-                            container.getChildren().add(hBox);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
+                    if (getClicou() == 1) {
+                        System.out.println("dwefgnhfbdferwedqfrgthytjguitfodrxsenkwrm tksjhlgfdvc");
+                        if (String.valueOf(t.getIdProject()).equals(getIdProject().getText()) && t.getidUser() == Objects.requireNonNull(userLogged()).getId()) {
+                            if (getId() == i && t.getState() == TaskState.FINALIZADO) {
+                                System.out.println(i);
+                                System.out.println(getId());
+                                System.out.println(day);
+                                System.out.println("LDEGFH");
+                                FXMLLoader fxmlLoader = new FXMLLoader();
+                                fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
+                                try {
+                                    HBox hBox = fxmlLoader.load();
+                                    TaskItemController taskItemController = fxmlLoader.getController();
+                                    taskItemController.setData(t);
+                                    taskItemController.invisible();
+                                    container.getChildren().add(hBox);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                        }
+                    } else {
+                        if (getId() == i && t.getState() == TaskState.FINALIZADO) {
+                            System.out.println(i);
+                            System.out.println(getId());
+                            System.out.println(day);
+                            System.out.println("LDEGFH");
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
+                            try {
+                                HBox hBox = fxmlLoader.load();
+                                TaskItemController taskItemController = fxmlLoader.getController();
+                                taskItemController.setData(t);
+                                taskItemController.invisible();
+                                container.getChildren().add(hBox);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     }
                 }

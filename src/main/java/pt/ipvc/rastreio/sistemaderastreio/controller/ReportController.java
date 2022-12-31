@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -16,34 +17,27 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
+import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
+import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
+import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
+import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.matchException;
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
-import static java.lang.Thread.sleep;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController.addTaskToProject;
 
 public class ReportController implements Initializable {
     @FXML
     private DatePicker DateId;
-    @FXML
-    private TextField EndTimeSearch;
-    @FXML
-    private Label ProjectName;
-    @FXML
-    private TextField StarteTimeSearch;
     @FXML
     private HBox Utilizadores = new HBox();
     @FXML
@@ -59,15 +53,50 @@ public class ReportController implements Initializable {
     public static LocalDate DatePicked;
     private HBox hBox;
     private static int id = 0;
+    private static int idUserLogged = 0;
+    private int clicou = 0;
+    private static int clicouButton = 0;
+    @FXML
+    private TextField idProject;
+    private static String Project;
+    @FXML
+    private TextField ClientName;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         returnUserLogged();
         setVisibleUsers();
+        addTaskToProject();
+
+        idUserLogged = Objects.requireNonNull(userLogged()).getId();
+        System.out.println(idUserLogged);
+    }
+
+    public int getClicou() {
+        return clicou;
+    }
+
+    public TextField getIdProject() {
+        return idProject;
+    }
+
+    public void validator() throws isEmptyException, matchException {
+        boolean nExiste = false;
+        if(idProject.getText().isEmpty() || ClientName.getText().isEmpty()) throw new isEmptyException("Field is empty");
+        for (Project p: projects) {
+            if (Integer.parseInt(idProject.getText()) == p.getIdProject()
+                    && p.getClientName().equals(ClientName.getText())) {
+                System.out.println(ClientName.getText());
+                System.out.println(p.getClientName());
+                System.out.println(idProject.getText());
+                System.out.println(p.getIdProject());
+                nExiste = true;
+            }
+        }
+        if(!nExiste) throw new matchException("This idProject does not have that Client name");
     }
     public String getDateSplited(){
         LocalDate datePicker = DatePicked;
-        String NewDatePicker = datePicker.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
-        return NewDatePicker;
+        return datePicker.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
     }
     public int getDayPicked(){
         LocalDate datePicker = DatePicked;
@@ -76,20 +105,37 @@ public class ReportController implements Initializable {
     public int getSumPicked(){
         LocalDate datePicker = DatePicked;
         Integer day = Integer.parseInt(datePicker.format(DateTimeFormatter.ofPattern("dd")));
-        Integer month = datePicker.lengthOfMonth();
-        return month;
+        return datePicker.lengthOfMonth();
     }
     public long getTotalHoursDay(int i){
         long Total = 0;
+        long TotalProject = 0;
         for (Task t: tasks){
             LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
             int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
             String comparasion = lol.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
-            if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO){
-                Total += t.getDuration();
+            if(clicouButton == 1){
+                if(String.valueOf(t.getIdProject()).equals(Project)  && t.getidUser() == idUserLogged){
+                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO){
+                        TotalProject += t.getDuration();
+                    }
+                }
+            }else {
+                if (userLogged().tipoUser == user.typeUser.admin) {
+                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO)
+                        Total += t.getDuration();
+                }else {
+                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO &&
+                            String.valueOf(t.getIdProject()).equals(Project) && t.getidUser() == idUserLogged) {
+                        Total += t.getDuration();
+                    }
+                }
             }
         }
-        return Total;
+        if(clicouButton == 1)
+            return TotalProject;
+        else
+            return Total;
     }
     public long getTotalHoursMonth(){
         long Total = 0;
@@ -107,15 +153,34 @@ public class ReportController implements Initializable {
     }
     public float getTotalPriceDay(int i){
         float Total = 0;
+        float TotalProject = 0;
         for (Task t: tasks){
             LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
             int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
             String comparasion = lol.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
-            if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO){
-                Total += t.getPriceProject();
+            if (clicouButton == 1){
+                if(String.valueOf(t.getIdProject()).equals(Project)  && t.getidUser() == idUserLogged) {
+                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO) {
+                        TotalProject += t.getPriceProject();
+                    }
+                }
+            }else {
+                if (userLogged().tipoUser == user.typeUser.admin) {
+                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO) {
+                        Total += t.getPriceProject();
+                    }
+                }else{
+                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO
+                        && String.valueOf(t.getIdProject()).equals(Project) && t.getidUser() == idUserLogged) {
+                        Total += t.getPriceProject();
+                    }
+                }
             }
         }
-        return Total;
+        if(clicouButton == 1)
+            return TotalProject;
+        else
+            return Total;
     }
     public float getTotalPriceMonth(){
         long totalPriceMonth = 0;
@@ -126,9 +191,22 @@ public class ReportController implements Initializable {
     }
     public void listDays(){
         container.getChildren().clear();
-        System.out.println("LOL23");
         for (int i = getDayPicked(); i <= getSumPicked(); i++) {
-            System.out.println("LOL");
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("reportItem.fxml"));
+            try {
+                hBox = fxmlLoader.load();
+                ReportItemController reportItemController = fxmlLoader.getController();
+                reportItemController.setData(i);
+                container.getChildren().add(hBox);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+    public void listDaysProject(){
+        container.getChildren().clear();
+        for (int i = getDayPicked(); i <= getSumPicked(); i++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("reportItem.fxml"));
             try {
@@ -142,14 +220,40 @@ public class ReportController implements Initializable {
         }
     }
     @FXML
-     public void DateOnAction(ActionEvent event) throws InterruptedException {
+     public void DateOnAction(ActionEvent event) {
+        Project = idProject.getText();
         System.out.println(DateId.getValue());
         DatePicked = DateId.getValue();
         LocalDate datePicker = this.DateId.getValue();
         String NewDatePicker = datePicker.format(DateTimeFormatter.ofPattern("MM-yyyy"));
         ReportMonth.setText("Report of month: " + NewDatePicker);
-        listDays();
-        setAnimaitionText();
+        if (clicou == 0) {
+            setAnimaitionText();
+            listDays();
+        }
+    }
+    @FXML
+    void showIds(ActionEvent event) {
+        ClientName.setVisible(true);
+        idProject.setVisible(true);
+        clicou = 1;
+    }
+    @FXML
+    void searchProject(ActionEvent event) {
+        try {
+            validator();
+            clicouButton = 1;
+            Project = idProject.getText();
+            setAnimaitionText();
+            listDaysProject();
+        }catch (isEmptyException e){
+            Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
+        }catch (matchException e){
+            Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
+        }catch (NumberFormatException e){
+            Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
+
+        }
     }
     @FXML
     void CreateInvite(ActionEvent event) throws IOException {

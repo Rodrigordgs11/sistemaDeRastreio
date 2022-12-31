@@ -160,7 +160,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="984.0">
                      <children>
-                        <Label fx:id="ProjectName" prefHeight="42.0" prefWidth="491.0" styleClass="shadow" text="Reports" textFill="WHITE">
+                        <Label fx:id="ProjectName" prefHeight="42.0" prefWidth="342.0" styleClass="shadow" text="Reports" textFill="WHITE">
                            <font>
                               <Font name="Agency FB Bold" size="28.0" />
                            </font>
@@ -168,11 +168,32 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="92.0" prefWidth="276.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <DatePicker fx:id="DateId" layoutX="137.0" layoutY="32.0" onAction="#DateOnAction" prefHeight="26.0" prefWidth="293.0" promptText="Enter a date" styleClass="shadow" />
-                           </children></Pane>
-                        <Pane prefHeight="92.0" prefWidth="67.0" />
+                        <Button mnemonicParsing="false" onAction="#searchProject" text="Button" />
+                        <TextField fx:id="idProject" prefHeight="26.0" prefWidth="223.0" promptText="id Project" stylesheets="@Styles/login.css" visible="false">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="input_register" />
+                           </styleClass>
+                        </TextField>
+                        <Pane prefHeight="59.0" prefWidth="54.0" />
+                        <TextField fx:id="ClientName" prefHeight="26.0" prefWidth="223.0" promptText="Client Name" stylesheets="@Styles/login.css" visible="false">
+                           <styleClass>
+                              <String fx:value="transparent" />
+                              <String fx:value="input_register" />
+                           </styleClass>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#showIds" styleClass="transparent" stylesheets="@Styles/user.css">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/search.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="984.0">
@@ -193,21 +214,8 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="StarteTimeSearch" prefHeight="26.0" prefWidth="223.0" promptText="Start time" stylesheets="@Styles/login.css" visible="false">
-                           <styleClass>
-                              <String fx:value="transparent" />
-                              <String fx:value="input_register" />
-                           </styleClass>
-                        </TextField>
-                        <Pane prefHeight="58.0" prefWidth="62.0" styleClass="transparent" stylesheets="@Styles/login.css" />
-                        <TextField fx:id="EndTimeSearch" prefHeight="26.0" prefWidth="223.0" promptText="End Time" stylesheets="@Styles/login.css" visible="false">
-                           <styleClass>
-                              <String fx:value="transparent" />
-                              <String fx:value="input_register" />
-                           </styleClass>
-                        </TextField>
-                        <Pane prefHeight="58.0" prefWidth="3.0" styleClass="transparent" stylesheets="@Styles/login.css" />
-                        <Button mnemonicParsing="false" styleClass="transparent" stylesheets="@Styles/user.css" />
+                        <DatePicker fx:id="DateId" onAction="#DateOnAction" prefHeight="26.0" prefWidth="293.0" promptText="Enter a date" styleClass="shadow" />
+                        <Pane prefHeight="58.0" prefWidth="61.0" styleClass="transparent" stylesheets="@Styles/login.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
