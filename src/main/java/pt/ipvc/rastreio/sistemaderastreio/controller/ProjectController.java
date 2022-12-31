@@ -175,4 +175,8 @@ public class ProjectController implements Initializable {
     public void CreateProject(ActionEvent event) throws IOException {
         routes.handleGeneric(event, "Create Project", "createProject.fxml");
     }
+    @FXML
+    public void handleReport(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create report", "reportsView.fxml");
+    }
 }

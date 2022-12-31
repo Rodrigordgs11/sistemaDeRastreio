@@ -297,4 +297,11 @@ public class TaskController implements Initializable {
     void CreateTask(ActionEvent event) throws IOException {
         routes.handleGeneric(event, "Create Task", "taskView.fxml");
     }
+    @FXML
+    public void handleReport(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create report", "reportsView.fxml");
+    }
+    public void switchUser(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create task", "userView.fxml");
+    }
 }
