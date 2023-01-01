@@ -72,11 +72,11 @@ public class ReportController implements Initializable {
         System.out.println(idUserLogged);
     }
 
-    public int getClicou() {
+    public int getClicouButton() {
         return clicouButton;
     }
 
-    public String getIdProject() {
+    public String getProject() {
         return Project;
     }
 
@@ -126,8 +126,8 @@ public class ReportController implements Initializable {
                     if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO)
                         Total += t.getDuration();
                 }else {
-                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO &&
-                            String.valueOf(t.getIdProject()).equals(Project) && t.getidUser() == idUserLogged) {
+                    if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO
+                            && t.getidUser() == idUserLogged) {
                         Total += t.getDuration();
                     }
                 }
@@ -172,7 +172,7 @@ public class ReportController implements Initializable {
                     }
                 }else{
                     if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO
-                        && String.valueOf(t.getIdProject()).equals(Project) && t.getidUser() == idUserLogged) {
+                         && t.getidUser() == idUserLogged) {
                         Total += t.getPriceProject();
                     }
                 }
@@ -230,6 +230,7 @@ public class ReportController implements Initializable {
         String NewDatePicker = datePicker.format(DateTimeFormatter.ofPattern("MM-yyyy"));
         ReportMonth.setText("Report of month: " + NewDatePicker);
         if (clicou == 0) {
+            System.out.println("DateOnAction");
             setAnimaitionText();
             listDays();
         }

@@ -57,12 +57,12 @@ public class ReportItemController extends ReportController implements Initializa
             int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
             if(day == getId()) {
                 for (int i = getDayPicked(); i <= getSumPicked(); i++) {
-                    if (getClicou() == 1) {
+                    if (getClicouButton() == 1) {
                         System.out.println("dwefgnhfbdferwedqfrgthytjguitfodrxsenkwrm tksjhlgfdvc");
-                        if (String.valueOf(t.getIdProject()).equals(getIdProject()) && t.getidUser() == Objects.requireNonNull(userLogged()).getId()) {
+                        if (String.valueOf(t.getIdProject()).equals(getProject()) && t.getidUser() == Objects.requireNonNull(userLogged()).getId()) {
                             if (getId() == i && t.getState() == TaskState.FINALIZADO) {
-                                System.out.println(getIdProject());
-                                System.out.println(getClicou());
+                                System.out.println(getProject());
+                                System.out.println(getClicouButton());
                                 System.out.println(day);
                                 System.out.println("LDEGFH");
                                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -80,8 +80,8 @@ public class ReportItemController extends ReportController implements Initializa
                         }
                     } else {
                         if (getId() == i && t.getState() == TaskState.FINALIZADO) {
-                            System.out.println(getIdProject());
-                            System.out.println(getClicou());
+                            System.out.println(getProject());
+                            System.out.println(getClicouButton());
                             System.out.println(day);
                             System.out.println("LDEGFH");
                             FXMLLoader fxmlLoader = new FXMLLoader();

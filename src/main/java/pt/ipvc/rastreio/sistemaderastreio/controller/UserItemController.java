@@ -3,6 +3,7 @@ package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
@@ -24,6 +25,10 @@ public class UserItemController extends UserController implements Initializable{
     private Label UsernameUser;
     @FXML
     private Label idUser;
+    @FXML
+    private Button removeUser;
+    @FXML
+    private Button editUser;
     public int getId() {
         return id;
     }
@@ -38,6 +43,10 @@ public class UserItemController extends UserController implements Initializable{
         NumberPhoneUser.setText(String.valueOf(User.getNumberPhone()));
         TypeUserUser.setText(String.valueOf(User.getTipoUser()));
         UsernameUser.setText(User.getUsername());
+        if(userLogged().getTipoUser() == user.typeUser.userManager){
+            removeUser.setVisible(false);
+            editUser.setVisible(false);
+        }
     }
     @FXML
     public void remove(ActionEvent event){
