@@ -73,11 +73,11 @@ public class ReportController implements Initializable {
     }
 
     public int getClicou() {
-        return clicou;
+        return clicouButton;
     }
 
-    public TextField getIdProject() {
-        return idProject;
+    public String getIdProject() {
+        return Project;
     }
 
     public void validator() throws isEmptyException, matchException {
@@ -224,6 +224,7 @@ public class ReportController implements Initializable {
      public void DateOnAction(ActionEvent event) {
         Project = idProject.getText();
         System.out.println(DateId.getValue());
+        clicouButton = 0;
         DatePicked = DateId.getValue();
         LocalDate datePicker = this.DateId.getValue();
         String NewDatePicker = datePicker.format(DateTimeFormatter.ofPattern("MM-yyyy"));
