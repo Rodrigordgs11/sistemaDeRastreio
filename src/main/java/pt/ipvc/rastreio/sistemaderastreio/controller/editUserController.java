@@ -55,7 +55,9 @@ public class editUserController extends UserItemController implements Initializa
         if(!UserName.getText().isEmpty()) for(user u: users) if(UserName.getText().equals(u.getUsername())) exitUser = true;
         if(exitUser) throw new alreadyExistException("Username already exists");
         if(!(Password.getText().equals(ConfirmPass.getText()))) throw new matchException("Passwords aren't matching");
-        //if(!TypeUser.getText().isEmpty()) if(TypeUser.getText().equals(user.typeUser.userStd))
+        if(!TypeUser.getText().isEmpty()) if(TypeUser.getText().equals(user.typeUser.userStd)){
+
+        }
     }
     public void SaveChanges() throws matchException, alreadyExistException, isEmptyException {
         try {

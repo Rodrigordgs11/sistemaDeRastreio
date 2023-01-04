@@ -10,6 +10,7 @@ import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
@@ -43,10 +44,12 @@ public class UserItemController extends UserController implements Initializable{
         NumberPhoneUser.setText(String.valueOf(User.getNumberPhone()));
         TypeUserUser.setText(String.valueOf(User.getTipoUser()));
         UsernameUser.setText(User.getUsername());
-        for (user u: users) {
-            if (u.getTipoUser() == user.typeUser.userManager) {
-                removeUser.setVisible(false);
-                editUser.setVisible(false);
+        if(userLogged() != null && Objects.requireNonNull(userLogged()).getTipoUser() == user.typeUser.userManager) {
+            for (user u : users) {
+                if (u.getTipoUser() != user.typeUser.userStd) {
+                    removeUser.setVisible(false);
+                    editUser.setVisible(false);
+                }
             }
         }
     }

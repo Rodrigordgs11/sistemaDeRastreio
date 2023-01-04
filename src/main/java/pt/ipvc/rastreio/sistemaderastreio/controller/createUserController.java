@@ -52,7 +52,7 @@ public class createUserController extends UserController implements Initializabl
     void SaveChanges(ActionEvent event) {
         try {
             Validator();
-            user newUser = new userStd(Name.getText(), UserName.getText(), Password.getText(), Integer.parseInt(Phone.getText()), 0,  user.typeUser.userStd);
+            user newUser = new userStd(Name.getText(), UserName.getText(), Password.getText(), Integer.parseInt(Phone.getText()), 0, user.typeUser.valueOf(TypeUser.getText()));
             users.add(newUser);
         }catch (NumberFormatException e){
             Alerts.showAlert("Phone number", "Integer field with letters or Incorrect number of numbers",e.getMessage(), Alert.AlertType.ERROR);
@@ -68,13 +68,15 @@ public class createUserController extends UserController implements Initializabl
     public void Validator() throws isEmptyException, alreadyExistException, matchException {
         boolean exist = false;
         boolean existPhone = false;
-        if(Name.getText().isEmpty() || UserName.getText().isEmpty() || Password.getText().isEmpty() || ConfirmPass.getText().isEmpty() || Phone.getText().isEmpty() /*TypeUser.getText().isEmpty()*/) throw new isEmptyException("Text field is empty");
+        if(Name.getText().isEmpty() || UserName.getText().isEmpty() || Password.getText().isEmpty() || ConfirmPass.getText().isEmpty() || Phone.getText().isEmpty() || TypeUser.getText().isEmpty()) throw new isEmptyException("Text field is empty");
         for(user u : users) if (UserName.getText().equals(u.getUsername())) exist = true;
         if(exist) throw new alreadyExistException("Username already used");
         for(user u : users) if (Integer.parseInt(Phone.getText()) == u.getNumberPhone()) existPhone = true;
         if(existPhone) throw new alreadyExistException("Phone already exists");
         if(Phone.getText().length() != 9) throw new NumberFormatException("Phone field must have 9 numbers");
         if(!(Password.getText().equals(ConfirmPass.getText()))) throw new matchException("Passwords aren't matching");
+        if(!(TypeUser.getText().toLowerCase().equals("usermanager") || TypeUser.getText().toLowerCase().equals("admin") ||
+           TypeUser.getText().toLowerCase().equals("userstd"))) throw new matchException("This type user does not exist");
     }
     private void returnUserLogged(){
         System.out.println(userLogged());
