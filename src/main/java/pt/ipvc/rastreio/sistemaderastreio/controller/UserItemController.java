@@ -43,9 +43,11 @@ public class UserItemController extends UserController implements Initializable{
         NumberPhoneUser.setText(String.valueOf(User.getNumberPhone()));
         TypeUserUser.setText(String.valueOf(User.getTipoUser()));
         UsernameUser.setText(User.getUsername());
-        if(userLogged().getTipoUser() == user.typeUser.userManager){
-            removeUser.setVisible(false);
-            editUser.setVisible(false);
+        for (user u: users) {
+            if (u.getTipoUser() == user.typeUser.userManager) {
+                removeUser.setVisible(false);
+                editUser.setVisible(false);
+            }
         }
     }
     @FXML
