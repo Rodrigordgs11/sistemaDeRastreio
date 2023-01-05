@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -34,7 +31,6 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import static pt.ipvc.rastreio.sistemaderastreio.Data.data.*;
 import static pt.ipvc.rastreio.sistemaderastreio.controller.ProjectItemController.addTaskToProject;
-import static pt.ipvc.rastreio.sistemaderastreio.controller.TaskController.correctDuration;
 
 public class ReportController implements Initializable {
     @FXML
@@ -53,7 +49,10 @@ public class ReportController implements Initializable {
     private Label totalHoursMonth;
     public static LocalDate DatePicked;
     private HBox hBox;
-    private static int id = 0;
+
+    @FXML
+    private Button ButtonSearch;
+
     private static int idUserLogged = 0;
     private int clicou = 0;
     private static int clicouButton = 0;
@@ -105,7 +104,6 @@ public class ReportController implements Initializable {
     }
     public int getSumPicked(){
         LocalDate datePicker = DatePicked;
-        Integer day = Integer.parseInt(datePicker.format(DateTimeFormatter.ofPattern("dd")));
         return datePicker.lengthOfMonth();
     }
     public long getTotalHoursDay(int i){
@@ -221,7 +219,7 @@ public class ReportController implements Initializable {
         }
     }
     @FXML
-     public void DateOnAction(ActionEvent event) {
+     public void DateOnAction() {
         Project = idProject.getText();
         System.out.println(DateId.getValue());
         clicouButton = 0;
@@ -236,13 +234,14 @@ public class ReportController implements Initializable {
         }
     }
     @FXML
-    void showIds(ActionEvent event) {
+    void showIds() {
         ClientName.setVisible(true);
         idProject.setVisible(true);
+        ButtonSearch.setVisible(true);
         clicou = 1;
     }
     @FXML
-    void searchProject(ActionEvent event) {
+    void searchProject() {
         try {
             validator();
             clicouButton = 1;
@@ -250,11 +249,11 @@ public class ReportController implements Initializable {
             setAnimaitionText();
             listDaysProject();
         }catch (isEmptyException e){
-            Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
+            Alerts.showAlert("Search fields are empty", "A search field is empty",e.getMessage(), Alert.AlertType.ERROR);
         }catch (matchException e){
-            Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
+            Alerts.showAlert("Project id and Client Name", "The project id does not have that client",e.getMessage(), Alert.AlertType.ERROR);
         }catch (NumberFormatException e){
-            Alerts.showAlert("Passswords", "The passwords must be equal",e.getMessage(), Alert.AlertType.ERROR);
+            Alerts.showAlert("Project id field", "There are letters on the project id number",e.getMessage(), Alert.AlertType.ERROR);
 
         }
     }

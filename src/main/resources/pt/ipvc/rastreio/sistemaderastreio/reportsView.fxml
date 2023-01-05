@@ -108,7 +108,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+                        <HBox alignment="CENTER" onMouseClicked="#CreateInvite" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                                  <image>
@@ -168,7 +168,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#searchProject" text="Button" />
+                        <Button fx:id="ButtonSearch" mnemonicParsing="false" onAction="#searchProject" text="Button" visible="false" />
                         <TextField fx:id="idProject" prefHeight="26.0" prefWidth="223.0" promptText="id Project" stylesheets="@Styles/login.css" visible="false">
                            <styleClass>
                               <String fx:value="transparent" />

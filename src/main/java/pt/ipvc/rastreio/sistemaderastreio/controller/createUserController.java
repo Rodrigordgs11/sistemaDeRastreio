@@ -1,6 +1,5 @@
 package pt.ipvc.rastreio.sistemaderastreio.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -49,7 +48,7 @@ public class createUserController extends UserController implements Initializabl
         setVisibleUsers();
     }
     @FXML
-    void SaveChanges(ActionEvent event) {
+    void SaveChanges() {
         try {
             Validator();
             user newUser = new userStd(Name.getText(), UserName.getText(), Password.getText(), Integer.parseInt(Phone.getText()), 0, user.typeUser.valueOf(TypeUser.getText()));

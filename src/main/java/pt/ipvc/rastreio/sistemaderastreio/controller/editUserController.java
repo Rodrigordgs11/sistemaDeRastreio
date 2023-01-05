@@ -54,9 +54,15 @@ public class editUserController extends UserItemController implements Initializa
         if(!Phone.getText().isEmpty()) if(Phone.getText().length() != 9 ) throw new NumberFormatException("Phone field must have 9 numbers");
         if(!UserName.getText().isEmpty()) for(user u: users) if(UserName.getText().equals(u.getUsername())) exitUser = true;
         if(exitUser) throw new alreadyExistException("Username already exists");
-        if(!(Password.getText().equals(ConfirmPass.getText()))) throw new matchException("Passwords aren't matching");
-        if(!TypeUser.getText().isEmpty()) if(TypeUser.getText().equals(user.typeUser.userStd)){
-
+        if (ConfirmPass != null) {
+            if (!(Password.getText().equals(ConfirmPass.getText()))) {
+                throw new matchException("Passwords aren't matching");
+            }
+        }
+        if (!TypeUser.getText().isEmpty()) {
+            if (!(TypeUser.getText().toLowerCase().equals("usermanager") || TypeUser.getText().toLowerCase().equals("admin") || TypeUser.getText().toLowerCase().equals("userstd"))){
+                throw new matchException("This type user does not exist");
+         }
         }
     }
     public void SaveChanges() throws matchException, alreadyExistException, isEmptyException {
@@ -70,6 +76,7 @@ public class editUserController extends UserItemController implements Initializa
                     if (!Password.getText().isEmpty()) u.setPassword(Password.getText());
                     if (!UserName.getText().isEmpty()) u.setUsername(UserName.getText());
                     if (!NumberOfHours.getText().isEmpty()) u.setNumOfWork(Integer.parseInt(NumberOfHours.getText()));
+                    if (!TypeUser.getText().isEmpty()) u.setTipoUser(user.typeUser.valueOf(TypeUser.getText()));
                 }
             }
         }catch (NumberFormatException e){
