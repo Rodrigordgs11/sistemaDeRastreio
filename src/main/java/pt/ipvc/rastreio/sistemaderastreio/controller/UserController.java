@@ -56,8 +56,6 @@ public class UserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userItem();
-        //returnUserLogged();
-        //setVisibleUsers();
     }
     public void validator() throws alreadyExistException, matchException, isEmptyException {
         boolean exist = false;
@@ -119,7 +117,6 @@ public class UserController implements Initializable {
         }
     }
     private void returnUserLogged(){
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

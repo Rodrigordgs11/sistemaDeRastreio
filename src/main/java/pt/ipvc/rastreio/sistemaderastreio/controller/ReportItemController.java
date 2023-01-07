@@ -3,10 +3,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import pt.ipvc.rastreio.sistemaderastreio.App;
 import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.*;
@@ -30,41 +29,42 @@ public class ReportItemController extends ReportController implements Initializa
     private Label Date;
     @FXML
     private Label Hours;
+
     @FXML
-    private Button ListTasksId;
+    private Label name = new Label();
+
+    @FXML
+    private Label userName = new Label();
+
     @FXML
     private Label TotalPrice;
+    @FXML
+    private HBox Utilizadores = new HBox();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ListTask(new ActionEvent());
+        returnUserLogged();
+        setVisibleUsers();
     }
 
     @FXML
     public void ListTasks(ActionEvent event) throws IOException {
         id = Integer.parseInt(idDate.getText());
-        routes.handleGeneric(event, "Edit projects", "reportTasks.fxml");
+        routes.handleGeneric(event, "Reports", "reportTasks.fxml");
     }
-    public boolean exceedHours(){
-        boolean exceed = false;
 
-        return exceed;
-    }
     public void ListTask(ActionEvent event) {
         container.getChildren().clear();
         for (Task t : tasks) {
-            LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-            int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
+            LocalDateTime Time = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+            int day = Integer.parseInt(Time.format(DateTimeFormatter.ofPattern("dd")));
             if(day == getId()) {
                 for (int i = getDayPicked(); i <= getSumPicked(); i++) {
+                    if((Time.format(DateTimeFormatter.ofPattern("-MM-yyyy")).equals(getDateSplited())))
                     if (getClicouButton() == 1) {
-                        System.out.println("dwefgnhfbdferwedqfrgthytjguitfodrxsenkwrm tksjhlgfdvc");
                         if (String.valueOf(t.getIdProject()).equals(getProject()) && t.getidUser() == Objects.requireNonNull(userLogged()).getId()) {
                             if (getId() == i && t.getState() == TaskState.FINALIZADO) {
-                                System.out.println(getProject());
-                                System.out.println(getClicouButton());
-                                System.out.println(day);
-                                System.out.println("LDEGFH");
                                 FXMLLoader fxmlLoader = new FXMLLoader();
                                 fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
                                 try {
@@ -80,10 +80,6 @@ public class ReportItemController extends ReportController implements Initializa
                         }
                     } else {
                         if (getId() == i && t.getState() == TaskState.FINALIZADO) {
-                            System.out.println(getProject());
-                            System.out.println(getClicouButton());
-                            System.out.println(day);
-                            System.out.println("LDEGFH");
                             FXMLLoader fxmlLoader = new FXMLLoader();
                             fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
                             try {
@@ -115,5 +111,29 @@ public class ReportItemController extends ReportController implements Initializa
         if (Objects.requireNonNull(userLogged()).getNumOfWork() < getTotalHoursDay(i)){
             Hours.setStyle("-fx-font-weight: bold");
         }
+    }
+
+    private void returnUserLogged(){
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+    private void setVisibleUsers(){
+        Utilizadores.setVisible(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd));
+    }
+    @FXML
+    void handleDashboard(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Menu Inicial", "dashboardView.fxml");
+    }
+    @FXML
+    void handleImage(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "My settings", "mySettings.fxml");
+    }
+    @FXML
+    void handleTask(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create task", "taskEditView.fxml");
+    }
+    @FXML
+    void handleInvites(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create and view invites", "invitesView.fxml");
     }
 }

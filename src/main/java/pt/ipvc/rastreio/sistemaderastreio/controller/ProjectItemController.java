@@ -15,6 +15,7 @@ import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Project;
 import pt.ipvc.rastreio.sistemaderastreio.backend.Task;
 import pt.ipvc.rastreio.sistemaderastreio.backend.TaskState;
+import pt.ipvc.rastreio.sistemaderastreio.backend.user;
 import pt.ipvc.rastreio.sistemaderastreio.utils.Alerts;
 import pt.ipvc.rastreio.sistemaderastreio.utils.loginRegisterExceptions.isEmptyException;
 import java.io.IOException;
@@ -41,8 +42,7 @@ public class ProjectItemController extends ProjectController implements Initiali
     private Label TimeSpent;
     @FXML
     private Label idProject;
-    @FXML
-    private Button lis;
+
     @FXML
     private Button remove;
     @FXML
@@ -52,13 +52,13 @@ public class ProjectItemController extends ProjectController implements Initiali
     @FXML
     private TextField EditPrice;
     @FXML
-    private HBox Utilizadores;
+    private HBox Utilizadores = new HBox();
     @FXML
     private Button editChangesButton;
     @FXML
-    private Label name;
+    private Label name = new Label();
     @FXML
-    private Label userName;
+    private Label userName = new Label();
     @FXML
     private Label ProjectName = new Label();
     @FXML
@@ -75,6 +75,8 @@ public class ProjectItemController extends ProjectController implements Initiali
         }
         addTaskToProject();
         projectTaskList();
+        returnUserLogged();
+        setVisibleUsers();
     }
     public void ValidatorEdit() throws isEmptyException{
         if(EditName.getText().isEmpty() || EditClientName.getText().isEmpty() || EditPrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
@@ -111,7 +113,6 @@ public class ProjectItemController extends ProjectController implements Initiali
         for (Task t: p.getTasks()){
             total += t.getDuration();
         }
-        System.out.println(total);
         return total;
     }
     @FXML
@@ -120,7 +121,6 @@ public class ProjectItemController extends ProjectController implements Initiali
         for (Project p: projects){
             if(Integer.parseInt(idProject.getText()) == p.getIdProject()){
                 id = p.getIdProject();
-                System.out.println(getId());
             }
         }
         routes.handleGeneric(event, "Menu Inicial", "projectTasks.fxml");
@@ -128,10 +128,8 @@ public class ProjectItemController extends ProjectController implements Initiali
     public void projectTaskList () {
         correctDuration();
         for (Project p : projects) {
-            System.out.println(p.getTasks());
             if (p.getIdProject() == getId()) {
                 for (Task t : tasks) {
-                    System.out.println(getId());
                     if (t.getIdProject() == getId()) {
                         FXMLLoader fxmlLoader = new FXMLLoader();
                         fxmlLoader.setLocation(App.class.getResource("taskItem.fxml"));
@@ -156,13 +154,12 @@ public class ProjectItemController extends ProjectController implements Initiali
         for (Project p: projects){
             if(Integer.parseInt(idProject.getText()) == p.getIdProject()){
                 id = p.getIdProject();
-                System.out.println(getId());
             }
         }
         routes.handleGeneric(event, "Edit projects", "editProject.fxml");
     }
     @FXML
-    void EditProject(ActionEvent event) {
+    void EditProject() {
         try {
             ValidatorEdit();
             if(!EditName.getText().isEmpty()){
@@ -183,14 +180,14 @@ public class ProjectItemController extends ProjectController implements Initiali
         saveProjects();
     }
     @FXML
-    void remove(ActionEvent event) {
+    void remove() {
         projectItem();
         projects.removeIf(p -> Integer.parseInt(idProject.getText()) == p.getIdProject());
         saveProjects();
         remove.setVisible(false);
     }
     @FXML
-    void AddTask(ActionEvent event) {
+    void AddTask() {
         container.getChildren().clear();
         correctDuration();
         for (Task t : tasks) {
@@ -220,6 +217,14 @@ public class ProjectItemController extends ProjectController implements Initiali
             }
 
         }
+    }
+
+    private void returnUserLogged(){
+        name.setText(Objects.requireNonNull(userLogged()).getName());
+        userName.setText(Objects.requireNonNull(userLogged()).getUsername());
+    }
+    private void setVisibleUsers(){
+        Utilizadores.setVisible(!Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userStd));
     }
     @FXML
     void handleDashboard(MouseEvent event) throws IOException {

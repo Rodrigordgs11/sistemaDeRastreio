@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Reports">
+    <list default="true" id="1ea86ed4-7f9b-4ffd-be6d-b7364d179318" name="Changes" comment="Minor changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/InviteItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ProjectItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/ReportItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/TaskItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/UserItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/createUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/createUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/editUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ipvc/rastreio/sistemaderastreio/controller/editUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/createInvite.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/createInvite.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/createUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/createUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/dashboardView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/reportsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/reportsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/reportTasks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pt/ipvc/rastreio/sistemaderastreio/reportTasks.fxml" afterDir="false" />
     </list>
     <list id="c5d34e0d-62bc-4cf8-b3c8-da57cdade186" name="Changes by Pedro" comment="Changes by Pedro" />
     <list id="5e525de6-a354-44c6-8251-de9ca054005e" name="Changes by Rodrigo" comment="Changes by Rodrigo" />
@@ -92,11 +103,11 @@
       <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\images" />
-      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
-      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Styles" />
-      <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio" />
-      <recent name="C:\Users\Rodrigo\IdeaProjects\sistemaDeRastreio\src\main\java\pt\ipvc\rastreio\sistemaderastreio\gui" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Views\User" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Views" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\User" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Task" />
+      <recent name="C:\Users\Pedro\IdeaProjects\sistemaDeRastreio\src\main\resources\pt\ipvc\rastreio\sistemaderastreio\Project" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="pt.ipvc.rastreio.sistemaderastreio" />
@@ -201,13 +212,15 @@
       <workItem from="1672831218345" duration="2614000" />
       <workItem from="1672833838168" duration="662000" />
       <workItem from="1672940252437" duration="2635000" />
-    </task>
-    <task id="LOCAL-00022" summary="create task files">
-      <created>1671636260690</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1671636260690</updated>
+      <workItem from="1672942987034" duration="47000" />
+      <workItem from="1672951700072" duration="68000" />
+      <workItem from="1673030693241" duration="67000" />
+      <workItem from="1673030895622" duration="302000" />
+      <workItem from="1673087261679" duration="3798000" />
+      <workItem from="1673095586628" duration="222000" />
+      <workItem from="1673095989685" duration="2331000" />
+      <workItem from="1673099420879" duration="44000" />
+      <workItem from="1673099466171" duration="6455000" />
     </task>
     <task id="LOCAL-00023" summary="update user abstract and update dashboard with userEnumeration">
       <created>1671636311516</created>
@@ -545,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672831262425</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Minor changes">
+      <created>1672943011263</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1672943011263</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dashboard create" />
     <MESSAGE value="dashboard controller create" />
     <MESSAGE value="Dashboard UI done" />
     <MESSAGE value="switch dash with log in done" />
@@ -588,7 +607,8 @@
     <MESSAGE value="Invites update" />
     <MESSAGE value="Changes by Rodrigo" />
     <MESSAGE value="Reports" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reports" />
+    <MESSAGE value="Minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

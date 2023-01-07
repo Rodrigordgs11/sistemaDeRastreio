@@ -107,7 +107,6 @@ public class TaskItemController extends TaskController implements Initializable{
         for (Task t: tasks){
             if(Integer.parseInt(idTask.getText()) == t.getIdTask()){
                 id = t.getIdTask();
-                System.out.println(getId());
             }
         }
         routes.handleGeneric(event, "Edit task", "editTask.fxml");
@@ -125,7 +124,6 @@ public class TaskItemController extends TaskController implements Initializable{
         for (Task t: tasks){
             if(Integer.parseInt(idTask.getText()) == t.getIdTask()){
                 id = t.getIdTask();
-                System.out.println(getId());
             }
         }
         routes.handleGeneric(event, "Terminate Task", "terminateTaskView.fxml");
@@ -186,12 +184,8 @@ public class TaskItemController extends TaskController implements Initializable{
         for (Task t: tasks){
             if(Integer.parseInt(idTask.getText()) == t.getIdTask()){
                 id = t.getIdTask();
-                System.out.println(ProjectItemController.getId());
                 t.setIdProject(ProjectItemController.getId());
             }
-        }
-        for(Task tk: tasks){
-            System.out.println(tk);
         }
         saveTasks();
     }

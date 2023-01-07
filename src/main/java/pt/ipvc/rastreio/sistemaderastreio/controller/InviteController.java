@@ -114,7 +114,6 @@ public class InviteController implements Initializable {
         }
     }
     private void returnUserLogged(){
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

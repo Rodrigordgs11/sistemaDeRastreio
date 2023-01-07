@@ -65,7 +65,7 @@ public class editUserController extends UserItemController implements Initializa
          }
         }
     }
-    public void SaveChanges() throws matchException, alreadyExistException, isEmptyException {
+    public void SaveChanges(){
         try {
             validator();
             userItem();
@@ -92,7 +92,6 @@ public class editUserController extends UserItemController implements Initializa
         data.saveUsers();
     }
     private void returnUserLogged(){
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

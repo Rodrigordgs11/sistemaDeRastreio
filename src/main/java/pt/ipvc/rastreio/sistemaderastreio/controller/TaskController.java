@@ -203,7 +203,6 @@ public class TaskController implements Initializable {
     public void startTask() {
         Date date = new Date();
         for (Task t : tasks) {
-            System.out.println(date);
             if (t.getStartTime().compareTo(date) <= 0) {
                 t.setState(TaskState.EMCURSO);
             }
@@ -264,7 +263,6 @@ public class TaskController implements Initializable {
         }
     }
     private void returnUserLogged() {
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

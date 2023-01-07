@@ -66,9 +66,7 @@ public class ReportController implements Initializable {
         returnUserLogged();
         setVisibleUsers();
         addTaskToProject();
-
         idUserLogged = Objects.requireNonNull(userLogged()).getId();
-        System.out.println(idUserLogged);
     }
 
     public int getClicouButton() {
@@ -85,10 +83,6 @@ public class ReportController implements Initializable {
         for (Project p: projects) {
             if (Integer.parseInt(idProject.getText()) == p.getIdProject()
                     && p.getClientName().equals(ClientName.getText())) {
-                System.out.println(ClientName.getText());
-                System.out.println(p.getClientName());
-                System.out.println(idProject.getText());
-                System.out.println(p.getIdProject());
                 nExiste = true;
             }
         }
@@ -110,9 +104,9 @@ public class ReportController implements Initializable {
         long Total = 0;
         long TotalProject = 0;
         for (Task t: tasks){
-            LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-            int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
-            String comparasion = lol.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
+            LocalDateTime Time = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+            int day = Integer.parseInt(Time.format(DateTimeFormatter.ofPattern("dd")));
+            String comparasion = Time.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
             if(clicouButton == 1){
                 if(String.valueOf(t.getIdProject()).equals(Project)  && t.getidUser() == idUserLogged){
                     if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO){
@@ -154,9 +148,9 @@ public class ReportController implements Initializable {
         float Total = 0;
         float TotalProject = 0;
         for (Task t: tasks){
-            LocalDateTime lol = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-            int day = Integer.parseInt(lol.format(DateTimeFormatter.ofPattern("dd")));
-            String comparasion = lol.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
+            LocalDateTime Time = t.getStartTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+            int day = Integer.parseInt(Time.format(DateTimeFormatter.ofPattern("dd")));
+            String comparasion = Time.format(DateTimeFormatter.ofPattern("-MM-yyyy"));
             if (clicouButton == 1){
                 if(String.valueOf(t.getIdProject()).equals(Project)  && t.getidUser() == idUserLogged) {
                     if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO) {
@@ -221,14 +215,12 @@ public class ReportController implements Initializable {
     @FXML
      public void DateOnAction() {
         Project = idProject.getText();
-        System.out.println(DateId.getValue());
         clicouButton = 0;
         DatePicked = DateId.getValue();
         LocalDate datePicker = this.DateId.getValue();
         String NewDatePicker = datePicker.format(DateTimeFormatter.ofPattern("MM-yyyy"));
         ReportMonth.setText("Report of month: " + NewDatePicker);
         if (clicou == 0) {
-            System.out.println("DateOnAction");
             setAnimaitionText();
             listDays();
         }
@@ -278,7 +270,6 @@ public class ReportController implements Initializable {
         routes.handleGeneric(event, "List Tasks", "taskEditView.fxml");
     }
     private void returnUserLogged(){
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

@@ -78,7 +78,6 @@ public class createUserController extends UserController implements Initializabl
            TypeUser.getText().toLowerCase().equals("userstd"))) throw new matchException("This type user does not exist");
     }
     private void returnUserLogged(){
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

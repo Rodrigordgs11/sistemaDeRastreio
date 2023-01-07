@@ -49,7 +49,7 @@ public class ProjectController implements Initializable {
         if(CreateName.getText().isEmpty() || CreateClientName.getText().isEmpty() || CreatePrice.getText().isEmpty()) throw new isEmptyException("Text field is empty");
     }
     @FXML
-    public void SaveChanges(ActionEvent event){
+    public void SaveChanges(){
         try {
             Validator();
                 Project project = new Project(CreateName.getText(), CreateClientName.getText(), Float.parseFloat(CreatePrice.getText()), Objects.requireNonNull(userLogged()).getUsername(), null);
@@ -63,7 +63,7 @@ public class ProjectController implements Initializable {
         data.saveProjects();
     }
     @FXML
-    void ListAll(ActionEvent event) {
+    void ListAll() {
         if(!(Objects.requireNonNull(userLogged()).tipoUser == user.typeUser.userStd)){
             projectItem();
         }else{
@@ -104,7 +104,7 @@ public class ProjectController implements Initializable {
         }
     }
     @FXML
-    void ListAllMine(ActionEvent event) {
+    void ListAllMine() {
         container.getChildren().clear();
         for (Project p : projects) {
             if (p.getOwner().equals(Objects.requireNonNull(userLogged()).getUsername())) {
@@ -122,7 +122,7 @@ public class ProjectController implements Initializable {
         }
     }
     @FXML
-    void ListAllShared(ActionEvent event) {
+    void ListAllShared() {
         container.getChildren().clear();
         for (Project p : projects) {
             if(p.getSharedUsers().contains(String.valueOf(Objects.requireNonNull(userLogged()).getId()))) {
@@ -141,7 +141,6 @@ public class ProjectController implements Initializable {
         }
     }
     private void returnUserLogged(){
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

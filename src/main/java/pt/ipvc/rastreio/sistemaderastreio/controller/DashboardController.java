@@ -2,7 +2,6 @@ package pt.ipvc.rastreio.sistemaderastreio.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import pt.ipvc.rastreio.sistemaderastreio.Routes.routes;
@@ -18,8 +17,6 @@ public class DashboardController implements Initializable {
     @FXML
     private Label userName;
     @FXML
-    private ImageView imageSwitchMy;
-    @FXML
     private HBox Utilizadores;
     @FXML
     private Label ClientStat;
@@ -34,7 +31,6 @@ public class DashboardController implements Initializable {
         setStats();
     }
     private void returnUserLogged(){
-        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }

@@ -102,10 +102,7 @@ public class InviteItemController extends InviteController{
                 }
                 for (user u : users){
                     if(Integer.parseInt(idUser.getText()) == i.getId() && i.getReceiver().equals(u.getUsername()) && i.getIdProject() == p.getIdProject()){
-                        System.out.println(i);
-                        System.out.println(u);
                         p.getSharedUsers().remove(String.valueOf(u.getId()));
-                        System.out.println(p);
                     }
                 }
             }
@@ -113,4 +110,6 @@ public class InviteItemController extends InviteController{
         saveProjects();
         saveInvites();
     }
+
+
 }

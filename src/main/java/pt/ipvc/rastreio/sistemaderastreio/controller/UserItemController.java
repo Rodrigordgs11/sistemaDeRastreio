@@ -36,7 +36,6 @@ public class UserItemController extends UserController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idUser.setVisible(false);
-        //returnUserLogged();
     }
     public void setData(user User){
         idUser.setText(String.valueOf(User.getId()));
@@ -54,7 +53,7 @@ public class UserItemController extends UserController implements Initializable{
         }
     }
     @FXML
-    public void remove(ActionEvent event){
+    public void remove(){
         userItem();
         users.removeIf(u -> Integer.parseInt(idUser.getText()) == u.getId());
         saveUsers();
@@ -72,5 +71,18 @@ public class UserItemController extends UserController implements Initializable{
     }
     public void handleDashboard(MouseEvent event) throws IOException {
         routes.handleGeneric(event, "Inicial menu", "dashboardView.fxml");
+    }
+    @FXML
+    public void handleInvite(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create and view invites", "invitesView.fxml");
+    }
+    @FXML
+    public void handleProject(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "List Project", "projectView.fxml");
+    }
+
+    @FXML
+    public void handleReport(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create report", "reportsView.fxml");
     }
 }
