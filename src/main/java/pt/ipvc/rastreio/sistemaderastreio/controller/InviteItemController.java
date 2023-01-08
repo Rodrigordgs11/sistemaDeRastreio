@@ -76,7 +76,6 @@ public class InviteItemController extends InviteController{
                 if (Integer.parseInt(idUser.getText()) == i.getId() && i.getIdProject() == p.getIdProject() && !p.getSharedUsers().contains(Objects.requireNonNull(userLogged()).getId())) {
                     p.getSharedUsers().add(String.valueOf(Objects.requireNonNull(userLogged()).getId()));
                 }
-            System.out.println(p);
             }
         }
         saveInvites();
@@ -93,7 +92,7 @@ public class InviteItemController extends InviteController{
         saveInvites();
     }
     @FXML
-    void remove(ActionEvent event) {
+    void remove() {
         for (Project p : projects) {
             for (Invite i : invites){
                 if (Integer.parseInt(idUser.getText()) == i.getId()) {

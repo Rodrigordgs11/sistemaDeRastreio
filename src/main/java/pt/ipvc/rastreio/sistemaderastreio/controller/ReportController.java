@@ -114,7 +114,7 @@ public class ReportController implements Initializable {
                     }
                 }
             }else {
-                if (userLogged().tipoUser == user.typeUser.admin) {
+                if (userLogged() != null && userLogged().tipoUser == user.typeUser.admin) {
                     if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO)
                         Total += t.getDuration();
                 }else {
@@ -158,7 +158,7 @@ public class ReportController implements Initializable {
                     }
                 }
             }else {
-                if (userLogged().tipoUser == user.typeUser.admin) {
+                if (userLogged() != null && userLogged().tipoUser == user.typeUser.admin) {
                     if (i == day && getDateSplited().equals(comparasion) && t.getState() == TaskState.FINALIZADO) {
                         Total += t.getPriceProject();
                     }

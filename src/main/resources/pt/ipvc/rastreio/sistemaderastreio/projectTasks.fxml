@@ -201,15 +201,7 @@
                            </styleClass>
                         </TextField>
                         <Pane prefHeight="58.0" prefWidth="3.0" styleClass="transparent" stylesheets="@Styles/login.css" />
-                        <Button mnemonicParsing="false" styleClass="transparent" stylesheets="@Styles/user.css">
-                           <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@images/search.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
+                        <Button mnemonicParsing="false" styleClass="transparent" stylesheets="@Styles/user.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">

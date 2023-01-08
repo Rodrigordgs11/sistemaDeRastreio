@@ -219,7 +219,7 @@
                            </styleClass>
                         </TextField>
                         <Pane prefHeight="58.0" prefWidth="3.0" styleClass="transparent" stylesheets="@Styles/login.css" />
-                        <Button mnemonicParsing="false" onAction="#showText" styleClass="transparent" stylesheets="@Styles/user.css">
+                        <Button fx:id="search" mnemonicParsing="false" onAction="#showText" styleClass="transparent" stylesheets="@Styles/user.css" visible="false">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

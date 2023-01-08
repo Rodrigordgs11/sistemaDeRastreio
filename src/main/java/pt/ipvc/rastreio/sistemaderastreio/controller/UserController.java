@@ -56,6 +56,8 @@ public class UserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userItem();
+        //returnUserLogged();
+        //setVisibleUsers();
     }
     public void validator() throws alreadyExistException, matchException, isEmptyException {
         boolean exist = false;
@@ -117,11 +119,15 @@ public class UserController implements Initializable {
         }
     }
     private void returnUserLogged(){
+        System.out.println(userLogged());
         name.setText(Objects.requireNonNull(userLogged()).getName());
         userName.setText(Objects.requireNonNull(userLogged()).getUsername());
     }
     private void setVisibleUsers(){
         Utilizadores.setVisible(Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.admin) || Objects.requireNonNull(userLogged()).getTipoUser().equals(user.typeUser.userManager));
+    }
+    public void switchUser(MouseEvent event) throws IOException {
+        routes.handleGeneric(event, "Create task", "userView.fxml");
     }
     @FXML
     public void CreateUser(ActionEvent event) throws IOException {

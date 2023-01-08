@@ -108,6 +108,7 @@ public class ReportItemController extends ReportController implements Initializa
         Hours.setText(String.valueOf(getTotalHoursDay(i)));
         TotalPrice.setText(String.valueOf(getTotalPriceDay(i)));
         idDate.setText(String.valueOf(i));
+        idDate.setVisible(false);
         if (Objects.requireNonNull(userLogged()).getNumOfWork() < getTotalHoursDay(i)){
             Hours.setStyle("-fx-font-weight: bold");
         }

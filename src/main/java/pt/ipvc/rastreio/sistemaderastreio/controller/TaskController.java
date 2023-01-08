@@ -40,6 +40,8 @@ public class TaskController implements Initializable {
     @FXML
     private HBox Utilizadores;
     @FXML
+    private Button search;
+    @FXML
     private VBox container = new VBox();
     @FXML
     private HBox hBox;
@@ -88,12 +90,14 @@ public class TaskController implements Initializable {
     public void ListAll(ActionEvent event) {
         EndTimeSearch.setVisible(false);
         StarteTimeSearch.setVisible(false);
+        search.setVisible(false);
         ListAllMethod();
     }
     @FXML
     public void ListALLEMCURSO(ActionEvent event) {
         StarteTimeSearch.setVisible(false);
         EndTimeSearch.setVisible(false);
+        search.setVisible(false);
         startTask();
         endTask();
         correctDuration();
@@ -170,6 +174,7 @@ public class TaskController implements Initializable {
         container.getChildren().clear();
         StarteTimeSearch.setVisible(true);
         EndTimeSearch.setVisible(true);
+        search.setVisible(true);
         for (Task t : tasks) {
             if (!(Objects.requireNonNull(userLogged()).tipoUser == user.typeUser.userStd)) {
                 if (t.getState().equals(TaskState.FINALIZADO)) {
@@ -179,6 +184,7 @@ public class TaskController implements Initializable {
                         hBox = fxmlLoader.load();
                         TaskItemController taskItemController = fxmlLoader.getController();
                         taskItemController.setData(t);
+                        taskItemController.invisible();
                         container.getChildren().add(hBox);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
